@@ -3,23 +3,102 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>棚卸カウンター サポート</title>
+<title>棚卸カウンター｜バーコードで在庫を数えるiPhone棚卸アプリ（無料）</title>
+<meta name="description" content="JANバーコードにiPhoneのカメラを向けるだけで在庫を数える、小さなお店向けの棚卸アプリ。登録不要・無料で使え、プロ版（買い切り¥480）で棚卸結果をExcel対応のCSVに書き出せます。">
+<link rel="canonical" href="https://axostoxast.github.io/tanacount-support/">
+<meta name="apple-itunes-app" content="app-id=6820345195">
+<meta property="og:type" content="website">
+<meta property="og:title" content="棚卸カウンター｜バーコードで在庫を数えるiPhoneアプリ">
+<meta property="og:description" content="JANバーコードを読み取って、小さなお店の棚卸をスマホひとつで。登録不要・無料。">
+<meta property="og:url" content="https://axostoxast.github.io/tanacount-support/">
+<meta property="og:image" content="https://axostoxast.github.io/tanacount-support/img/tanacount_1_list.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "棚卸カウンター - バーコードで在庫を数える",
+      "operatingSystem": "iOS 17以降",
+      "applicationCategory": "BusinessApplication",
+      "description": "JANバーコードを読み取って在庫を数える、小さなお店向けの棚卸アプリ。",
+      "url": "https://apps.apple.com/jp/app/id6820345195",
+      "image": "https://axostoxast.github.io/tanacount-support/img/tanacount_1_list.jpg",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "バーコードが読み取れません", "acceptedAnswer": {"@type": "Answer", "text": "読み取れるのはJAN（EAN-13・EAN-8）です。明るい場所で、バーコード全体が画面に入るように少し離してかざしてください。読み取れない場合は、入力欄に数字を入力しても数えられます。"}},
+        {"@type": "Question", "name": "「チェックデジットが合いません」と表示されます", "acceptedAnswer": {"@type": "Answer", "text": "JANの最後の1桁は、前の桁から計算される確認用の数字です。入力した番号が商品のバーコードの数字と一致しているか確認してください。"}},
+        {"@type": "Question", "name": "機種変更したらデータは引き継げますか", "acceptedAnswer": {"@type": "Answer", "text": "データは端末内にだけ保存されるため、自動では引き継がれません。プロ版のCSV書き出しで記録を残しておくことをおすすめします。"}},
+        {"@type": "Question", "name": "プロ版を購入したのにCSV書き出しが使えません", "acceptedAnswer": {"@type": "Answer", "text": "メニューの「プロ版について」から「購入を復元」を押してください。購入時と同じApple IDでサインインしている必要があります。"}}
+      ]
+    }
+  ]
+}
+</script>
 <style>
-  :root { color-scheme: light dark; --fg: #1d1d1f; --bg: #fff; --muted: #6e6e73; }
-  @media (prefers-color-scheme: dark) { :root { --fg: #f5f5f7; --bg: #000; --muted: #a1a1a6; } }
+  :root { color-scheme: light dark; --fg: #1d1d1f; --bg: #fff; --muted: #6e6e73; --card: #f5f5f7; --accent: #0071e3; }
+  @media (prefers-color-scheme: dark) { :root { --fg: #f5f5f7; --bg: #000; --muted: #a1a1a6; --card: #1c1c1e; --accent: #2997ff; } }
   body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.8 -apple-system, "Hiragino Sans", sans-serif; }
   main { max-width: 680px; margin: 0 auto; padding: 32px 16px 64px; }
-  h1 { font-size: 1.6rem; line-height: 1.4; }
+  h1 { font-size: 1.6rem; line-height: 1.4; margin-bottom: .3em; }
   h2 { font-size: 1.15rem; margin-top: 2em; }
   h3 { font-size: 1rem; margin-bottom: .2em; }
   h3 + p { margin-top: 0; }
+  .lead { font-size: 1.05rem; }
   .muted { color: var(--muted); font-size: .9rem; }
+  .cta { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; padding: 10px 22px; border-radius: 999px; font-weight: 600; }
+  .shots { display: flex; gap: 12px; overflow-x: auto; padding: 8px 0; }
+  .shots img { width: 46%; max-width: 240px; height: auto; border-radius: 18px; background: var(--card); flex: none; }
+  ul.features { padding-left: 1.2em; }
+  ol li, ul li { margin-bottom: .3em; }
+  .card { background: var(--card); border-radius: 12px; padding: 12px 16px; }
+  a { color: var(--accent); }
 </style>
 </head>
 <body>
 <main>
-  <h1>棚卸カウンター サポート</h1>
-  <p>JANバーコードを読み取って、小さなお店の在庫を数えるiOSアプリです。</p>
+  <h1>棚卸カウンター</h1>
+  <p class="lead">JANバーコードにiPhoneのカメラを向けるだけで、在庫を数えられる棚卸アプリです。小さなお店や事務所の棚卸を、スマホひとつで終わらせられます。</p>
+  <p><a class="cta" href="https://apps.apple.com/jp/app/id6820345195">App Storeで見る（無料）</a></p>
+  <p class="muted">iPhone（iOS 17以降）・アカウント登録不要</p>
+
+  <div class="shots">
+    <img src="img/tanacount_1_list.jpg" width="390" height="847" alt="棚卸カウンターの品目一覧。品名・JANコード・数量が並び、合計数が表示されている">
+    <img src="img/tanacount_2_add_scanned.jpg" width="390" height="845" alt="バーコードを読み取ってJANコードが入った品目追加画面">
+  </div>
+
+  <h2>できること</h2>
+  <ul class="features">
+    <li><strong>バーコードで数える</strong>：登録済みの商品はJANバーコードを読み取るだけで＋1。未登録の商品はその場で品名を入れて登録できます。</li>
+    <li><strong>手でも数えられる</strong>：バーコードのない商品は、一覧の＋／−ボタンで数えます。品名やJANコードで検索もできます。</li>
+    <li><strong>外付けスキャナに対応</strong>：キーボードとして動くBluetoothバーコードスキャナが使えます。</li>
+    <li><strong>次の棚卸もすぐ</strong>：品目を残したまま、数量だけを0に戻せます。</li>
+    <li><strong>CSVで書き出し（プロ版）</strong>：JANコード・品名・数量・最終更新日時をCSVで書き出し。Excelで開いても文字化けしません。</li>
+  </ul>
+
+  <h2>使い方</h2>
+  <ol>
+    <li>「バーコードで数える」を押して、商品のJANバーコードにカメラを向けます。</li>
+    <li>初めての商品は品名を入れて登録。2回目からは読み取るたびに数量が増えます。</li>
+    <li>数え終わったら、プロ版のCSV書き出しで結果をExcelやスプレッドシートに貼り付けます。</li>
+  </ol>
+
+  <h2>こんな方に</h2>
+  <ul>
+    <li>個人商店・雑貨店・文具店の月末・期末の棚卸</li>
+    <li>事務所の備品や消耗品の在庫確認</li>
+    <li>イベントや催事の物販の在庫数え</li>
+  </ul>
+
+  <h2>料金</h2>
+  <div class="card">
+    <p>基本機能は無料です。CSV書き出しは<strong>プロ版（買い切り¥480）</strong>で使えます。月額料金はかかりません。</p>
+  </div>
 
   <h2>よくある質問</h2>
   <h3>バーコードが読み取れません</h3>
@@ -37,6 +116,9 @@
   <h2>お問い合わせ</h2>
   <p>メール: <a href="mailto:tanacount.support@gmail.com">tanacount.support@gmail.com</a></p>
   <p class="muted">返信までお時間をいただく場合があります。</p>
+
+  <h2>ほかのアプリ</h2>
+  <p><a href="hojowatch/">補助金ウォッチ</a>：受付中の補助金・助成金を探して、申請締切の前に通知するiPhoneアプリ</p>
 
   <p><a href="privacy.html">プライバシーポリシー</a></p>
 </main>

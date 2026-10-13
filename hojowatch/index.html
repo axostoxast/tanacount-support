@@ -3,23 +3,92 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>補助金ウォッチ サポート</title>
+<title>補助金ウォッチ｜補助金・助成金の締切を通知するiPhoneアプリ</title>
+<meta name="description" content="受付中の補助金・助成金をJグランツの公開情報からキーワードと都道府県で検索し、気になる補助金の申請締切の7日前・3日前・前日に通知するiPhoneアプリ。登録不要・無料（3件まで）。">
+<link rel="canonical" href="https://axostoxast.github.io/tanacount-support/hojowatch/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="補助金ウォッチ｜補助金・助成金の締切を通知するiPhoneアプリ">
+<meta property="og:description" content="受付中の補助金を探して、申請締切の前に通知。中小企業・個人事業主向け。">
+<meta property="og:url" content="https://axostoxast.github.io/tanacount-support/hojowatch/">
+<meta property="og:image" content="https://axostoxast.github.io/tanacount-support/img/hojowatch_1_search.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "補助金ウォッチ - 締切通知",
+      "operatingSystem": "iOS 17以降",
+      "applicationCategory": "BusinessApplication",
+      "description": "受付中の補助金・助成金を検索し、申請締切の前に通知するアプリ。",
+      "image": "https://axostoxast.github.io/tanacount-support/img/hojowatch_1_search.jpg",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "通知が届きません", "acceptedAnswer": {"@type": "Answer", "text": "iPhoneの「設定」→「通知」→「補助金ウォッチ」で通知が許可されているか確認してください。通知は締切日の指定日数前の朝9時に届きます。すでに過ぎた時刻の通知は届きません。"}},
+        {"@type": "Question", "name": "締切や金額の情報は正確ですか", "acceptedAnswer": {"@type": "Answer", "text": "情報はJグランツ（デジタル庁）の公開APIから取得しています。アプリを開くたびにウォッチ中の補助金の締切を更新しますが、申請要件・締切・金額は必ず各補助金の公募要領でご確認ください。"}},
+        {"@type": "Question", "name": "検索で何も表示されません", "acceptedAnswer": {"@type": "Answer", "text": "キーワードは2文字以上で入力してください。「補助」「助成」「設備」など広めの言葉で検索し、地域で絞り込むと見つけやすくなります。"}},
+        {"@type": "Question", "name": "プロ版を購入したのにウォッチが3件までのままです", "acceptedAnswer": {"@type": "Answer", "text": "「設定」→「プロ版について」から「購入を復元」を押してください。購入時と同じApple IDでサインインしている必要があります。"}}
+      ]
+    }
+  ]
+}
+</script>
 <style>
-  :root { color-scheme: light dark; --fg: #1d1d1f; --bg: #fff; --muted: #6e6e73; }
-  @media (prefers-color-scheme: dark) { :root { --fg: #f5f5f7; --bg: #000; --muted: #a1a1a6; } }
+  :root { color-scheme: light dark; --fg: #1d1d1f; --bg: #fff; --muted: #6e6e73; --card: #f5f5f7; --accent: #0071e3; }
+  @media (prefers-color-scheme: dark) { :root { --fg: #f5f5f7; --bg: #000; --muted: #a1a1a6; --card: #1c1c1e; --accent: #2997ff; } }
   body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.8 -apple-system, "Hiragino Sans", sans-serif; }
   main { max-width: 680px; margin: 0 auto; padding: 32px 16px 64px; }
-  h1 { font-size: 1.6rem; line-height: 1.4; }
+  h1 { font-size: 1.6rem; line-height: 1.4; margin-bottom: .3em; }
   h2 { font-size: 1.15rem; margin-top: 2em; }
   h3 { font-size: 1rem; margin-bottom: .2em; }
   h3 + p { margin-top: 0; }
+  .lead { font-size: 1.05rem; }
   .muted { color: var(--muted); font-size: .9rem; }
+  .badge { display: inline-block; background: var(--card); padding: 8px 18px; border-radius: 999px; font-weight: 600; }
+  .shots { display: flex; gap: 12px; overflow-x: auto; padding: 8px 0; }
+  .shots img { width: 46%; max-width: 240px; height: auto; border-radius: 18px; background: var(--card); flex: none; }
+  ol li, ul li { margin-bottom: .3em; }
+  .card { background: var(--card); border-radius: 12px; padding: 12px 16px; }
+  a { color: var(--accent); }
 </style>
 </head>
 <body>
 <main>
-  <h1>補助金ウォッチ サポート</h1>
-  <p>受付中の補助金・助成金を探して、気になるものの申請締切前に通知するiOSアプリです。</p>
+  <h1>補助金ウォッチ</h1>
+  <p class="lead">国や自治体の補助金・助成金の「申請締切をうっかり逃す」を防ぐiPhoneアプリです。受付中の補助金を探して、気になるものの締切前に通知します。</p>
+  <p><span class="badge">App Storeで近日公開</span></p>
+  <p class="muted">iPhone（iOS 17以降）・アカウント登録不要</p>
+
+  <div class="shots">
+    <img src="../img/hojowatch_1_search.jpg" width="390" height="845" alt="補助金ウォッチの検索結果。受付中の補助金が締切の近い順に並び、残り日数が表示されている">
+    <img src="../img/hojowatch_2_watch.jpg" width="390" height="845" alt="ウォッチ中の補助金の一覧と締切日">
+  </div>
+
+  <h2>できること</h2>
+  <ul>
+    <li><strong>受付中の補助金を探す</strong>：デジタル庁の補助金申請システム「Jグランツ」の公開情報から、いま受付中の補助金・助成金をキーワードと都道府県で検索できます。締切が近い順に並び、締切まで3日以内のものは赤字で表示します。</li>
+    <li><strong>締切前に通知</strong>：ベルを押してウォッチすると、締切日の7日前・3日前・前日の朝9時に通知します。締切が延長された場合も、アプリを開いたときに通知が合わせて変わります。</li>
+    <li><strong>プロ版（買い切り¥480）</strong>：ウォッチ件数が無制限に（無料版は3件まで）。通知のタイミングを30日前・14日前・7日前・3日前・前日・当日から選べます。</li>
+  </ul>
+
+  <h2>使い方</h2>
+  <ol>
+    <li>「探す」タブで「設備」「IT導入」「創業」などのキーワードを入れ、必要なら都道府県で絞り込みます。</li>
+    <li>気になる補助金のベルを押してウォッチします。</li>
+    <li>締切が近づくと通知が届きます。補助金名を押すと、Jグランツの公募ページを開けます。</li>
+  </ol>
+
+  <h2>こんな方に</h2>
+  <ul>
+    <li>設備投資やIT導入の補助金を探している中小企業・個人事業主</li>
+    <li>創業や事業承継の助成金をチェックしたい方</li>
+    <li>顧問先の補助金情報を追っている士業・支援機関の方</li>
+  </ul>
 
   <h2>よくある質問</h2>
   <h3>通知が届きません</h3>
@@ -40,6 +109,9 @@
 
   <h2>情報の出典</h2>
   <p class="muted">出典：Jグランツ。本アプリは、政府公式の補助金申請システムjGrantsのWeb-API機能を利用して取得した情報をもとに、補助金ウォッチ（個人開発・非公式）が表示しています。内容は日本国政府及び自治体によって保証されたものではありません。</p>
+
+  <h2>ほかのアプリ</h2>
+  <p><a href="../">棚卸カウンター</a>：JANバーコードを読み取って、小さなお店の在庫を数えるiPhoneアプリ</p>
 
   <p><a href="privacy.html">プライバシーポリシー</a></p>
 </main>
