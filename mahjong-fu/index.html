@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>麻雀 符計算｜符の数え方の早見表と計算ツール</title>
+<meta name="description" content="麻雀の符計算を表と計算ツールで解説。副底・門前加符・ツモ・雀頭・待ち・面子（明刻・暗刻・明槓・暗槓）の符と、七対子・平和の例外。手の形を選ぶと符を自動で計算します。">
+<link rel="canonical" href="https://axostoxast.github.io/tanacount-support/mahjong-fu/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="麻雀 符計算｜符の数え方の早見表と計算ツール">
+<meta property="og:description" content="麻雀の符計算を表と計算ツールで解説。副底・門前加符・ツモ・雀頭・待ち・面子（明刻・暗刻・明槓・暗槓）の符と、七対子・平和の例外。手の形を選ぶと符を自動で計算します。">
+<meta property="og:url" content="https://axostoxast.github.io/tanacount-support/mahjong-fu/">
+<meta property="og:locale" content="ja_JP">
+<meta name="apple-itunes-app" content="app-id=6822173418">
+<link rel="stylesheet" href="../assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "符はなぜ切り上げる？", "acceptedAnswer": {"@type": "Answer", "text": "点数計算を簡単にするため、合計した符を10符単位に切り上げます。七対子の25符だけは例外です。"}}, {"@type": "Question", "name": "平和ツモは何符？", "acceptedAnswer": {"@type": "Answer", "text": "20符です。平和はツモの2符をつけません。平和のロンは30符です。"}}, {"@type": "Question", "name": "符を覚えなくても遊べる？", "acceptedAnswer": {"@type": "Answer", "text": "早見表や点数計算アプリを使えば、符を覚えていなくても遊べます。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "早見表・ガイド", "item": "https://axostoxast.github.io/tanacount-support/guide/"}, {"@type": "ListItem", "position": 2, "name": "麻雀 符計算", "item": "https://axostoxast.github.io/tanacount-support/mahjong-fu/"}]}</script>
+
+</head>
+<body>
+<main>
+  <nav class="crumb"><a href="../guide/">早見表・ガイド</a> ＞ 麻雀 符計算</nav>
+  <h1>麻雀 符計算</h1>
+  <p class="lead">麻雀の符の数え方を、表と計算ツールでまとめました。手の形を選ぶと符を計算します。符と翻から点数を出すときは<a href="../mahjong-tensu/">点数早見表</a>を使ってください。</p>
+
+  <div class="calc" id="calc">
+    <div class="row"><label>和了</label>
+      <select id="win"><option value="ron">ロン</option><option value="tsumo">ツモ</option></select>
+      <label style="margin-left:8px">門前</label><select id="men"><option value="1">門前（鳴きなし）</option><option value="0">鳴きあり</option></select></div>
+    <div class="row"><label>特別な形</label>
+      <select id="special"><option value="">通常</option><option value="chiitoi">七対子（25符固定）</option><option value="pinfu">平和</option></select></div>
+    <div class="row"><label>雀頭</label>
+      <select id="head"><option value="0">数牌・役のない風牌（0符）</option><option value="2">役牌（2符）</option><option value="4">連風牌（4符・ルールによる）</option></select></div>
+    <div class="row"><label>待ち</label>
+      <select id="wait"><option value="0">両面・双碰（0符）</option><option value="2">嵌張・辺張・単騎（2符）</option></select></div>
+    <div class="row"><b>面子の数</b>（順子は0符なので入れなくてよい）</div>
+    <div class="scroll"><table class="center" style="min-width:420px">
+      <thead><tr><th></th><th>明刻</th><th>暗刻</th><th>明槓</th><th>暗槓</th></tr></thead>
+      <tbody>
+        <tr><th>中張牌（2〜8）</th><td><input type="number" min="0" max="4" value="0" id="m_c_mk" style="width:3.5em"></td><td><input type="number" min="0" max="4" value="0" id="m_c_ak" style="width:3.5em"></td><td><input type="number" min="0" max="4" value="0" id="m_c_mn" style="width:3.5em"></td><td><input type="number" min="0" max="4" value="0" id="m_c_an" style="width:3.5em"></td></tr>
+        <tr><th>么九牌（1・9・字）</th><td><input type="number" min="0" max="4" value="0" id="m_y_mk" style="width:3.5em"></td><td><input type="number" min="0" max="4" value="0" id="m_y_ak" style="width:3.5em"></td><td><input type="number" min="0" max="4" value="0" id="m_y_mn" style="width:3.5em"></td><td><input type="number" min="0" max="4" value="0" id="m_y_an" style="width:3.5em"></td></tr>
+      </tbody>
+    </table></div>
+    <div class="out" id="out" aria-live="polite"></div>
+    <p class="muted" style="margin:.4em 0 0">双碰待ちをロンで和了した刻子は明刻として数えます。</p>
+  </div>
+
+  <h2>符の内訳</h2>
+  <table>
+    <thead><tr><th>項目</th><th>符</th></tr></thead>
+    <tbody>
+      <tr><th>副底（必ずつく）</th><td>20符</td></tr>
+      <tr><th>門前でロン和了（門前加符）</th><td>10符</td></tr>
+      <tr><th>ツモ和了（平和のツモを除く）</th><td>2符</td></tr>
+      <tr><th>雀頭が役牌（三元牌・場風・自風）</th><td>2符（連風牌は4符とするルールが多い）</td></tr>
+      <tr><th>嵌張・辺張・単騎待ち</th><td>2符</td></tr>
+    </tbody>
+  </table>
+  <h3>面子の符</h3>
+  <table class="center">
+    <thead><tr><th></th><th>明刻</th><th>暗刻</th><th>明槓</th><th>暗槓</th></tr></thead>
+    <tbody>
+      <tr><th>中張牌（2〜8）</th><td>2</td><td>4</td><td>8</td><td>16</td></tr>
+      <tr><th>么九牌（1・9・字牌）</th><td>4</td><td>8</td><td>16</td><td>32</td></tr>
+    </tbody>
+  </table>
+  <p>合計を10符単位に切り上げます（例：32符→40符）。順子は0符です。</p>
+
+  <h2>例外</h2>
+  <ul>
+    <li><b>七対子</b>：25符で固定（切り上げない）</li>
+    <li><b>平和のツモ</b>：20符（ツモの2符をつけない）。平和のロンは30符</li>
+    <li><b>鳴いて符がない形（喰い平和）のロン</b>：20符にならないよう30符とする</li>
+  </ul>
+
+  <a class="app" href="https://apps.apple.com/jp/app/id6822173418"><strong>符と翻から点数を答える練習問題 →</strong><br>「子・ロン 3翻40符」のような問題に4択で答える練習問題。間違えたら計算の手順をその場で解説します。</a>
+  <a class="app" href="https://apps.apple.com/jp/app/id6822353532"><strong>手牌を入れると符と点数を自動で計算 →</strong><br>手牌を入れると、待ち牌と残り枚数、待ちごとの役・符・点数がわかります。</a>
+
+
+  <h2>よくある質問</h2>
+  <h3>符はなぜ切り上げる？</h3>
+  <p>点数計算を簡単にするため、合計した符を10符単位に切り上げます。七対子の25符だけは例外です。</p>
+  <h3>平和ツモは何符？</h3>
+  <p>20符です。平和はツモの2符をつけません。平和のロンは30符です。</p>
+  <h3>符を覚えなくても遊べる？</h3>
+  <p>早見表や点数計算アプリを使えば、符を覚えていなくても遊べます。</p>
+</main>
+<footer>
+  <a href="../guide/">早見表・ガイドの一覧</a> ・ <a href="../apps/">アプリの一覧</a> ・ お問い合わせ: tanacount.support@gmail.com
+</footer>
+<script>
+function v(id){return +document.getElementById(id).value||0;}
+function calc(){var ron=document.getElementById("win").value==="ron",men=document.getElementById("men").value==="1",sp=document.getElementById("special").value,o=document.getElementById("out");
+ if(sp==="chiitoi"){o.innerHTML=men?"<b>25符</b>（七対子は25符で固定）":"七対子は門前のみの役です";return;}
+ if(sp==="pinfu"){o.innerHTML=men?(ron?"<b>30符</b>（副底20＋門前ロン10）":"<b>20符</b>（平和のツモは20符）"):"平和は門前のみの役です";return;}
+ var parts=[["副底",20]];if(men&&ron)parts.push(["門前ロン",10]);if(!ron)parts.push(["ツモ",2]);
+ var h=v("head");if(h)parts.push(["雀頭",h]);var w=v("wait");if(w)parts.push(["待ち",w]);
+ var tbl={c_mk:2,c_ak:4,c_mn:8,c_an:16,y_mk:4,y_ak:8,y_mn:16,y_an:32},names={mk:"明刻",ak:"暗刻",mn:"明槓",an:"暗槓"},cnt=0;
+ for(var k in tbl){var n=v("m_"+k);cnt+=n;if(n)parts.push([(k[0]==="c"?"中張":"么九")+names[k.slice(2)]+"×"+n,tbl[k]*n]);}
+ if(cnt>4){o.innerHTML="面子は4組までです";return;}
+ var sum=parts.reduce(function(a,p){return a+p[1];},0),fu=Math.ceil(sum/10)*10,note="";
+ if(!men&&ron&&fu===20){fu=30;note="（喰い平和形のロンは30符）";}
+ o.innerHTML="<b>"+fu+"符</b>"+note+"<br><span class=\"muted\">"+parts.map(function(p){return p[0]+" "+p[1];}).join("＋")+" ＝ "+sum+"符 → 切り上げ</span>";}
+document.querySelectorAll("#calc select,#calc input").forEach(function(e){e.addEventListener("input",calc);});calc();
+</script>
+</body>
+</html>

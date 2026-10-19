@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>麻雀 精算計算機｜ウマ・オカ込みのポイントと精算額を自動計算</title>
+<meta name="description" content="麻雀の半荘の点数から、ウマ・オカ込みのポイントと精算額を計算するツール。持ち点・返し・ウマ（5-10・10-20・10-30）・端数（五捨六入・四捨五入）・レートを選べます。計算のしかたの解説つき。">
+<link rel="canonical" href="https://axostoxast.github.io/tanacount-support/mahjong-seisan/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="麻雀 精算計算機｜ウマ・オカ込みのポイントと精算額を自動計算">
+<meta property="og:description" content="麻雀の半荘の点数から、ウマ・オカ込みのポイントと精算額を計算するツール。持ち点・返し・ウマ（5-10・10-20・10-30）・端数（五捨六入・四捨五入）・レートを選べます。計算のしかたの解説つき。">
+<meta property="og:url" content="https://axostoxast.github.io/tanacount-support/mahjong-seisan/">
+<meta property="og:locale" content="ja_JP">
+<meta name="apple-itunes-app" content="app-id=6822218449">
+<link rel="stylesheet" href="../assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "オカとは？", "acceptedAnswer": {"@type": "Answer", "text": "持ち点と返しの差です。25,000点持ち30,000点返しなら、1人5,000点×4人＝20,000点（20pt）がトップに入ります。"}}, {"@type": "Question", "name": "五捨六入とは？", "acceptedAnswer": {"@type": "Answer", "text": "100の位が5以下なら切り捨て、6以上なら切り上げる丸め方です。例：27,500点→27、27,600点→28。"}}, {"@type": "Question", "name": "同点のときの順位は？", "acceptedAnswer": {"@type": "Answer", "text": "このツールでは同じ順位とし、該当する順位のウマ（1位ならオカも）を等分します。上家取りなど別のルールの場合は手で調整してください。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "早見表・ガイド", "item": "https://axostoxast.github.io/tanacount-support/guide/"}, {"@type": "ListItem", "position": 2, "name": "麻雀 精算計算機（ウマ・オカ）", "item": "https://axostoxast.github.io/tanacount-support/mahjong-seisan/"}]}</script>
+
+</head>
+<body>
+<main>
+  <nav class="crumb"><a href="../guide/">早見表・ガイド</a> ＞ 麻雀 精算計算機（ウマ・オカ）</nav>
+  <h1>麻雀 精算計算機（ウマ・オカ）</h1>
+  <p class="lead">半荘の最終の点数を入れると、ウマ・オカ込みのポイントと精算額を計算します。持ち点・返し・ウマ・端数の扱い・レートを選べます。同点の場合は同じ順位として、ウマ（1位ならオカも）を分け合います。</p>
+
+  <div class="calc" id="calc">
+    <div class="row"><label>持ち点</label><input type="number" id="start" value="25000" step="1000" style="width:7em"> <label>返し</label><input type="number" id="ret" value="30000" step="1000" style="width:7em"></div>
+    <div class="row"><label>ウマ</label><select id="uma"><option value="0,0,0,0">なし</option><option value="10,5,-5,-10">5-10</option><option value="20,10,-10,-20" selected>10-20</option><option value="30,10,-10,-30">10-30</option></select>
+      <label style="margin-left:8px">端数</label><select id="rnd"><option value="gosha">五捨六入</option><option value="shisha">四捨五入</option><option value="none">なし</option></select></div>
+    <div class="row"><label>レート</label>1pt＝<input type="number" id="rate" value="0" min="0" style="width:5em">円 <span class="muted">（0なら金額を出さない）</span></div>
+    <div class="scroll"><table class="center" style="min-width:420px">
+      <thead><tr><th>名前</th><th>最終の点数</th><th>順位</th><th>ポイント</th><th>精算</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table></div>
+    <div class="out" id="out" aria-live="polite"></div>
+  </div>
+
+  <a class="app" href="https://apps.apple.com/jp/app/id6822218449"><strong>半荘ごとに記録して通算成績まで →</strong><br>半荘の点数を入れるだけで、ウマ・オカ込みのポイントと精算額を計算。健康麻雀・セット麻雀の成績管理に。</a>
+
+  <h2>計算のしかた</h2>
+  <ol>
+    <li>各自の点数を1,000点単位にする（端数は五捨六入など、ルールで決めた方法で丸める）</li>
+    <li>返し（例：30,000点）を引く。25,000点持ち30,000点返しなら、全員が5,000点ずつ出し合い、合計20,000点（20pt）が1位のオカになる</li>
+    <li>順位に応じてウマを足す（例：10-20なら1位＋20、2位＋10、3位−10、4位−20）</li>
+    <li>2〜4位のポイントの合計の逆を1位のポイントにする（全員の合計が0になる）</li>
+  </ol>
+  <p>例：25,000点持ち30,000点返し・ウマ10-20で、最終が45,000／30,000／15,000／10,000点なら、1位＋55、2位＋10、3位−25、4位−40ポイントです。</p>
+  <p>健康麻雀など賭けない麻雀では、ポイントを成績として記録するのに使えます。</p>
+
+
+  <h2>よくある質問</h2>
+  <h3>オカとは？</h3>
+  <p>持ち点と返しの差です。25,000点持ち30,000点返しなら、1人5,000点×4人＝20,000点（20pt）がトップに入ります。</p>
+  <h3>五捨六入とは？</h3>
+  <p>100の位が5以下なら切り捨て、6以上なら切り上げる丸め方です。例：27,500点→27、27,600点→28。</p>
+  <h3>同点のときの順位は？</h3>
+  <p>このツールでは同じ順位とし、該当する順位のウマ（1位ならオカも）を等分します。上家取りなど別のルールの場合は手で調整してください。</p>
+</main>
+<footer>
+  <a href="../guide/">早見表・ガイドの一覧</a> ・ <a href="../apps/">アプリの一覧</a> ・ お問い合わせ: tanacount.support@gmail.com
+</footer>
+<script>
+var N=["Aさん","Bさん","Cさん","Dさん"],D=[45000,30000,15000,10000];
+(function(){var t=document.getElementById("rows");for(var i=0;i<4;i++){t.insertAdjacentHTML("beforeend",'<tr><td><input id="n'+i+'" value="'+N[i]+'" style="width:6em"></td><td><input type="number" id="s'+i+'" value="'+D[i]+'" step="100" style="width:7em"></td><td id="r'+i+'"></td><td id="p'+i+'"></td><td id="y'+i+'"></td></tr>');}})();
+function rd(v,m){if(m==="gosha")return Math.floor(v+0.4);if(m==="shisha")return Math.floor(v+0.5);return v;}
+function tidy(v){return Math.round(v*10)/10;}
+function calc(){var s=[0,1,2,3].map(function(i){return +document.getElementById("s"+i).value||0;}),start=+document.getElementById("start").value,ret=+document.getElementById("ret").value,
+ uma=document.getElementById("uma").value.split(",").map(Number),m=document.getElementById("rnd").value,rate=+document.getElementById("rate").value,o=document.getElementById("out");
+ var sum=s.reduce(function(a,b){return a+b;},0);o.textContent=sum!==start*4?("点数の合計が"+(start*4).toLocaleString()+"点になっていません（いま"+sum.toLocaleString()+"点）"):"";
+ var order=[0,1,2,3].sort(function(a,b){return s[a]!==s[b]?s[b]-s[a]:a-b;}),groups=[],st=0;
+ for(var k=1;k<=4;k++){if(k===4||s[order[k]]!==s[order[st]]){groups.push([st,k]);st=k;}}
+ var ranks=[],pts=[];groups.forEach(function(g){var u=0;for(var k=g[0];k<g[1];k++)u+=uma[k];u/=(g[1]-g[0]);
+  for(var k=g[0];k<g[1];k++){var i=order[k];ranks[i]=g[0];pts[i]=tidy(rd(s[i]/1000,m)-ret/1000+u);}});
+ var top=[];for(var k=groups[0][0];k<groups[0][1];k++)top.push(order[k]);
+ var rest=0;for(var i=0;i<4;i++)if(top.indexOf(i)<0)rest+=pts[i];var share=tidy(-rest/top.length);
+ top.forEach(function(i){pts[i]=share;});pts[top[0]]=tidy(-rest-share*(top.length-1));
+ for(var i=0;i<4;i++){document.getElementById("r"+i).textContent=(ranks[i]+1)+"位";var p=pts[i];
+  document.getElementById("p"+i).textContent=p===0?"±0":(p>0?"+":"")+p.toFixed(1);
+  document.getElementById("y"+i).textContent=rate>0?((p>0?"+":"")+Math.round(p*rate).toLocaleString()+"円"):"";}}
+document.querySelectorAll("#calc select,#calc input").forEach(function(e){e.addEventListener("input",calc);});calc();
+</script>
+</body>
+</html>

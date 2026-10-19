@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>棚卸のやり方｜小さなお店の手順・棚卸表テンプレート（CSV）・JANコード計算</title>
+<meta name="description" content="小さなお店や事務所の棚卸のやり方を6ステップで解説。そのまま使える棚卸表テンプレート（CSV）と、JANコードのチェックデジット計算ツールつき。">
+<link rel="canonical" href="https://axostoxast.github.io/tanacount-support/tanaoroshi/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="棚卸のやり方｜小さなお店の手順・棚卸表テンプレート（CSV）・JANコード計算">
+<meta property="og:description" content="小さなお店や事務所の棚卸のやり方を6ステップで解説。そのまま使える棚卸表テンプレート（CSV）と、JANコードのチェックデジット計算ツールつき。">
+<meta property="og:url" content="https://axostoxast.github.io/tanacount-support/tanaoroshi/">
+<meta property="og:locale" content="ja_JP">
+<meta name="apple-itunes-app" content="app-id=6820345195">
+<link rel="stylesheet" href="../assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "棚卸はいつやる？", "acceptedAnswer": {"@type": "Answer", "text": "決算期末には必ず行います。在庫の多いお店では、毎月や四半期ごとに行うと差に早く気づけます。"}}, {"@type": "Question", "name": "棚卸の金額はどう出す？", "acceptedAnswer": {"@type": "Answer", "text": "実際の数に単価（仕入れ値）を掛けて合計します。評価のしかた（最終仕入原価法など）は税務署への届け出によります。"}}, {"@type": "Question", "name": "JANコードがない商品は？", "acceptedAnswer": {"@type": "Answer", "text": "お店で独自のコードを決めて管理します。棚卸アプリによっては、独自のコードや商品名で登録できます。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "早見表・ガイド", "item": "https://axostoxast.github.io/tanacount-support/guide/"}, {"@type": "ListItem", "position": 2, "name": "棚卸のやり方", "item": "https://axostoxast.github.io/tanacount-support/tanaoroshi/"}]}</script>
+
+</head>
+<body>
+<main>
+  <nav class="crumb"><a href="../guide/">早見表・ガイド</a> ＞ 棚卸のやり方</nav>
+  <h1>棚卸のやり方</h1>
+  <p class="lead">小さなお店や事務所向けに、棚卸のやり方を手順ごとにまとめました。そのまま使える棚卸表（CSV）と、JANコードのチェックデジットを確かめる計算ツールもあります。</p>
+
+  <div class="toc"><b>目次</b><ul><li><a href="#what">棚卸とは</a></li><li><a href="#steps">棚卸のやり方（6ステップ）</a></li><li><a href="#template">棚卸表のテンプレート</a></li><li><a href="#jan">JANコードのチェックデジット計算</a></li><li><a href="#tips">早く正確に終わらせるコツ</a></li></ul></div>
+
+  <h2 id="what">棚卸とは</h2>
+  <p>棚卸は、手元にある商品や材料の数を実際に数えて、帳簿（記録上の在庫）と合っているかを確かめる作業です。決算のときに在庫の金額を出すために必要なほか、数え間違い・紛失・盗難・発注ミスに気づくきっかけになります。決算期末に1回だけ行うお店もあれば、毎月行うお店もあります。</p>
+
+  <h2 id="steps">棚卸のやり方（6ステップ）</h2>
+  <ol>
+    <li><b>日にちと担当を決める</b>：営業時間外や定休日に行うと、数えている間に在庫が動きません。売り場ごとに担当を分けます。</li>
+    <li><b>事前に片づける</b>：同じ商品を1か所にまとめ、返品予定・破損品は分けておきます。</li>
+    <li><b>棚卸表を用意する</b>：商品名・JANコード・保管場所・帳簿の数を入れた表を作ります（下のテンプレートを使えます）。</li>
+    <li><b>数える</b>：棚の端から順に、決めた方向に数えます。数え終わった場所には付箋などで印をつけます。</li>
+    <li><b>帳簿と比べる</b>：差が大きいものは数え直します。それでも合わなければ、入出荷の記録を確認します。</li>
+    <li><b>金額を出して記録する</b>：数×単価（仕入れ値）で在庫の金額を出し、帳簿を実際の数に合わせます。</li>
+  </ol>
+
+  <h2 id="template">棚卸表のテンプレート</h2>
+  <p><a href="tanaoroshi-hyo.csv" download>棚卸表（CSV）をダウンロード</a>（Excel・Numbers・Googleスプレッドシートで開けます）</p>
+  <table>
+    <thead><tr><th>列</th><th>書くこと</th></tr></thead>
+    <tbody>
+      <tr><th>JANコード</th><td>商品のバーコードの13桁（または8桁）の数字</td></tr>
+      <tr><th>商品名・保管場所・単位</th><td>どこに何があるか。数え漏れを防ぐ</td></tr>
+      <tr><th>帳簿の数・実際の数・差</th><td>記録上の数と数えた数。差が大きいものは数え直す</td></tr>
+      <tr><th>単価・金額</th><td>仕入れ値×実際の数＝在庫の金額</td></tr>
+    </tbody>
+  </table>
+
+  <a class="app" href="https://apps.apple.com/jp/app/id6820345195"><strong>バーコードを読むだけで数えられる棚卸アプリ →</strong><br>JANバーコードにカメラを向けるだけで在庫を数えられる棚卸アプリ。結果はCSVに書き出せます。</a>
+
+  <h2 id="jan">JANコードのチェックデジット計算</h2>
+  <p>JANコードの最後の1桁はチェックデジットで、ほかの桁から計算できます。手で入力したコードが正しいかを確かめるのに使えます。</p>
+  <div class="calc">
+    <div class="row"><label for="jan">JANコード</label><input id="jan" inputmode="numeric" value="490123456789" maxlength="13" style="width:12em"></div>
+    <div class="out" id="out" aria-live="polite"></div>
+    <p class="muted" style="margin:.4em 0 0">12桁を入れるとチェックデジットを、13桁を入れると正しいかどうかを表示します（8桁のJANは7桁／8桁で同じように使えます）。</p>
+  </div>
+  <p><b>計算のしかた（13桁の場合）</b>：右から数えて偶数番目の桁（チェックデジットを除く）の合計を3倍し、奇数番目の桁の合計を足します。その合計の1の位を10から引いた数がチェックデジットです（1の位が0ならチェックデジットは0）。</p>
+
+  <h2 id="tips">早く正確に終わらせるコツ</h2>
+  <ul>
+    <li>2人1組で「数える人」と「記録する人」に分ける</li>
+    <li>バーコードを読み取るアプリを使い、手書きと転記をなくす</li>
+    <li>毎月少しずつ数える「循環棚卸」にすると、決算前の負担が減る</li>
+    <li>差が出やすい商品（小さい・高い・よく動く）を先に数える</li>
+  </ul>
+
+
+  <h2>よくある質問</h2>
+  <h3>棚卸はいつやる？</h3>
+  <p>決算期末には必ず行います。在庫の多いお店では、毎月や四半期ごとに行うと差に早く気づけます。</p>
+  <h3>棚卸の金額はどう出す？</h3>
+  <p>実際の数に単価（仕入れ値）を掛けて合計します。評価のしかた（最終仕入原価法など）は税務署への届け出によります。</p>
+  <h3>JANコードがない商品は？</h3>
+  <p>お店で独自のコードを決めて管理します。棚卸アプリによっては、独自のコードや商品名で登録できます。</p>
+</main>
+<footer>
+  <a href="../guide/">早見表・ガイドの一覧</a> ・ <a href="../apps/">アプリの一覧</a> ・ お問い合わせ: tanacount.support@gmail.com
+</footer>
+<script>
+function cd(d){var s=0,n=d.length;for(var i=0;i<n;i++){var w=((n-i)%2===1)?3:1;s+=(+d[i])*w;}return (10-s%10)%10;}
+function calc(){var v=document.getElementById("jan").value.replace(/\D/g,""),o=document.getElementById("out");
+ if(v.length===12||v.length===7){o.innerHTML="チェックデジットは <b>"+cd(v)+"</b>（JANコード: "+v+cd(v)+"）";}
+ else if(v.length===13||v.length===8){var ok=cd(v.slice(0,-1))===+v.slice(-1);o.innerHTML=ok?"<b>正しいJANコードです</b>":"<b>チェックデジットが合いません</b>（正しくは "+cd(v.slice(0,-1))+"）";}
+ else{o.textContent="12桁（または13桁）の数字を入れてください";}}
+document.getElementById("jan").addEventListener("input",calc);calc();
+</script>
+</body>
+</html>
