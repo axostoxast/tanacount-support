@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>入学・卒業年 早見表｜生年月日から履歴書の学歴の年を自動計算（和暦・西暦）</title>
+<meta name="description" content="生年月日を入れるだけで、小学校・中学校・高校・大学・短大・専門学校の入学と卒業の年月を西暦と和暦で表示します。早生まれ（1月1日〜4月1日生まれ）にも対応。履歴書の学歴欄を書くときに。">
+<link rel="canonical" href="https://axostoxast.github.io/tanacount-support/gakureki/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="入学・卒業年 早見表｜生年月日から自動計算">
+<meta property="og:description" content="生年月日から、小学校〜大学の入学・卒業の年月を西暦と和暦で。早生まれにも対応。">
+<meta property="og:url" content="https://axostoxast.github.io/tanacount-support/gakureki/">
+<meta property="og:locale" content="ja_JP">
+<meta name="apple-itunes-app" content="app-id=6822750481">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "早生まれの場合、入学・卒業の年はどうなりますか", "acceptedAnswer": {"@type": "Answer", "text": "1月1日から4月1日までに生まれた人（早生まれ）は、同じ年の4月2日以降に生まれた人より1年早く入学します。4月1日生まれも早生まれです。この早見表と計算は早生まれに対応しています。"}},
+    {"@type": "Question", "name": "履歴書の学歴はどこから書けばいいですか", "acceptedAnswer": {"@type": "Answer", "text": "一般的には中学校卒業から書きます。高校以降は入学と卒業の両方を書き、在学中なら「卒業見込み」と書きます。"}},
+    {"@type": "Question", "name": "浪人や留年をした場合は", "acceptedAnswer": {"@type": "Answer", "text": "この表は浪人・留年・飛び級がない場合の年です。浪人や留年をした場合は、その年数だけ後ろにずらしてください。"}}
+  ]
+}
+</script>
+<style>
+  :root { color-scheme: light dark; --fg: #1d1d1f; --bg: #fff; --muted: #6e6e73; --card: #f5f5f7; --line: #e5e5ea; --accent: #0071e3; }
+  @media (prefers-color-scheme: dark) { :root { --fg: #f5f5f7; --bg: #000; --muted: #a1a1a6; --card: #1c1c1e; --line: #2c2c2e; --accent: #2997ff; } }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.8 -apple-system, "Hiragino Sans", sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 1.5rem; line-height: 1.4; margin-bottom: .3em; }
+  h2 { font-size: 1.15rem; margin-top: 2em; }
+  .muted { color: var(--muted); font-size: .9rem; }
+  .calc { background: var(--card); border-radius: 14px; padding: 16px; }
+  .calc label { font-weight: 600; }
+  .calc input { font: inherit; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); }
+  .result table, .full table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+  .result th, .result td { border-bottom: 1px solid var(--line); padding: 6px 4px; text-align: left; }
+  .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .full table { min-width: 720px; font-size: .82rem; }
+  .full th, .full td { border: 1px solid var(--line); padding: 4px 6px; white-space: nowrap; vertical-align: top; }
+  .full thead th { background: var(--card); position: sticky; top: 0; }
+  .w { color: var(--muted); }
+  .app { display: block; background: var(--card); border-radius: 14px; padding: 14px 16px; color: inherit; text-decoration: none; margin: 20px 0; }
+  .app strong { color: var(--accent); }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>入学・卒業年 早見表</h1>
+  <p>生年月日を入れると、小学校から大学までの入学・卒業の年月を、西暦と和暦で表示します。履歴書の学歴欄を書くときに使えます。早生まれ（1月1日〜4月1日生まれ）にも対応しています。</p>
+
+  <div class="calc">
+    <label for="birth">生年月日</label>
+    <input type="date" id="birth" value="2000-05-01" min="1960-01-01" max="2020-12-31">
+    <div class="result" id="result" aria-live="polite"></div>
+    <p class="muted" style="margin:.5em 0 0">浪人・留年・飛び級がない場合の年です。入学は4月、卒業は3月です。</p>
+  </div>
+
+  <a class="app" href="https://apps.apple.com/jp/app/id6822750481">
+    <strong>履歴書はiPhoneで作れます →</strong><br>
+    アプリ「証明写真・履歴書・職務経歴書」なら、生年月日と最終学歴を選ぶだけで学歴の年を自動で入力。背景を消した証明写真もそのまま貼れて、A4のPDFでコンビニ印刷できます。
+  </a>
+
+  <h2>生まれ年ごとの早見表</h2>
+  <p class="muted">表は横にスクロールできます。「短大・専門卒」は2年制、「大学卒」は4年制の場合です。</p>
+  <div class="scroll full">
+  <table>
+    <thead><tr><th>生まれ</th><th>小学校入学</th><th>中学校入学</th><th>高校入学</th><th>高校卒業</th><th>大学・短大入学</th><th>短大・専門卒業</th><th>大学卒業</th></tr></thead>
+    <tbody>
+<tr><th scope="row">2012年4月2日〜<br>2013年4月1日</th><td>2019年4月<br><span class="w">平成31年</span></td><td>2025年4月<br><span class="w">令和7年</span></td><td>2028年4月<br><span class="w">令和10年</span></td><td>2031年3月<br><span class="w">令和13年</span></td><td>2031年4月<br><span class="w">令和13年</span></td><td>2033年3月<br><span class="w">令和15年</span></td><td>2035年3月<br><span class="w">令和17年</span></td></tr>
+<tr><th scope="row">2011年4月2日〜<br>2012年4月1日</th><td>2018年4月<br><span class="w">平成30年</span></td><td>2024年4月<br><span class="w">令和6年</span></td><td>2027年4月<br><span class="w">令和9年</span></td><td>2030年3月<br><span class="w">令和12年</span></td><td>2030年4月<br><span class="w">令和12年</span></td><td>2032年3月<br><span class="w">令和14年</span></td><td>2034年3月<br><span class="w">令和16年</span></td></tr>
+<tr><th scope="row">2010年4月2日〜<br>2011年4月1日</th><td>2017年4月<br><span class="w">平成29年</span></td><td>2023年4月<br><span class="w">令和5年</span></td><td>2026年4月<br><span class="w">令和8年</span></td><td>2029年3月<br><span class="w">令和11年</span></td><td>2029年4月<br><span class="w">令和11年</span></td><td>2031年3月<br><span class="w">令和13年</span></td><td>2033年3月<br><span class="w">令和15年</span></td></tr>
+<tr><th scope="row">2009年4月2日〜<br>2010年4月1日</th><td>2016年4月<br><span class="w">平成28年</span></td><td>2022年4月<br><span class="w">令和4年</span></td><td>2025年4月<br><span class="w">令和7年</span></td><td>2028年3月<br><span class="w">令和10年</span></td><td>2028年4月<br><span class="w">令和10年</span></td><td>2030年3月<br><span class="w">令和12年</span></td><td>2032年3月<br><span class="w">令和14年</span></td></tr>
+<tr><th scope="row">2008年4月2日〜<br>2009年4月1日</th><td>2015年4月<br><span class="w">平成27年</span></td><td>2021年4月<br><span class="w">令和3年</span></td><td>2024年4月<br><span class="w">令和6年</span></td><td>2027年3月<br><span class="w">令和9年</span></td><td>2027年4月<br><span class="w">令和9年</span></td><td>2029年3月<br><span class="w">令和11年</span></td><td>2031年3月<br><span class="w">令和13年</span></td></tr>
+<tr><th scope="row">2007年4月2日〜<br>2008年4月1日</th><td>2014年4月<br><span class="w">平成26年</span></td><td>2020年4月<br><span class="w">令和2年</span></td><td>2023年4月<br><span class="w">令和5年</span></td><td>2026年3月<br><span class="w">令和8年</span></td><td>2026年4月<br><span class="w">令和8年</span></td><td>2028年3月<br><span class="w">令和10年</span></td><td>2030年3月<br><span class="w">令和12年</span></td></tr>
+<tr><th scope="row">2006年4月2日〜<br>2007年4月1日</th><td>2013年4月<br><span class="w">平成25年</span></td><td>2019年4月<br><span class="w">平成31年</span></td><td>2022年4月<br><span class="w">令和4年</span></td><td>2025年3月<br><span class="w">令和7年</span></td><td>2025年4月<br><span class="w">令和7年</span></td><td>2027年3月<br><span class="w">令和9年</span></td><td>2029年3月<br><span class="w">令和11年</span></td></tr>
+<tr><th scope="row">2005年4月2日〜<br>2006年4月1日</th><td>2012年4月<br><span class="w">平成24年</span></td><td>2018年4月<br><span class="w">平成30年</span></td><td>2021年4月<br><span class="w">令和3年</span></td><td>2024年3月<br><span class="w">令和6年</span></td><td>2024年4月<br><span class="w">令和6年</span></td><td>2026年3月<br><span class="w">令和8年</span></td><td>2028年3月<br><span class="w">令和10年</span></td></tr>
+<tr><th scope="row">2004年4月2日〜<br>2005年4月1日</th><td>2011年4月<br><span class="w">平成23年</span></td><td>2017年4月<br><span class="w">平成29年</span></td><td>2020年4月<br><span class="w">令和2年</span></td><td>2023年3月<br><span class="w">令和5年</span></td><td>2023年4月<br><span class="w">令和5年</span></td><td>2025年3月<br><span class="w">令和7年</span></td><td>2027年3月<br><span class="w">令和9年</span></td></tr>
+<tr><th scope="row">2003年4月2日〜<br>2004年4月1日</th><td>2010年4月<br><span class="w">平成22年</span></td><td>2016年4月<br><span class="w">平成28年</span></td><td>2019年4月<br><span class="w">平成31年</span></td><td>2022年3月<br><span class="w">令和4年</span></td><td>2022年4月<br><span class="w">令和4年</span></td><td>2024年3月<br><span class="w">令和6年</span></td><td>2026年3月<br><span class="w">令和8年</span></td></tr>
+<tr><th scope="row">2002年4月2日〜<br>2003年4月1日</th><td>2009年4月<br><span class="w">平成21年</span></td><td>2015年4月<br><span class="w">平成27年</span></td><td>2018年4月<br><span class="w">平成30年</span></td><td>2021年3月<br><span class="w">令和3年</span></td><td>2021年4月<br><span class="w">令和3年</span></td><td>2023年3月<br><span class="w">令和5年</span></td><td>2025年3月<br><span class="w">令和7年</span></td></tr>
+<tr><th scope="row">2001年4月2日〜<br>2002年4月1日</th><td>2008年4月<br><span class="w">平成20年</span></td><td>2014年4月<br><span class="w">平成26年</span></td><td>2017年4月<br><span class="w">平成29年</span></td><td>2020年3月<br><span class="w">令和2年</span></td><td>2020年4月<br><span class="w">令和2年</span></td><td>2022年3月<br><span class="w">令和4年</span></td><td>2024年3月<br><span class="w">令和6年</span></td></tr>
+<tr><th scope="row">2000年4月2日〜<br>2001年4月1日</th><td>2007年4月<br><span class="w">平成19年</span></td><td>2013年4月<br><span class="w">平成25年</span></td><td>2016年4月<br><span class="w">平成28年</span></td><td>2019年3月<br><span class="w">平成31年</span></td><td>2019年4月<br><span class="w">平成31年</span></td><td>2021年3月<br><span class="w">令和3年</span></td><td>2023年3月<br><span class="w">令和5年</span></td></tr>
+<tr><th scope="row">1999年4月2日〜<br>2000年4月1日</th><td>2006年4月<br><span class="w">平成18年</span></td><td>2012年4月<br><span class="w">平成24年</span></td><td>2015年4月<br><span class="w">平成27年</span></td><td>2018年3月<br><span class="w">平成30年</span></td><td>2018年4月<br><span class="w">平成30年</span></td><td>2020年3月<br><span class="w">令和2年</span></td><td>2022年3月<br><span class="w">令和4年</span></td></tr>
+<tr><th scope="row">1998年4月2日〜<br>1999年4月1日</th><td>2005年4月<br><span class="w">平成17年</span></td><td>2011年4月<br><span class="w">平成23年</span></td><td>2014年4月<br><span class="w">平成26年</span></td><td>2017年3月<br><span class="w">平成29年</span></td><td>2017年4月<br><span class="w">平成29年</span></td><td>2019年3月<br><span class="w">平成31年</span></td><td>2021年3月<br><span class="w">令和3年</span></td></tr>
+<tr><th scope="row">1997年4月2日〜<br>1998年4月1日</th><td>2004年4月<br><span class="w">平成16年</span></td><td>2010年4月<br><span class="w">平成22年</span></td><td>2013年4月<br><span class="w">平成25年</span></td><td>2016年3月<br><span class="w">平成28年</span></td><td>2016年4月<br><span class="w">平成28年</span></td><td>2018年3月<br><span class="w">平成30年</span></td><td>2020年3月<br><span class="w">令和2年</span></td></tr>
+<tr><th scope="row">1996年4月2日〜<br>1997年4月1日</th><td>2003年4月<br><span class="w">平成15年</span></td><td>2009年4月<br><span class="w">平成21年</span></td><td>2012年4月<br><span class="w">平成24年</span></td><td>2015年3月<br><span class="w">平成27年</span></td><td>2015年4月<br><span class="w">平成27年</span></td><td>2017年3月<br><span class="w">平成29年</span></td><td>2019年3月<br><span class="w">平成31年</span></td></tr>
+<tr><th scope="row">1995年4月2日〜<br>1996年4月1日</th><td>2002年4月<br><span class="w">平成14年</span></td><td>2008年4月<br><span class="w">平成20年</span></td><td>2011年4月<br><span class="w">平成23年</span></td><td>2014年3月<br><span class="w">平成26年</span></td><td>2014年4月<br><span class="w">平成26年</span></td><td>2016年3月<br><span class="w">平成28年</span></td><td>2018年3月<br><span class="w">平成30年</span></td></tr>
+<tr><th scope="row">1994年4月2日〜<br>1995年4月1日</th><td>2001年4月<br><span class="w">平成13年</span></td><td>2007年4月<br><span class="w">平成19年</span></td><td>2010年4月<br><span class="w">平成22年</span></td><td>2013年3月<br><span class="w">平成25年</span></td><td>2013年4月<br><span class="w">平成25年</span></td><td>2015年3月<br><span class="w">平成27年</span></td><td>2017年3月<br><span class="w">平成29年</span></td></tr>
+<tr><th scope="row">1993年4月2日〜<br>1994年4月1日</th><td>2000年4月<br><span class="w">平成12年</span></td><td>2006年4月<br><span class="w">平成18年</span></td><td>2009年4月<br><span class="w">平成21年</span></td><td>2012年3月<br><span class="w">平成24年</span></td><td>2012年4月<br><span class="w">平成24年</span></td><td>2014年3月<br><span class="w">平成26年</span></td><td>2016年3月<br><span class="w">平成28年</span></td></tr>
+<tr><th scope="row">1992年4月2日〜<br>1993年4月1日</th><td>1999年4月<br><span class="w">平成11年</span></td><td>2005年4月<br><span class="w">平成17年</span></td><td>2008年4月<br><span class="w">平成20年</span></td><td>2011年3月<br><span class="w">平成23年</span></td><td>2011年4月<br><span class="w">平成23年</span></td><td>2013年3月<br><span class="w">平成25年</span></td><td>2015年3月<br><span class="w">平成27年</span></td></tr>
+<tr><th scope="row">1991年4月2日〜<br>1992年4月1日</th><td>1998年4月<br><span class="w">平成10年</span></td><td>2004年4月<br><span class="w">平成16年</span></td><td>2007年4月<br><span class="w">平成19年</span></td><td>2010年3月<br><span class="w">平成22年</span></td><td>2010年4月<br><span class="w">平成22年</span></td><td>2012年3月<br><span class="w">平成24年</span></td><td>2014年3月<br><span class="w">平成26年</span></td></tr>
+<tr><th scope="row">1990年4月2日〜<br>1991年4月1日</th><td>1997年4月<br><span class="w">平成9年</span></td><td>2003年4月<br><span class="w">平成15年</span></td><td>2006年4月<br><span class="w">平成18年</span></td><td>2009年3月<br><span class="w">平成21年</span></td><td>2009年4月<br><span class="w">平成21年</span></td><td>2011年3月<br><span class="w">平成23年</span></td><td>2013年3月<br><span class="w">平成25年</span></td></tr>
+<tr><th scope="row">1989年4月2日〜<br>1990年4月1日</th><td>1996年4月<br><span class="w">平成8年</span></td><td>2002年4月<br><span class="w">平成14年</span></td><td>2005年4月<br><span class="w">平成17年</span></td><td>2008年3月<br><span class="w">平成20年</span></td><td>2008年4月<br><span class="w">平成20年</span></td><td>2010年3月<br><span class="w">平成22年</span></td><td>2012年3月<br><span class="w">平成24年</span></td></tr>
+<tr><th scope="row">1988年4月2日〜<br>1989年4月1日</th><td>1995年4月<br><span class="w">平成7年</span></td><td>2001年4月<br><span class="w">平成13年</span></td><td>2004年4月<br><span class="w">平成16年</span></td><td>2007年3月<br><span class="w">平成19年</span></td><td>2007年4月<br><span class="w">平成19年</span></td><td>2009年3月<br><span class="w">平成21年</span></td><td>2011年3月<br><span class="w">平成23年</span></td></tr>
+<tr><th scope="row">1987年4月2日〜<br>1988年4月1日</th><td>1994年4月<br><span class="w">平成6年</span></td><td>2000年4月<br><span class="w">平成12年</span></td><td>2003年4月<br><span class="w">平成15年</span></td><td>2006年3月<br><span class="w">平成18年</span></td><td>2006年4月<br><span class="w">平成18年</span></td><td>2008年3月<br><span class="w">平成20年</span></td><td>2010年3月<br><span class="w">平成22年</span></td></tr>
+<tr><th scope="row">1986年4月2日〜<br>1987年4月1日</th><td>1993年4月<br><span class="w">平成5年</span></td><td>1999年4月<br><span class="w">平成11年</span></td><td>2002年4月<br><span class="w">平成14年</span></td><td>2005年3月<br><span class="w">平成17年</span></td><td>2005年4月<br><span class="w">平成17年</span></td><td>2007年3月<br><span class="w">平成19年</span></td><td>2009年3月<br><span class="w">平成21年</span></td></tr>
+<tr><th scope="row">1985年4月2日〜<br>1986年4月1日</th><td>1992年4月<br><span class="w">平成4年</span></td><td>1998年4月<br><span class="w">平成10年</span></td><td>2001年4月<br><span class="w">平成13年</span></td><td>2004年3月<br><span class="w">平成16年</span></td><td>2004年4月<br><span class="w">平成16年</span></td><td>2006年3月<br><span class="w">平成18年</span></td><td>2008年3月<br><span class="w">平成20年</span></td></tr>
+<tr><th scope="row">1984年4月2日〜<br>1985年4月1日</th><td>1991年4月<br><span class="w">平成3年</span></td><td>1997年4月<br><span class="w">平成9年</span></td><td>2000年4月<br><span class="w">平成12年</span></td><td>2003年3月<br><span class="w">平成15年</span></td><td>2003年4月<br><span class="w">平成15年</span></td><td>2005年3月<br><span class="w">平成17年</span></td><td>2007年3月<br><span class="w">平成19年</span></td></tr>
+<tr><th scope="row">1983年4月2日〜<br>1984年4月1日</th><td>1990年4月<br><span class="w">平成2年</span></td><td>1996年4月<br><span class="w">平成8年</span></td><td>1999年4月<br><span class="w">平成11年</span></td><td>2002年3月<br><span class="w">平成14年</span></td><td>2002年4月<br><span class="w">平成14年</span></td><td>2004年3月<br><span class="w">平成16年</span></td><td>2006年3月<br><span class="w">平成18年</span></td></tr>
+<tr><th scope="row">1982年4月2日〜<br>1983年4月1日</th><td>1989年4月<br><span class="w">平成元年</span></td><td>1995年4月<br><span class="w">平成7年</span></td><td>1998年4月<br><span class="w">平成10年</span></td><td>2001年3月<br><span class="w">平成13年</span></td><td>2001年4月<br><span class="w">平成13年</span></td><td>2003年3月<br><span class="w">平成15年</span></td><td>2005年3月<br><span class="w">平成17年</span></td></tr>
+<tr><th scope="row">1981年4月2日〜<br>1982年4月1日</th><td>1988年4月<br><span class="w">昭和63年</span></td><td>1994年4月<br><span class="w">平成6年</span></td><td>1997年4月<br><span class="w">平成9年</span></td><td>2000年3月<br><span class="w">平成12年</span></td><td>2000年4月<br><span class="w">平成12年</span></td><td>2002年3月<br><span class="w">平成14年</span></td><td>2004年3月<br><span class="w">平成16年</span></td></tr>
+<tr><th scope="row">1980年4月2日〜<br>1981年4月1日</th><td>1987年4月<br><span class="w">昭和62年</span></td><td>1993年4月<br><span class="w">平成5年</span></td><td>1996年4月<br><span class="w">平成8年</span></td><td>1999年3月<br><span class="w">平成11年</span></td><td>1999年4月<br><span class="w">平成11年</span></td><td>2001年3月<br><span class="w">平成13年</span></td><td>2003年3月<br><span class="w">平成15年</span></td></tr>
+<tr><th scope="row">1979年4月2日〜<br>1980年4月1日</th><td>1986年4月<br><span class="w">昭和61年</span></td><td>1992年4月<br><span class="w">平成4年</span></td><td>1995年4月<br><span class="w">平成7年</span></td><td>1998年3月<br><span class="w">平成10年</span></td><td>1998年4月<br><span class="w">平成10年</span></td><td>2000年3月<br><span class="w">平成12年</span></td><td>2002年3月<br><span class="w">平成14年</span></td></tr>
+<tr><th scope="row">1978年4月2日〜<br>1979年4月1日</th><td>1985年4月<br><span class="w">昭和60年</span></td><td>1991年4月<br><span class="w">平成3年</span></td><td>1994年4月<br><span class="w">平成6年</span></td><td>1997年3月<br><span class="w">平成9年</span></td><td>1997年4月<br><span class="w">平成9年</span></td><td>1999年3月<br><span class="w">平成11年</span></td><td>2001年3月<br><span class="w">平成13年</span></td></tr>
+<tr><th scope="row">1977年4月2日〜<br>1978年4月1日</th><td>1984年4月<br><span class="w">昭和59年</span></td><td>1990年4月<br><span class="w">平成2年</span></td><td>1993年4月<br><span class="w">平成5年</span></td><td>1996年3月<br><span class="w">平成8年</span></td><td>1996年4月<br><span class="w">平成8年</span></td><td>1998年3月<br><span class="w">平成10年</span></td><td>2000年3月<br><span class="w">平成12年</span></td></tr>
+<tr><th scope="row">1976年4月2日〜<br>1977年4月1日</th><td>1983年4月<br><span class="w">昭和58年</span></td><td>1989年4月<br><span class="w">平成元年</span></td><td>1992年4月<br><span class="w">平成4年</span></td><td>1995年3月<br><span class="w">平成7年</span></td><td>1995年4月<br><span class="w">平成7年</span></td><td>1997年3月<br><span class="w">平成9年</span></td><td>1999年3月<br><span class="w">平成11年</span></td></tr>
+<tr><th scope="row">1975年4月2日〜<br>1976年4月1日</th><td>1982年4月<br><span class="w">昭和57年</span></td><td>1988年4月<br><span class="w">昭和63年</span></td><td>1991年4月<br><span class="w">平成3年</span></td><td>1994年3月<br><span class="w">平成6年</span></td><td>1994年4月<br><span class="w">平成6年</span></td><td>1996年3月<br><span class="w">平成8年</span></td><td>1998年3月<br><span class="w">平成10年</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>よくある質問</h2>
+  <h3>早生まれの場合は？</h3>
+  <p>1月1日から4月1日までに生まれた人は、同じ年の4月2日以降に生まれた人より1年早く入学します。4月1日生まれも早生まれです。</p>
+  <h3>履歴書の学歴はどこから書く？</h3>
+  <p>一般的には中学校卒業から書きます。高校以降は入学と卒業の両方を書き、在学中なら「卒業見込み」とします。和暦か西暦のどちらかに統一してください。</p>
+  <h3>浪人・留年した場合は？</h3>
+  <p>その年数だけ後ろにずらしてください。たとえば1年浪人した場合、大学入学と大学卒業がそれぞれ1年後になります。</p>
+
+  <p class="muted"><a href="../idphoto/">証明写真・履歴書・職務経歴書アプリについて</a></p>
+</main>
+<script>
+function era(y, m) {
+  var name, n;
+  if (y > 2019 || (y === 2019 && m >= 5)) { name = "令和"; n = y - 2018; }
+  else if (y >= 1989) { name = "平成"; n = y - 1988; }
+  else { name = "昭和"; n = y - 1925; }
+  return name + (n === 1 ? "元" : n) + "年";
+}
+function fmt(y, m) { return y + "年" + m + "月（" + era(y, m) + m + "月）"; }
+function update() {
+  var v = document.getElementById("birth").value;
+  var out = document.getElementById("result");
+  if (!v) { out.innerHTML = ""; return; }
+  var p = v.split("-").map(Number), y = p[0], mo = p[1], d = p[2];
+  var early = mo < 4 || (mo === 4 && d === 1);
+  var e = y + (early ? 6 : 7);
+  var rows = [
+    ["小学校 入学", e, 4], ["小学校 卒業", e + 6, 3],
+    ["中学校 入学", e + 6, 4], ["中学校 卒業", e + 9, 3],
+    ["高等学校 入学", e + 9, 4], ["高等学校 卒業", e + 12, 3],
+    ["大学・短大・専門学校 入学", e + 12, 4], ["短大・専門学校（2年制）卒業", e + 14, 3],
+    ["大学（4年制）卒業", e + 16, 3], ["大学院（修士）修了", e + 18, 3]
+  ];
+  var html = "<table>";
+  rows.forEach(function (r) { html += "<tr><th>" + r[0] + "</th><td>" + fmt(r[1], r[2]) + "</td></tr>"; });
+  html += "</table>";
+  if (early) html = '<p class="muted" style="margin:.5em 0 0">早生まれとして計算しています。</p>' + html;
+  out.innerHTML = html;
+}
+document.getElementById("birth").addEventListener("input", update);
+update();
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>麻雀 点数早見表｜子・親のロンとツモ、符と翻ですぐわかる</title>
+<meta name="description" content="麻雀の点数早見表。20符〜110符・1翻〜4翻の子と親のロン・ツモの点数と、満貫・跳満・倍満・三倍満・役満の点数を一覧にしました。点数計算の練習や、点棒なしで遊ぶときのアプリも紹介。">
+<link rel="canonical" href="https://axostoxast.github.io/tanacount-support/mahjong-tensu/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="麻雀 点数早見表｜子・親のロンとツモ">
+<meta property="og:description" content="符と翻から子・親のロン・ツモの点数がすぐわかる一覧表。満貫以上も。">
+<meta property="og:url" content="https://axostoxast.github.io/tanacount-support/mahjong-tensu/">
+<meta property="og:locale" content="ja_JP">
+<meta name="apple-itunes-app" content="app-id=6822173418">
+<style>
+  :root { color-scheme: light dark; --fg: #1d1d1f; --bg: #fff; --muted: #6e6e73; --card: #f5f5f7; --line: #e5e5ea; --accent: #0071e3; --mg: #fff4e5; }
+  @media (prefers-color-scheme: dark) { :root { --fg: #f5f5f7; --bg: #000; --muted: #a1a1a6; --card: #1c1c1e; --line: #2c2c2e; --accent: #2997ff; --mg: #2a2214; } }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.7 -apple-system, "Hiragino Sans", sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 1.5rem; line-height: 1.4; margin-bottom: .3em; }
+  h2 { font-size: 1.15rem; margin-top: 2em; }
+  .muted { color: var(--muted); font-size: .9rem; }
+  table { border-collapse: collapse; width: 100%; font-size: .9rem; }
+  th, td { border: 1px solid var(--line); padding: 5px 6px; text-align: center; }
+  thead th, tbody th { background: var(--card); white-space: nowrap; }
+  td b { font-size: 1rem; }
+  .t { color: var(--muted); font-size: .8rem; }
+  .mg { background: var(--mg); }
+  .app { display: block; background: var(--card); border-radius: 14px; padding: 14px 16px; color: inherit; text-decoration: none; margin: 14px 0; }
+  .app strong { color: var(--accent); }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>麻雀 点数早見表</h1>
+  <p>符と翻から、和了したときの点数を探せる一覧表です。各マスの上がロン、下がツモの支払い（子のツモは「子の支払い・親の支払い」）です。本場・供託は含みません。</p>
+  <p class="muted">「—」は存在しない組み合わせです（20符のロン、25符（七対子）の1翻など）。色付きのマスは満貫です。切り上げ満貫は採用していません。</p>
+
+  <h2>子の点数</h2>
+  <table><thead><tr><th>符＼翻</th><th>1翻</th><th>2翻</th><th>3翻</th><th>4翻</th></tr></thead><tbody><tr><th>20符</th><td><b>—</b><br><span class="t">—</span></td><td><b>—</b><br><span class="t">400・700</span></td><td><b>—</b><br><span class="t">700・1300</span></td><td><b>—</b><br><span class="t">1300・2600</span></td></tr><tr><th>25符</th><td><b>—</b><br><span class="t">—</span></td><td><b>1,600</b><br><span class="t">—</span></td><td><b>3,200</b><br><span class="t">800・1600</span></td><td><b>6,400</b><br><span class="t">1600・3200</span></td></tr><tr><th>30符</th><td><b>1,000</b><br><span class="t">300・500</span></td><td><b>2,000</b><br><span class="t">500・1000</span></td><td><b>3,900</b><br><span class="t">1000・2000</span></td><td><b>7,700</b><br><span class="t">2000・3900</span></td></tr><tr><th>40符</th><td><b>1,300</b><br><span class="t">400・700</span></td><td><b>2,600</b><br><span class="t">700・1300</span></td><td><b>5,200</b><br><span class="t">1300・2600</span></td><td class="mg"><b>8,000</b><br><span class="t">2000・4000</span></td></tr><tr><th>50符</th><td><b>1,600</b><br><span class="t">400・800</span></td><td><b>3,200</b><br><span class="t">800・1600</span></td><td><b>6,400</b><br><span class="t">1600・3200</span></td><td class="mg"><b>8,000</b><br><span class="t">2000・4000</span></td></tr><tr><th>60符</th><td><b>2,000</b><br><span class="t">500・1000</span></td><td><b>3,900</b><br><span class="t">1000・2000</span></td><td><b>7,700</b><br><span class="t">2000・3900</span></td><td class="mg"><b>8,000</b><br><span class="t">2000・4000</span></td></tr><tr><th>70符</th><td><b>2,300</b><br><span class="t">600・1200</span></td><td><b>4,500</b><br><span class="t">1200・2300</span></td><td class="mg"><b>8,000</b><br><span class="t">2000・4000</span></td><td class="mg"><b>8,000</b><br><span class="t">2000・4000</span></td></tr><tr><th>80符</th><td><b>2,600</b><br><span class="t">700・1300</span></td><td><b>5,200</b><br><span class="t">1300・2600</span></td><td class="mg"><b>8,000</b><br><span class="t">2000・4000</span></td><td class="mg"><b>8,000</b><br><span class="t">2000・4000</span></td></tr><tr><th>90符</th><td><b>2,900</b><br><span class="t">800・1500</span></td><td><b>5,800</b><br><span class="t">1500・2900</span></td><td class="mg"><b>8,000</b><br><span class="t">2000・4000</span></td><td class="mg"><b>8,000</b><br><span class="t">2000・4000</span></td></tr><tr><th>100符</th><td><b>3,200</b><br><span class="t">800・1600</span></td><td><b>6,400</b><br><span class="t">1600・3200</span></td><td class="mg"><b>8,000</b><br><span class="t">2000・4000</span></td><td class="mg"><b>8,000</b><br><span class="t">2000・4000</span></td></tr><tr><th>110符</th><td><b>3,600</b><br><span class="t">900・1800</span></td><td><b>7,100</b><br><span class="t">1800・3600</span></td><td class="mg"><b>8,000</b><br><span class="t">2000・4000</span></td><td class="mg"><b>8,000</b><br><span class="t">2000・4000</span></td></tr></tbody></table>
+
+  <h2>親の点数</h2>
+  <table><thead><tr><th>符＼翻</th><th>1翻</th><th>2翻</th><th>3翻</th><th>4翻</th></tr></thead><tbody><tr><th>20符</th><td><b>—</b><br><span class="t">—</span></td><td><b>—</b><br><span class="t">700オール</span></td><td><b>—</b><br><span class="t">1300オール</span></td><td><b>—</b><br><span class="t">2600オール</span></td></tr><tr><th>25符</th><td><b>—</b><br><span class="t">—</span></td><td><b>2,400</b><br><span class="t">—</span></td><td><b>4,800</b><br><span class="t">1600オール</span></td><td><b>9,600</b><br><span class="t">3200オール</span></td></tr><tr><th>30符</th><td><b>1,500</b><br><span class="t">500オール</span></td><td><b>2,900</b><br><span class="t">1000オール</span></td><td><b>5,800</b><br><span class="t">2000オール</span></td><td><b>11,600</b><br><span class="t">3900オール</span></td></tr><tr><th>40符</th><td><b>2,000</b><br><span class="t">700オール</span></td><td><b>3,900</b><br><span class="t">1300オール</span></td><td><b>7,700</b><br><span class="t">2600オール</span></td><td class="mg"><b>12,000</b><br><span class="t">4000オール</span></td></tr><tr><th>50符</th><td><b>2,400</b><br><span class="t">800オール</span></td><td><b>4,800</b><br><span class="t">1600オール</span></td><td><b>9,600</b><br><span class="t">3200オール</span></td><td class="mg"><b>12,000</b><br><span class="t">4000オール</span></td></tr><tr><th>60符</th><td><b>2,900</b><br><span class="t">1000オール</span></td><td><b>5,800</b><br><span class="t">2000オール</span></td><td><b>11,600</b><br><span class="t">3900オール</span></td><td class="mg"><b>12,000</b><br><span class="t">4000オール</span></td></tr><tr><th>70符</th><td><b>3,400</b><br><span class="t">1200オール</span></td><td><b>6,800</b><br><span class="t">2300オール</span></td><td class="mg"><b>12,000</b><br><span class="t">4000オール</span></td><td class="mg"><b>12,000</b><br><span class="t">4000オール</span></td></tr><tr><th>80符</th><td><b>3,900</b><br><span class="t">1300オール</span></td><td><b>7,700</b><br><span class="t">2600オール</span></td><td class="mg"><b>12,000</b><br><span class="t">4000オール</span></td><td class="mg"><b>12,000</b><br><span class="t">4000オール</span></td></tr><tr><th>90符</th><td><b>4,400</b><br><span class="t">1500オール</span></td><td><b>8,700</b><br><span class="t">2900オール</span></td><td class="mg"><b>12,000</b><br><span class="t">4000オール</span></td><td class="mg"><b>12,000</b><br><span class="t">4000オール</span></td></tr><tr><th>100符</th><td><b>4,800</b><br><span class="t">1600オール</span></td><td><b>9,600</b><br><span class="t">3200オール</span></td><td class="mg"><b>12,000</b><br><span class="t">4000オール</span></td><td class="mg"><b>12,000</b><br><span class="t">4000オール</span></td></tr><tr><th>110符</th><td><b>5,300</b><br><span class="t">1800オール</span></td><td><b>10,600</b><br><span class="t">3600オール</span></td><td class="mg"><b>12,000</b><br><span class="t">4000オール</span></td><td class="mg"><b>12,000</b><br><span class="t">4000オール</span></td></tr></tbody></table>
+
+  <h2>満貫以上</h2>
+  <table><thead><tr><th></th><th>目安</th><th>子（ロン／ツモ）</th><th>親（ロン／ツモ）</th></tr></thead><tbody><tr><th>満貫</th><td>5翻（4翻40符・3翻70符以上）</td><td><b>8,000</b><br><span class='t'>2000・4000</span></td><td><b>12,000</b><br><span class='t'>4000オール</span></td></tr><tr><th>跳満</th><td>6〜7翻</td><td><b>12,000</b><br><span class='t'>3000・6000</span></td><td><b>18,000</b><br><span class='t'>6000オール</span></td></tr><tr><th>倍満</th><td>8〜10翻</td><td><b>16,000</b><br><span class='t'>4000・8000</span></td><td><b>24,000</b><br><span class='t'>8000オール</span></td></tr><tr><th>三倍満</th><td>11〜12翻</td><td><b>24,000</b><br><span class='t'>6000・12000</span></td><td><b>36,000</b><br><span class='t'>12000オール</span></td></tr><tr><th>役満</th><td>13翻以上・役満</td><td><b>32,000</b><br><span class='t'>8000・16000</span></td><td><b>48,000</b><br><span class='t'>16000オール</span></td></tr></tbody></table>
+
+  <h2>点数計算を覚えたい・点棒なしで遊びたいときは</h2>
+  <a class="app" href="https://apps.apple.com/jp/app/id6822173418"><strong>麻雀点数計算ドリル →</strong><br>「子・ロン 3翻40符」のような問題に4択で答える練習問題。間違えたら計算の手順をその場で解説します。</a>
+  <a class="app" href="https://apps.apple.com/jp/app/id6450893374"><strong>麻雀点数表示 →</strong><br>iPhoneを卓の真ん中に置く点数表示。符と翻を選ぶだけで、本場・供託・親の移動まで自動で計算します。</a>
+  <a class="app" href="https://apps.apple.com/jp/app/id6822353532"><strong>麻雀待ち判定 →</strong><br>手牌を入れると、待ち牌と待ちごとの役・符・点数がわかります。</a>
+  <a class="app" href="https://apps.apple.com/jp/app/id6822218449"><strong>麻雀成績表 →</strong><br>半荘の点数を入れるだけで、ウマ・オカ込みのポイントと精算額を計算。健康麻雀・セット麻雀の成績管理に。</a>
+
+  <h2>計算のしかた</h2>
+  <p>基本点 ＝ 符 × 2の（翻＋2）乗。子のロンは基本点×4、親のロンは基本点×6で、100点未満は切り上げます。子のツモは子が基本点×1、親が基本点×2、親のツモは全員が基本点×2を払います。基本点が2,000点を超えると満貫です。</p>
+</main>
+</body>
+</html>
