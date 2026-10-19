@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>何切る問題 30問（解説つき）｜初級・中級・上級で牌効率を練習</title>
+<meta name="description" content="麻雀の何切る問題を30問。初級（テンパイ取り）・中級（1向聴）・上級（2向聴）の3段階で、打牌ごとの向聴数と受け入れ枚数を比べた解説つき。牌効率の考え方も。">
+<link rel="canonical" href="https://axostoxast.github.io/tanacount-support/nanikiru/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="何切る問題 30問（解説つき）｜初級・中級・上級で牌効率を練習">
+<meta property="og:description" content="麻雀の何切る問題を30問。初級（テンパイ取り）・中級（1向聴）・上級（2向聴）の3段階で、打牌ごとの向聴数と受け入れ枚数を比べた解説つき。牌効率の考え方も。">
+<meta property="og:url" content="https://axostoxast.github.io/tanacount-support/nanikiru/">
+<meta property="og:locale" content="ja_JP">
+<meta name="apple-itunes-app" content="app-id=6822556543">
+<link rel="stylesheet" href="../assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "向聴数（シャンテン数）とは？", "acceptedAnswer": {"@type": "Answer", "text": "テンパイまであと何枚有効な牌が必要かを表す数です。テンパイが0、あと1枚でテンパイなら1向聴です。"}}, {"@type": "Question", "name": "受け入れ枚数とは？", "acceptedAnswer": {"@type": "Answer", "text": "引くと向聴数が進む牌の残り枚数です。自分の手牌で使っている枚数を4枚から引いて数えます。"}}, {"@type": "Question", "name": "正解が2つある問題は？", "acceptedAnswer": {"@type": "Answer", "text": "向聴数と受け入れ枚数が同じになる打牌が複数ある場合は、どれも正解としています。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "早見表・ガイド", "item": "https://axostoxast.github.io/tanacount-support/guide/"}, {"@type": "ListItem", "position": 2, "name": "何切る問題 30問（解説つき）", "item": "https://axostoxast.github.io/tanacount-support/nanikiru/"}]}</script>
+<style>
+.hand { display: flex; flex-wrap: wrap; gap: 2px; align-items: flex-end; margin: 6px 0; }
+.t { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; width: 24px; height: 34px; border: 1px solid #c9c9ce; border-radius: 4px; background: #fffef8; color: #1d1d1f; font: 700 15px/1 "Hiragino Mincho ProN", serif; box-shadow: 0 1px 0 #c9c9ce; }
+.t i { font-style: normal; font-size: 9px; line-height: 1; margin-top: 2px; }
+.t.m i { color: #c0392b; } .t.p { color: #1f4fbf; } .t.s { color: #1e7f4f; } .t.z.r { color: #c0392b; } .t.z.g { color: #1e7f4f; }
+.t.sm { width: 18px; height: 26px; font-size: 12px; vertical-align: middle; } .t.sm i { font-size: 7px; }
+.t.draw { margin-left: 8px; } .gap { width: 4px; }
+.q { border-bottom: 1px solid var(--line); padding: 8px 0 14px; }
+details summary { cursor: pointer; color: var(--accent); margin: 6px 0; }
+@media (max-width: 380px) { .t { width: 20px; height: 30px; font-size: 13px; } }
+</style>
+</head>
+<body>
+<main>
+  <nav class="crumb"><a href="../guide/">早見表・ガイド</a> ＞ 何切る問題 30問（解説つき）</nav>
+  <h1>何切る問題 30問（解説つき）</h1>
+  <p class="lead">牌効率の練習になる何切る問題を30問載せています。初級（切るとテンパイ）・中級（1向聴）・上級（2向聴）の3段階で、解説では打牌ごとの向聴数と受け入れ枚数を比べています。</p>
+
+  <h2>何切るの考え方</h2>
+  <ol>
+    <li><b>向聴数を下げない牌を切る</b>：切ってもテンパイ（や1向聴）から遠ざからない牌の中から選びます。</li>
+    <li><b>受け入れが一番多い牌を切る</b>：次に引くと向聴数が進む牌（受け入れ）の残り枚数が多いほど、早く和了に近づきます。</li>
+    <li><b>迷ったら孤立した字牌や端の牌から</b>：他の牌とつながりにくい牌は受け入れを生みにくいです。</li>
+  </ol>
+  <p class="muted">この問題は和了の速さ（受け入れ枚数）だけで正解を決めています。実戦では点数・安全度・ドラも考えます。</p>
+
+  <a class="app" href="https://apps.apple.com/jp/app/id6822556543"><strong>何切る問題を何問でも解けるアプリ →</strong><br>自動で作られる何切る問題を何問でも。打牌ごとの向聴数と受け入れ枚数で、牌効率が身につきます。</a>
+
+  <h2>初級：切るとテンパイ（第1〜10問）</h2>
+  <div class="q" id="q1">
+    <h3>第1問（初級）</h3>
+    <div class="hand"><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="6萬">六<i>萬</i></span><span class="t m " title="7萬">七<i>萬</i></span><span class="t s " title="1索">1<i>索</i></span><span class="t s " title="2索">2<i>索</i></span><span class="t s " title="2索">2<i>索</i></span><span class="t s " title="3索">3<i>索</i></span><span class="t s " title="4索">4<i>索</i></span><span class="t s " title="8索">8<i>索</i></span><span class="t s " title="8索">8<i>索</i></span><span class="t s " title="8索">8<i>索</i></span><span class="t s " title="9索">9<i>索</i></span><span class="t z  " title="西">西</span><span class="gap"></span><span class="t s draw" title="3索">3<i>索</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：西切り</b>。切るとテンパイで、受け入れは2種7枚（7索・9索）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t z  sm" title="西">西</span> 西</td><td>テンパイ</td><td>2種7枚</td></tr><tr><td><span class="t s sm" title="9索">9<i>索</i></span> 9索</td><td>テンパイ</td><td>1種3枚</td></tr><tr><td><span class="t m sm" title="5萬">五<i>萬</i></span> 5萬</td><td>1向聴</td><td>5種17枚</td></tr><tr><td><span class="t m sm" title="7萬">七<i>萬</i></span> 7萬</td><td>1向聴</td><td>5種17枚</td></tr><tr><td><span class="t s sm" title="1索">1<i>索</i></span> 1索</td><td>1向聴</td><td>5種16枚</td></tr><tr><td><span class="t s sm" title="2索">2<i>索</i></span> 2索</td><td>1向聴</td><td>5種16枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <div class="q" id="q2">
+    <h3>第2問（初級）</h3>
+    <div class="hand"><span class="t p " title="2筒">2<i>筒</i></span><span class="t p " title="2筒">2<i>筒</i></span><span class="t p " title="3筒">3<i>筒</i></span><span class="t p " title="4筒">4<i>筒</i></span><span class="t p " title="5筒">5<i>筒</i></span><span class="t p " title="5筒">5<i>筒</i></span><span class="t p " title="5筒">5<i>筒</i></span><span class="t p " title="6筒">6<i>筒</i></span><span class="t p " title="7筒">7<i>筒</i></span><span class="t s " title="4索">4<i>索</i></span><span class="t s " title="4索">4<i>索</i></span><span class="t s " title="5索">5<i>索</i></span><span class="t s " title="5索">5<i>索</i></span><span class="gap"></span><span class="t s draw" title="5索">5<i>索</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：2筒切り</b>。切るとテンパイで、受け入れは3種7枚（5筒・8筒・4索）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t p sm" title="2筒">2<i>筒</i></span> 2筒</td><td>テンパイ</td><td>3種7枚</td></tr><tr><td><span class="t p sm" title="5筒">5<i>筒</i></span> 5筒</td><td>テンパイ</td><td>2種4枚</td></tr><tr><td><span class="t s sm" title="4索">4<i>索</i></span> 4索</td><td>1向聴</td><td>13種38枚</td></tr><tr><td><span class="t p sm" title="6筒">6<i>筒</i></span> 6筒</td><td>1向聴</td><td>10種29枚</td></tr><tr><td><span class="t p sm" title="7筒">7<i>筒</i></span> 7筒</td><td>1向聴</td><td>9種25枚</td></tr><tr><td><span class="t s sm" title="5索">5<i>索</i></span> 5索</td><td>1向聴</td><td>7種18枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <div class="q" id="q3">
+    <h3>第3問（初級）</h3>
+    <div class="hand"><span class="t m " title="2萬">二<i>萬</i></span><span class="t m " title="3萬">三<i>萬</i></span><span class="t m " title="4萬">四<i>萬</i></span><span class="t m " title="4萬">四<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="6萬">六<i>萬</i></span><span class="t m " title="6萬">六<i>萬</i></span><span class="t m " title="7萬">七<i>萬</i></span><span class="t m " title="8萬">八<i>萬</i></span><span class="t p " title="9筒">9<i>筒</i></span><span class="t p " title="9筒">9<i>筒</i></span><span class="t p " title="9筒">9<i>筒</i></span><span class="gap"></span><span class="t m draw" title="1萬">一<i>萬</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：9筒切り</b>。切るとテンパイで、受け入れは3種9枚（3萬・6萬・9萬）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t p sm" title="9筒">9<i>筒</i></span> 9筒</td><td>テンパイ</td><td>3種9枚</td></tr><tr><td><span class="t m sm" title="1萬">一<i>萬</i></span> 1萬</td><td>テンパイ</td><td>3種8枚</td></tr><tr><td><span class="t m sm" title="5萬">五<i>萬</i></span> 5萬</td><td>テンパイ</td><td>3種8枚</td></tr><tr><td><span class="t m sm" title="8萬">八<i>萬</i></span> 8萬</td><td>テンパイ</td><td>3種8枚</td></tr><tr><td><span class="t m sm" title="4萬">四<i>萬</i></span> 4萬</td><td>テンパイ</td><td>2種5枚</td></tr><tr><td><span class="t m sm" title="6萬">六<i>萬</i></span> 6萬</td><td>テンパイ</td><td>2種4枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <div class="q" id="q4">
+    <h3>第4問（初級）</h3>
+    <div class="hand"><span class="t m " title="4萬">四<i>萬</i></span><span class="t m " title="6萬">六<i>萬</i></span><span class="t p " title="1筒">1<i>筒</i></span><span class="t p " title="1筒">1<i>筒</i></span><span class="t p " title="1筒">1<i>筒</i></span><span class="t p " title="2筒">2<i>筒</i></span><span class="t p " title="3筒">3<i>筒</i></span><span class="t s " title="3索">3<i>索</i></span><span class="t s " title="4索">4<i>索</i></span><span class="t s " title="5索">5<i>索</i></span><span class="t s " title="6索">6<i>索</i></span><span class="t s " title="7索">7<i>索</i></span><span class="t s " title="8索">8<i>索</i></span><span class="gap"></span><span class="t m draw" title="6萬">六<i>萬</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：4萬切り</b>。切るとテンパイで、受け入れは3種7枚（6萬・1筒・4筒）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t m sm" title="4萬">四<i>萬</i></span> 4萬</td><td>テンパイ</td><td>3種7枚</td></tr><tr><td><span class="t m sm" title="6萬">六<i>萬</i></span> 6萬</td><td>テンパイ</td><td>1種4枚</td></tr><tr><td><span class="t p sm" title="2筒">2<i>筒</i></span> 2筒</td><td>1向聴</td><td>10種32枚</td></tr><tr><td><span class="t p sm" title="1筒">1<i>筒</i></span> 1筒</td><td>1向聴</td><td>9種28枚</td></tr><tr><td><span class="t p sm" title="3筒">3<i>筒</i></span> 3筒</td><td>1向聴</td><td>9種28枚</td></tr><tr><td><span class="t s sm" title="3索">3<i>索</i></span> 3索</td><td>1向聴</td><td>7種21枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <div class="q" id="q5">
+    <h3>第5問（初級）</h3>
+    <div class="hand"><span class="t m " title="1萬">一<i>萬</i></span><span class="t m " title="2萬">二<i>萬</i></span><span class="t m " title="3萬">三<i>萬</i></span><span class="t m " title="3萬">三<i>萬</i></span><span class="t m " title="3萬">三<i>萬</i></span><span class="t m " title="4萬">四<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="6萬">六<i>萬</i></span><span class="t m " title="7萬">七<i>萬</i></span><span class="t z  " title="白"></span><span class="t z  " title="白"></span><span class="gap"></span><span class="t m draw" title="5萬">五<i>萬</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：3萬切り</b>。切るとテンパイで、受け入れは3種9枚（2萬・8萬・白）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t m sm" title="3萬">三<i>萬</i></span> 3萬</td><td>テンパイ</td><td>3種9枚</td></tr><tr><td><span class="t m sm" title="1萬">一<i>萬</i></span> 1萬</td><td>テンパイ</td><td>2種3枚</td></tr><tr><td><span class="t m sm" title="4萬">四<i>萬</i></span> 4萬</td><td>テンパイ</td><td>2種3枚</td></tr><tr><td><span class="t m sm" title="5萬">五<i>萬</i></span> 5萬</td><td>テンパイ</td><td>1種3枚</td></tr><tr><td><span class="t m sm" title="7萬">七<i>萬</i></span> 7萬</td><td>テンパイ</td><td>2種3枚</td></tr><tr><td><span class="t m sm" title="2萬">二<i>萬</i></span> 2萬</td><td>1向聴</td><td>9種26枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <div class="q" id="q6">
+    <h3>第6問（初級）</h3>
+    <div class="hand"><span class="t m " title="4萬">四<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="6萬">六<i>萬</i></span><span class="t m " title="6萬">六<i>萬</i></span><span class="t m " title="7萬">七<i>萬</i></span><span class="t p " title="5筒">5<i>筒</i></span><span class="t p " title="7筒">7<i>筒</i></span><span class="t s " title="3索">3<i>索</i></span><span class="t s " title="3索">3<i>索</i></span><span class="t s " title="3索">3<i>索</i></span><span class="gap"></span><span class="t p draw" title="7筒">7<i>筒</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：5筒切り</b>。切るとテンパイで、受け入れは2種6枚（8萬・7筒）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t p sm" title="5筒">5<i>筒</i></span> 5筒</td><td>テンパイ</td><td>2種6枚</td></tr><tr><td><span class="t p sm" title="7筒">7<i>筒</i></span> 7筒</td><td>テンパイ</td><td>1種4枚</td></tr><tr><td><span class="t m sm" title="6萬">六<i>萬</i></span> 6萬</td><td>1向聴</td><td>12種41枚</td></tr><tr><td><span class="t m sm" title="5萬">五<i>萬</i></span> 5萬</td><td>1向聴</td><td>10種33枚</td></tr><tr><td><span class="t m sm" title="7萬">七<i>萬</i></span> 7萬</td><td>1向聴</td><td>10種33枚</td></tr><tr><td><span class="t m sm" title="4萬">四<i>萬</i></span> 4萬</td><td>1向聴</td><td>9種29枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <div class="q" id="q7">
+    <h3>第7問（初級）</h3>
+    <div class="hand"><span class="t m " title="8萬">八<i>萬</i></span><span class="t m " title="9萬">九<i>萬</i></span><span class="t s " title="1索">1<i>索</i></span><span class="t s " title="2索">2<i>索</i></span><span class="t s " title="2索">2<i>索</i></span><span class="t s " title="2索">2<i>索</i></span><span class="t s " title="3索">3<i>索</i></span><span class="t s " title="5索">5<i>索</i></span><span class="t s " title="6索">6<i>索</i></span><span class="t s " title="6索">6<i>索</i></span><span class="t s " title="6索">6<i>索</i></span><span class="t s " title="6索">6<i>索</i></span><span class="t s " title="7索">7<i>索</i></span><span class="gap"></span><span class="t m draw" title="8萬">八<i>萬</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：8萬切り</b>。切るとテンパイで、受け入れは1種4枚（7萬）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t m sm" title="8萬">八<i>萬</i></span> 8萬</td><td>テンパイ</td><td>1種4枚</td></tr><tr><td><span class="t m sm" title="9萬">九<i>萬</i></span> 9萬</td><td>テンパイ</td><td>2種3枚</td></tr><tr><td><span class="t s sm" title="1索">1<i>索</i></span> 1索</td><td>1向聴</td><td>9種27枚</td></tr><tr><td><span class="t s sm" title="2索">2<i>索</i></span> 2索</td><td>1向聴</td><td>7種20枚</td></tr><tr><td><span class="t s sm" title="3索">3<i>索</i></span> 3索</td><td>1向聴</td><td>6種16枚</td></tr><tr><td><span class="t s sm" title="5索">5<i>索</i></span> 5索</td><td>1向聴</td><td>5種14枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <div class="q" id="q8">
+    <h3>第8問（初級）</h3>
+    <div class="hand"><span class="t p " title="3筒">3<i>筒</i></span><span class="t p " title="3筒">3<i>筒</i></span><span class="t p " title="4筒">4<i>筒</i></span><span class="t p " title="7筒">7<i>筒</i></span><span class="t p " title="7筒">7<i>筒</i></span><span class="t p " title="7筒">7<i>筒</i></span><span class="t p " title="8筒">8<i>筒</i></span><span class="t p " title="8筒">8<i>筒</i></span><span class="t p " title="8筒">8<i>筒</i></span><span class="t s " title="5索">5<i>索</i></span><span class="t s " title="5索">5<i>索</i></span><span class="t s " title="6索">6<i>索</i></span><span class="t s " title="7索">7<i>索</i></span><span class="gap"></span><span class="t p draw" title="3筒">3<i>筒</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：5索切り</b>。切るとテンパイで、受け入れは3種11枚（2筒・4筒・5筒）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t s sm" title="5索">5<i>索</i></span> 5索</td><td>テンパイ</td><td>3種11枚</td></tr><tr><td><span class="t p sm" title="4筒">4<i>筒</i></span> 4筒</td><td>テンパイ</td><td>2種6枚</td></tr><tr><td><span class="t p sm" title="7筒">7<i>筒</i></span> 7筒</td><td>1向聴</td><td>12種37枚</td></tr><tr><td><span class="t p sm" title="8筒">8<i>筒</i></span> 8筒</td><td>1向聴</td><td>12種37枚</td></tr><tr><td><span class="t p sm" title="3筒">3<i>筒</i></span> 3筒</td><td>1向聴</td><td>11種36枚</td></tr><tr><td><span class="t s sm" title="6索">6<i>索</i></span> 6索</td><td>1向聴</td><td>10種32枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <div class="q" id="q9">
+    <h3>第9問（初級）</h3>
+    <div class="hand"><span class="t p " title="2筒">2<i>筒</i></span><span class="t p " title="3筒">3<i>筒</i></span><span class="t p " title="4筒">4<i>筒</i></span><span class="t p " title="6筒">6<i>筒</i></span><span class="t p " title="7筒">7<i>筒</i></span><span class="t p " title="7筒">7<i>筒</i></span><span class="t p " title="8筒">8<i>筒</i></span><span class="t p " title="8筒">8<i>筒</i></span><span class="t p " title="9筒">9<i>筒</i></span><span class="t z  " title="西">西</span><span class="t z  " title="西">西</span><span class="t z  " title="西">西</span><span class="t z  " title="白"></span><span class="gap"></span><span class="t p draw" title="6筒">6<i>筒</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：白切り</b>。切るとテンパイで、受け入れは2種5枚（6筒・9筒）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t z  sm" title="白"></span> 白</td><td>テンパイ</td><td>2種5枚</td></tr><tr><td><span class="t p sm" title="6筒">6<i>筒</i></span> 6筒</td><td>テンパイ</td><td>1種3枚</td></tr><tr><td><span class="t p sm" title="9筒">9<i>筒</i></span> 9筒</td><td>テンパイ</td><td>1種3枚</td></tr><tr><td><span class="t z  sm" title="西">西</span> 西</td><td>1向聴</td><td>9種24枚</td></tr><tr><td><span class="t p sm" title="2筒">2<i>筒</i></span> 2筒</td><td>1向聴</td><td>6種18枚</td></tr><tr><td><span class="t p sm" title="3筒">3<i>筒</i></span> 3筒</td><td>1向聴</td><td>6種18枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <div class="q" id="q10">
+    <h3>第10問（初級）</h3>
+    <div class="hand"><span class="t m " title="3萬">三<i>萬</i></span><span class="t m " title="3萬">三<i>萬</i></span><span class="t m " title="4萬">四<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="6萬">六<i>萬</i></span><span class="t m " title="7萬">七<i>萬</i></span><span class="t s " title="5索">5<i>索</i></span><span class="t s " title="5索">5<i>索</i></span><span class="t z  " title="南">南</span><span class="t z  " title="南">南</span><span class="t z  " title="南">南</span><span class="gap"></span><span class="t m draw" title="1萬">一<i>萬</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：5萬切り</b>。切るとテンパイで、受け入れは1種4枚（2萬）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t m sm" title="5萬">五<i>萬</i></span> 5萬</td><td>テンパイ</td><td>1種4枚</td></tr><tr><td><span class="t m sm" title="1萬">一<i>萬</i></span> 1萬</td><td>テンパイ</td><td>1種3枚</td></tr><tr><td><span class="t m sm" title="3萬">三<i>萬</i></span> 3萬</td><td>1向聴</td><td>9種25枚</td></tr><tr><td><span class="t s sm" title="5索">5<i>索</i></span> 5索</td><td>1向聴</td><td>6種17枚</td></tr><tr><td><span class="t m sm" title="4萬">四<i>萬</i></span> 4萬</td><td>1向聴</td><td>6種16枚</td></tr><tr><td><span class="t m sm" title="7萬">七<i>萬</i></span> 7萬</td><td>1向聴</td><td>6種15枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <h2>中級：切ると1向聴（第11〜20問）</h2>
+  <div class="q" id="q11">
+    <h3>第11問（中級）</h3>
+    <div class="hand"><span class="t m " title="6萬">六<i>萬</i></span><span class="t m " title="7萬">七<i>萬</i></span><span class="t m " title="8萬">八<i>萬</i></span><span class="t p " title="3筒">3<i>筒</i></span><span class="t p " title="3筒">3<i>筒</i></span><span class="t p " title="3筒">3<i>筒</i></span><span class="t p " title="3筒">3<i>筒</i></span><span class="t s " title="1索">1<i>索</i></span><span class="t s " title="1索">1<i>索</i></span><span class="t s " title="3索">3<i>索</i></span><span class="t s " title="9索">9<i>索</i></span><span class="t s " title="9索">9<i>索</i></span><span class="t z g " title="發">發</span><span class="gap"></span><span class="t p draw" title="5筒">5<i>筒</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：發切り</b>。切ると1向聴で、受け入れは4種12枚（4筒・1索・2索・9索）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t z g sm" title="發">發</span> 發</td><td>1向聴</td><td>4種12枚</td></tr><tr><td><span class="t s sm" title="1索">1<i>索</i></span> 1索</td><td>1向聴</td><td>2種8枚</td></tr><tr><td><span class="t s sm" title="3索">3<i>索</i></span> 3索</td><td>1向聴</td><td>3種8枚</td></tr><tr><td><span class="t p sm" title="3筒">3<i>筒</i></span> 3筒</td><td>2向聴</td><td>11種37枚</td></tr><tr><td><span class="t p sm" title="5筒">5<i>筒</i></span> 5筒</td><td>2向聴</td><td>11種37枚</td></tr><tr><td><span class="t s sm" title="9索">9<i>索</i></span> 9索</td><td>2向聴</td><td>10種34枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <div class="q" id="q12">
+    <h3>第12問（中級）</h3>
+    <div class="hand"><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="6萬">六<i>萬</i></span><span class="t m " title="6萬">六<i>萬</i></span><span class="t m " title="7萬">七<i>萬</i></span><span class="t m " title="7萬">七<i>萬</i></span><span class="t m " title="8萬">八<i>萬</i></span><span class="t p " title="6筒">6<i>筒</i></span><span class="t s " title="1索">1<i>索</i></span><span class="t s " title="3索">3<i>索</i></span><span class="t s " title="6索">6<i>索</i></span><span class="t s " title="7索">7<i>索</i></span><span class="t z  " title="東">東</span><span class="gap"></span><span class="t s draw" title="5索">5<i>索</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：6筒・東切り</b>。切ると1向聴で、受け入れは4種12枚（5萬・8萬・2索・東）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t p sm" title="6筒">6<i>筒</i></span> 6筒</td><td>1向聴</td><td>4種12枚</td></tr><tr class=hl><td><span class="t z  sm" title="東">東</span> 東</td><td>1向聴</td><td>4種12枚</td></tr><tr><td><span class="t m sm" title="5萬">五<i>萬</i></span> 5萬</td><td>1向聴</td><td>3種10枚</td></tr><tr><td><span class="t m sm" title="8萬">八<i>萬</i></span> 8萬</td><td>1向聴</td><td>3種10枚</td></tr><tr><td><span class="t s sm" title="1索">1<i>索</i></span> 1索</td><td>2向聴</td><td>19種64枚</td></tr><tr><td><span class="t s sm" title="3索">3<i>索</i></span> 3索</td><td>2向聴</td><td>16種53枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <div class="q" id="q13">
+    <h3>第13問（中級）</h3>
+    <div class="hand"><span class="t m " title="6萬">六<i>萬</i></span><span class="t m " title="6萬">六<i>萬</i></span><span class="t m " title="7萬">七<i>萬</i></span><span class="t m " title="7萬">七<i>萬</i></span><span class="t m " title="8萬">八<i>萬</i></span><span class="t m " title="8萬">八<i>萬</i></span><span class="t p " title="8筒">8<i>筒</i></span><span class="t s " title="3索">3<i>索</i></span><span class="t s " title="4索">4<i>索</i></span><span class="t s " title="4索">4<i>索</i></span><span class="t s " title="5索">5<i>索</i></span><span class="t s " title="5索">5<i>索</i></span><span class="t z  " title="白"></span><span class="gap"></span><span class="t s draw" title="4索">4<i>索</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：白切り</b>。切ると1向聴で、受け入れは11種37枚（6筒・7筒・8筒・9筒・1索・2索・3索・4索・5索・6索・7索）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t z  sm" title="白"></span> 白</td><td>1向聴</td><td>11種37枚</td></tr><tr><td><span class="t p sm" title="8筒">8<i>筒</i></span> 8筒</td><td>1向聴</td><td>8種25枚</td></tr><tr><td><span class="t s sm" title="3索">3<i>索</i></span> 3索</td><td>1向聴</td><td>6種20枚</td></tr><tr><td><span class="t s sm" title="5索">5<i>索</i></span> 5索</td><td>1向聴</td><td>6種19枚</td></tr><tr><td><span class="t s sm" title="4索">4<i>索</i></span> 4索</td><td>1向聴</td><td>4種13枚</td></tr><tr><td><span class="t m sm" title="6萬">六<i>萬</i></span> 6萬</td><td>2向聴</td><td>14種46枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <div class="q" id="q14">
+    <h3>第14問（中級）</h3>
+    <div class="hand"><span class="t m " title="9萬">九<i>萬</i></span><span class="t m " title="9萬">九<i>萬</i></span><span class="t m " title="9萬">九<i>萬</i></span><span class="t m " title="9萬">九<i>萬</i></span><span class="t p " title="3筒">3<i>筒</i></span><span class="t p " title="7筒">7<i>筒</i></span><span class="t p " title="8筒">8<i>筒</i></span><span class="t p " title="9筒">9<i>筒</i></span><span class="t s " title="3索">3<i>索</i></span><span class="t s " title="4索">4<i>索</i></span><span class="t s " title="5索">5<i>索</i></span><span class="t z r " title="中">中</span><span class="t z r " title="中">中</span><span class="gap"></span><span class="t p draw" title="6筒">6<i>筒</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：9萬切り</b>。切ると1向聴で、受け入れは10種33枚（1筒・2筒・3筒・4筒・5筒・6筒・7筒・8筒・9筒・中）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t m sm" title="9萬">九<i>萬</i></span> 9萬</td><td>1向聴</td><td>10種33枚</td></tr><tr><td><span class="t p sm" title="3筒">3<i>筒</i></span> 3筒</td><td>1向聴</td><td>9種30枚</td></tr><tr><td><span class="t p sm" title="6筒">6<i>筒</i></span> 6筒</td><td>1向聴</td><td>8種29枚</td></tr><tr><td><span class="t p sm" title="9筒">9<i>筒</i></span> 9筒</td><td>1向聴</td><td>8種29枚</td></tr><tr><td><span class="t s sm" title="3索">3<i>索</i></span> 3索</td><td>2向聴</td><td>14種48枚</td></tr><tr><td><span class="t s sm" title="5索">5<i>索</i></span> 5索</td><td>2向聴</td><td>14種48枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <div class="q" id="q15">
+    <h3>第15問（中級）</h3>
+    <div class="hand"><span class="t m " title="3萬">三<i>萬</i></span><span class="t m " title="4萬">四<i>萬</i></span><span class="t m " title="4萬">四<i>萬</i></span><span class="t p " title="6筒">6<i>筒</i></span><span class="t p " title="6筒">6<i>筒</i></span><span class="t p " title="7筒">7<i>筒</i></span><span class="t p " title="7筒">7<i>筒</i></span><span class="t p " title="8筒">8<i>筒</i></span><span class="t p " title="8筒">8<i>筒</i></span><span class="t s " title="4索">4<i>索</i></span><span class="t s " title="4索">4<i>索</i></span><span class="t s " title="6索">6<i>索</i></span><span class="t z  " title="西">西</span><span class="gap"></span><span class="t m draw" title="5萬">五<i>萬</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：西切り</b>。切ると1向聴で、受け入れは10種33枚（2萬・3萬・4萬・5萬・6萬・4索・5索・6索・7索・8索）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t z  sm" title="西">西</span> 西</td><td>1向聴</td><td>10種33枚</td></tr><tr><td><span class="t s sm" title="6索">6<i>索</i></span> 6索</td><td>1向聴</td><td>7種21枚</td></tr><tr><td><span class="t m sm" title="4萬">四<i>萬</i></span> 4萬</td><td>1向聴</td><td>6種20枚</td></tr><tr><td><span class="t m sm" title="3萬">三<i>萬</i></span> 3萬</td><td>1向聴</td><td>3種9枚</td></tr><tr><td><span class="t m sm" title="5萬">五<i>萬</i></span> 5萬</td><td>1向聴</td><td>3種9枚</td></tr><tr><td><span class="t s sm" title="4索">4<i>索</i></span> 4索</td><td>1向聴</td><td>3種9枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <div class="q" id="q16">
+    <h3>第16問（中級）</h3>
+    <div class="hand"><span class="t m " title="3萬">三<i>萬</i></span><span class="t m " title="4萬">四<i>萬</i></span><span class="t p " title="2筒">2<i>筒</i></span><span class="t p " title="3筒">3<i>筒</i></span><span class="t p " title="4筒">4<i>筒</i></span><span class="t p " title="5筒">5<i>筒</i></span><span class="t p " title="6筒">6<i>筒</i></span><span class="t p " title="7筒">7<i>筒</i></span><span class="t p " title="8筒">8<i>筒</i></span><span class="t s " title="3索">3<i>索</i></span><span class="t s " title="4索">4<i>索</i></span><span class="t z  " title="北">北</span><span class="t z  " title="白"></span><span class="gap"></span><span class="t m draw" title="5萬">五<i>萬</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：北・白切り</b>。切ると1向聴で、受け入れは6種20枚（2筒・5筒・8筒・2索・5索・白）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t z  sm" title="北">北</span> 北</td><td>1向聴</td><td>6種20枚</td></tr><tr class=hl><td><span class="t z  sm" title="白"></span> 白</td><td>1向聴</td><td>6種20枚</td></tr><tr><td><span class="t p sm" title="2筒">2<i>筒</i></span> 2筒</td><td>1向聴</td><td>4種14枚</td></tr><tr><td><span class="t p sm" title="5筒">5<i>筒</i></span> 5筒</td><td>1向聴</td><td>4種14枚</td></tr><tr><td><span class="t p sm" title="8筒">8<i>筒</i></span> 8筒</td><td>1向聴</td><td>4種14枚</td></tr><tr><td><span class="t s sm" title="3索">3<i>索</i></span> 3索</td><td>2向聴</td><td>16種53枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <div class="q" id="q17">
+    <h3>第17問（中級）</h3>
+    <div class="hand"><span class="t m " title="1萬">一<i>萬</i></span><span class="t m " title="2萬">二<i>萬</i></span><span class="t m " title="3萬">三<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="6萬">六<i>萬</i></span><span class="t m " title="6萬">六<i>萬</i></span><span class="t p " title="5筒">5<i>筒</i></span><span class="t p " title="5筒">5<i>筒</i></span><span class="t p " title="7筒">7<i>筒</i></span><span class="t s " title="5索">5<i>索</i></span><span class="t s " title="5索">5<i>索</i></span><span class="t s " title="7索">7<i>索</i></span><span class="t s " title="7索">7<i>索</i></span><span class="gap"></span><span class="t s draw" title="7索">7<i>索</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：6萬・5筒切り</b>。切ると1向聴で、受け入れは5種16枚（4萬・7萬・5筒・6筒・5索）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t m sm" title="6萬">六<i>萬</i></span> 6萬</td><td>1向聴</td><td>5種16枚</td></tr><tr class=hl><td><span class="t p sm" title="5筒">5<i>筒</i></span> 5筒</td><td>1向聴</td><td>5種16枚</td></tr><tr><td><span class="t p sm" title="7筒">7<i>筒</i></span> 7筒</td><td>1向聴</td><td>5種14枚</td></tr><tr><td><span class="t m sm" title="5萬">五<i>萬</i></span> 5萬</td><td>1向聴</td><td>4種10枚</td></tr><tr><td><span class="t s sm" title="5索">5<i>索</i></span> 5索</td><td>2向聴</td><td>18種60枚</td></tr><tr><td><span class="t s sm" title="7索">7<i>索</i></span> 7索</td><td>2向聴</td><td>13種38枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <div class="q" id="q18">
+    <h3>第18問（中級）</h3>
+    <div class="hand"><span class="t m " title="2萬">二<i>萬</i></span><span class="t m " title="2萬">二<i>萬</i></span><span class="t m " title="3萬">三<i>萬</i></span><span class="t m " title="4萬">四<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="7萬">七<i>萬</i></span><span class="t m " title="9萬">九<i>萬</i></span><span class="t p " title="2筒">2<i>筒</i></span><span class="t p " title="3筒">3<i>筒</i></span><span class="t s " title="2索">2<i>索</i></span><span class="t s " title="4索">4<i>索</i></span><span class="t s " title="4索">4<i>索</i></span><span class="gap"></span><span class="t p draw" title="4筒">4<i>筒</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：2索切り</b>。切ると1向聴で、受け入れは5種14枚（2萬・5萬・6萬・8萬・4索）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t s sm" title="2索">2<i>索</i></span> 2索</td><td>1向聴</td><td>5種14枚</td></tr><tr><td><span class="t m sm" title="2萬">二<i>萬</i></span> 2萬</td><td>1向聴</td><td>4種12枚</td></tr><tr><td><span class="t m sm" title="5萬">五<i>萬</i></span> 5萬</td><td>1向聴</td><td>4種12枚</td></tr><tr><td><span class="t m sm" title="9萬">九<i>萬</i></span> 9萬</td><td>1向聴</td><td>4種12枚</td></tr><tr><td><span class="t s sm" title="4索">4<i>索</i></span> 4索</td><td>1向聴</td><td>3種12枚</td></tr><tr><td><span class="t m sm" title="7萬">七<i>萬</i></span> 7萬</td><td>2向聴</td><td>15種49枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <div class="q" id="q19">
+    <h3>第19問（中級）</h3>
+    <div class="hand"><span class="t m " title="3萬">三<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span><span class="t s " title="2索">2<i>索</i></span><span class="t s " title="3索">3<i>索</i></span><span class="t s " title="4索">4<i>索</i></span><span class="t s " title="4索">4<i>索</i></span><span class="t s " title="5索">5<i>索</i></span><span class="t s " title="6索">6<i>索</i></span><span class="t s " title="6索">6<i>索</i></span><span class="t s " title="7索">7<i>索</i></span><span class="t s " title="8索">8<i>索</i></span><span class="t z  " title="東">東</span><span class="gap"></span><span class="t s draw" title="4索">4<i>索</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：東切り</b>。切ると1向聴で、受け入れは13種40枚（1萬・2萬・3萬・4萬・5萬・1索・2索・3索・4索・5索・6索・7索・9索）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t z  sm" title="東">東</span> 東</td><td>1向聴</td><td>13種40枚</td></tr><tr><td><span class="t m sm" title="3萬">三<i>萬</i></span> 3萬</td><td>1向聴</td><td>10種28枚</td></tr><tr><td><span class="t s sm" title="4索">4<i>索</i></span> 4索</td><td>1向聴</td><td>6種20枚</td></tr><tr><td><span class="t m sm" title="5萬">五<i>萬</i></span> 5萬</td><td>1向聴</td><td>5種15枚</td></tr><tr><td><span class="t s sm" title="2索">2<i>索</i></span> 2索</td><td>2向聴</td><td>17種54枚</td></tr><tr><td><span class="t s sm" title="5索">5<i>索</i></span> 5索</td><td>2向聴</td><td>17種54枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <div class="q" id="q20">
+    <h3>第20問（中級）</h3>
+    <div class="hand"><span class="t m " title="1萬">一<i>萬</i></span><span class="t m " title="4萬">四<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="6萬">六<i>萬</i></span><span class="t p " title="1筒">1<i>筒</i></span><span class="t p " title="1筒">1<i>筒</i></span><span class="t p " title="2筒">2<i>筒</i></span><span class="t p " title="3筒">3<i>筒</i></span><span class="t p " title="4筒">4<i>筒</i></span><span class="t p " title="6筒">6<i>筒</i></span><span class="t p " title="9筒">9<i>筒</i></span><span class="t p " title="9筒">9<i>筒</i></span><span class="t z  " title="西">西</span><span class="gap"></span><span class="t p draw" title="1筒">1<i>筒</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：西切り</b>。切ると1向聴で、受け入れは10種32枚（1萬・2萬・3萬・1筒・4筒・5筒・6筒・7筒・8筒・9筒）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t z  sm" title="西">西</span> 西</td><td>1向聴</td><td>10種32枚</td></tr><tr><td><span class="t m sm" title="1萬">一<i>萬</i></span> 1萬</td><td>1向聴</td><td>8種24枚</td></tr><tr><td><span class="t p sm" title="6筒">6<i>筒</i></span> 6筒</td><td>1向聴</td><td>5種16枚</td></tr><tr><td><span class="t m sm" title="4萬">四<i>萬</i></span> 4萬</td><td>2向聴</td><td>13種42枚</td></tr><tr><td><span class="t p sm" title="1筒">1<i>筒</i></span> 1筒</td><td>2向聴</td><td>13種41枚</td></tr><tr><td><span class="t p sm" title="2筒">2<i>筒</i></span> 2筒</td><td>2向聴</td><td>13種41枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <h2>上級：切ると2向聴（第21〜30問）</h2>
+  <div class="q" id="q21">
+    <h3>第21問（上級）</h3>
+    <div class="hand"><span class="t m " title="2萬">二<i>萬</i></span><span class="t m " title="3萬">三<i>萬</i></span><span class="t m " title="4萬">四<i>萬</i></span><span class="t m " title="4萬">四<i>萬</i></span><span class="t m " title="4萬">四<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="6萬">六<i>萬</i></span><span class="t p " title="7筒">7<i>筒</i></span><span class="t p " title="8筒">8<i>筒</i></span><span class="t z  " title="東">東</span><span class="t z  " title="北">北</span><span class="t z  " title="北">北</span><span class="t z g " title="發">發</span><span class="gap"></span><span class="t s draw" title="7索">7<i>索</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：東・發切り</b>。切ると2向聴で、受け入れは16種53枚（1萬・2萬・3萬・4萬・5萬・6萬・7萬・6筒・9筒・5索・6索・7索・8索・9索・北・發）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t z  sm" title="東">東</span> 東</td><td>2向聴</td><td>16種53枚</td></tr><tr class=hl><td><span class="t z g sm" title="發">發</span> 發</td><td>2向聴</td><td>16種53枚</td></tr><tr><td><span class="t s sm" title="7索">7<i>索</i></span> 7索</td><td>2向聴</td><td>12種37枚</td></tr><tr><td><span class="t m sm" title="4萬">四<i>萬</i></span> 4萬</td><td>2向聴</td><td>10種35枚</td></tr><tr><td><span class="t p sm" title="8筒">8<i>筒</i></span> 8筒</td><td>3向聴</td><td>20種66枚</td></tr><tr><td><span class="t p sm" title="7筒">7<i>筒</i></span> 7筒</td><td>3向聴</td><td>19種62枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <div class="q" id="q22">
+    <h3>第22問（上級）</h3>
+    <div class="hand"><span class="t m " title="7萬">七<i>萬</i></span><span class="t m " title="7萬">七<i>萬</i></span><span class="t p " title="1筒">1<i>筒</i></span><span class="t p " title="1筒">1<i>筒</i></span><span class="t p " title="4筒">4<i>筒</i></span><span class="t p " title="5筒">5<i>筒</i></span><span class="t p " title="5筒">5<i>筒</i></span><span class="t p " title="5筒">5<i>筒</i></span><span class="t p " title="7筒">7<i>筒</i></span><span class="t p " title="8筒">8<i>筒</i></span><span class="t s " title="2索">2<i>索</i></span><span class="t s " title="3索">3<i>索</i></span><span class="t z  " title="東">東</span><span class="gap"></span><span class="t p draw" title="7筒">7<i>筒</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：4筒・東切り</b>。切ると2向聴で、受け入れは11種34枚（7萬・1筒・6筒・7筒・8筒・9筒・1索・2索・3索・4索・東）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t p sm" title="4筒">4<i>筒</i></span> 4筒</td><td>2向聴</td><td>11種34枚</td></tr><tr class=hl><td><span class="t z  sm" title="東">東</span> 東</td><td>2向聴</td><td>11種34枚</td></tr><tr><td><span class="t p sm" title="8筒">8<i>筒</i></span> 8筒</td><td>2向聴</td><td>9種26枚</td></tr><tr><td><span class="t p sm" title="7筒">7<i>筒</i></span> 7筒</td><td>2向聴</td><td>6種20枚</td></tr><tr><td><span class="t p sm" title="5筒">5<i>筒</i></span> 5筒</td><td>2向聴</td><td>5種15枚</td></tr><tr><td><span class="t s sm" title="2索">2<i>索</i></span> 2索</td><td>2向聴</td><td>4種12枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <div class="q" id="q23">
+    <h3>第23問（上級）</h3>
+    <div class="hand"><span class="t p " title="5筒">5<i>筒</i></span><span class="t p " title="5筒">5<i>筒</i></span><span class="t p " title="6筒">6<i>筒</i></span><span class="t p " title="6筒">6<i>筒</i></span><span class="t p " title="7筒">7<i>筒</i></span><span class="t p " title="7筒">7<i>筒</i></span><span class="t p " title="8筒">8<i>筒</i></span><span class="t p " title="8筒">8<i>筒</i></span><span class="t s " title="4索">4<i>索</i></span><span class="t s " title="5索">5<i>索</i></span><span class="t s " title="7索">7<i>索</i></span><span class="t z  " title="西">西</span><span class="t z r " title="中">中</span><span class="gap"></span><span class="t p draw" title="7筒">7<i>筒</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：西・中切り</b>。切ると2向聴で、受け入れは15種47枚（4筒・5筒・6筒・7筒・8筒・9筒・2索・3索・4索・5索・6索・7索・8索・9索・中）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t z  sm" title="西">西</span> 西</td><td>2向聴</td><td>15種47枚</td></tr><tr class=hl><td><span class="t z r sm" title="中">中</span> 中</td><td>2向聴</td><td>15種47枚</td></tr><tr><td><span class="t p sm" title="7筒">7<i>筒</i></span> 7筒</td><td>2向聴</td><td>12種39枚</td></tr><tr><td><span class="t s sm" title="7索">7<i>索</i></span> 7索</td><td>2向聴</td><td>12種35枚</td></tr><tr><td><span class="t s sm" title="4索">4<i>索</i></span> 4索</td><td>2向聴</td><td>11種31枚</td></tr><tr><td><span class="t p sm" title="5筒">5<i>筒</i></span> 5筒</td><td>2向聴</td><td>8種26枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <div class="q" id="q24">
+    <h3>第24問（上級）</h3>
+    <div class="hand"><span class="t m " title="5萬">五<i>萬</i></span><span class="t p " title="2筒">2<i>筒</i></span><span class="t p " title="6筒">6<i>筒</i></span><span class="t p " title="6筒">6<i>筒</i></span><span class="t p " title="7筒">7<i>筒</i></span><span class="t s " title="1索">1<i>索</i></span><span class="t s " title="2索">2<i>索</i></span><span class="t s " title="3索">3<i>索</i></span><span class="t s " title="5索">5<i>索</i></span><span class="t s " title="8索">8<i>索</i></span><span class="t z  " title="南">南</span><span class="t z  " title="南">南</span><span class="t z  " title="南">南</span><span class="gap"></span><span class="t p draw" title="5筒">5<i>筒</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：8索切り</b>。切ると2向聴で、受け入れは18種64枚（3萬・4萬・5萬・6萬・7萬・1筒・2筒・3筒・4筒・5筒・6筒・7筒・8筒・3索・4索・5索・6索・7索）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t s sm" title="8索">8<i>索</i></span> 8索</td><td>2向聴</td><td>18種64枚</td></tr><tr><td><span class="t s sm" title="5索">5<i>索</i></span> 5索</td><td>2向聴</td><td>17種61枚</td></tr><tr><td><span class="t p sm" title="2筒">2<i>筒</i></span> 2筒</td><td>2向聴</td><td>17種60枚</td></tr><tr><td><span class="t p sm" title="6筒">6<i>筒</i></span> 6筒</td><td>2向聴</td><td>16種59枚</td></tr><tr><td><span class="t m sm" title="5萬">五<i>萬</i></span> 5萬</td><td>2向聴</td><td>15種52枚</td></tr><tr><td><span class="t s sm" title="1索">1<i>索</i></span> 1索</td><td>3向聴</td><td>22種77枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <div class="q" id="q25">
+    <h3>第25問（上級）</h3>
+    <div class="hand"><span class="t m " title="4萬">四<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="6萬">六<i>萬</i></span><span class="t m " title="7萬">七<i>萬</i></span><span class="t m " title="7萬">七<i>萬</i></span><span class="t m " title="8萬">八<i>萬</i></span><span class="t m " title="8萬">八<i>萬</i></span><span class="t m " title="8萬">八<i>萬</i></span><span class="t m " title="8萬">八<i>萬</i></span><span class="t p " title="6筒">6<i>筒</i></span><span class="t s " title="4索">4<i>索</i></span><span class="t z  " title="西">西</span><span class="gap"></span><span class="t m draw" title="5萬">五<i>萬</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：7萬切り</b>。切ると2向聴で、受け入れは17種60枚（2萬・3萬・4萬・5萬・6萬・9萬・4筒・5筒・6筒・7筒・8筒・2索・3索・4索・5索・6索・西）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t m sm" title="7萬">七<i>萬</i></span> 7萬</td><td>2向聴</td><td>17種60枚</td></tr><tr><td><span class="t z  sm" title="西">西</span> 西</td><td>2向聴</td><td>17種59枚</td></tr><tr><td><span class="t m sm" title="4萬">四<i>萬</i></span> 4萬</td><td>2向聴</td><td>15種51枚</td></tr><tr><td><span class="t m sm" title="8萬">八<i>萬</i></span> 8萬</td><td>2向聴</td><td>15種51枚</td></tr><tr><td><span class="t p sm" title="6筒">6<i>筒</i></span> 6筒</td><td>2向聴</td><td>13種43枚</td></tr><tr><td><span class="t s sm" title="4索">4<i>索</i></span> 4索</td><td>2向聴</td><td>13種43枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <div class="q" id="q26">
+    <h3>第26問（上級）</h3>
+    <div class="hand"><span class="t m " title="7萬">七<i>萬</i></span><span class="t p " title="1筒">1<i>筒</i></span><span class="t p " title="2筒">2<i>筒</i></span><span class="t p " title="3筒">3<i>筒</i></span><span class="t p " title="4筒">4<i>筒</i></span><span class="t p " title="8筒">8<i>筒</i></span><span class="t s " title="7索">7<i>索</i></span><span class="t s " title="8索">8<i>索</i></span><span class="t s " title="9索">9<i>索</i></span><span class="t z  " title="西">西</span><span class="t z r " title="中">中</span><span class="t z r " title="中">中</span><span class="t z r " title="中">中</span><span class="gap"></span><span class="t s draw" title="6索">6<i>索</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：西切り</b>。切ると2向聴で、受け入れは20種70枚（5萬・6萬・7萬・8萬・9萬・1筒・2筒・3筒・4筒・5筒・6筒・7筒・8筒・9筒・4索・5索・6索・7索・8索・9索）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t z  sm" title="西">西</span> 西</td><td>2向聴</td><td>20種70枚</td></tr><tr><td><span class="t p sm" title="8筒">8<i>筒</i></span> 8筒</td><td>2向聴</td><td>18種62枚</td></tr><tr><td><span class="t p sm" title="1筒">1<i>筒</i></span> 1筒</td><td>2向聴</td><td>16種57枚</td></tr><tr><td><span class="t p sm" title="4筒">4<i>筒</i></span> 4筒</td><td>2向聴</td><td>16種57枚</td></tr><tr><td><span class="t m sm" title="7萬">七<i>萬</i></span> 7萬</td><td>2向聴</td><td>16種54枚</td></tr><tr><td><span class="t s sm" title="6索">6<i>索</i></span> 6索</td><td>2向聴</td><td>15種53枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <div class="q" id="q27">
+    <h3>第27問（上級）</h3>
+    <div class="hand"><span class="t m " title="4萬">四<i>萬</i></span><span class="t m " title="4萬">四<i>萬</i></span><span class="t m " title="6萬">六<i>萬</i></span><span class="t m " title="7萬">七<i>萬</i></span><span class="t m " title="7萬">七<i>萬</i></span><span class="t p " title="2筒">2<i>筒</i></span><span class="t p " title="2筒">2<i>筒</i></span><span class="t p " title="3筒">3<i>筒</i></span><span class="t p " title="7筒">7<i>筒</i></span><span class="t p " title="8筒">8<i>筒</i></span><span class="t p " title="8筒">8<i>筒</i></span><span class="t p " title="8筒">8<i>筒</i></span><span class="t s " title="3索">3<i>索</i></span><span class="gap"></span><span class="t m draw" title="5萬">五<i>萬</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：2筒切り</b>。切ると2向聴で、受け入れは20種69枚（2萬・3萬・4萬・5萬・6萬・7萬・8萬・9萬・1筒・4筒・5筒・6筒・7筒・8筒・9筒・1索・2索・3索・4索・5索）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t p sm" title="2筒">2<i>筒</i></span> 2筒</td><td>2向聴</td><td>20種69枚</td></tr><tr><td><span class="t p sm" title="3筒">3<i>筒</i></span> 3筒</td><td>2向聴</td><td>19種63枚</td></tr><tr><td><span class="t p sm" title="7筒">7<i>筒</i></span> 7筒</td><td>2向聴</td><td>18種62枚</td></tr><tr><td><span class="t s sm" title="3索">3<i>索</i></span> 3索</td><td>2向聴</td><td>17種55枚</td></tr><tr><td><span class="t m sm" title="4萬">四<i>萬</i></span> 4萬</td><td>2向聴</td><td>15種50枚</td></tr><tr><td><span class="t m sm" title="7萬">七<i>萬</i></span> 7萬</td><td>2向聴</td><td>15種50枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <div class="q" id="q28">
+    <h3>第28問（上級）</h3>
+    <div class="hand"><span class="t m " title="3萬">三<i>萬</i></span><span class="t m " title="3萬">三<i>萬</i></span><span class="t m " title="9萬">九<i>萬</i></span><span class="t m " title="9萬">九<i>萬</i></span><span class="t p " title="5筒">5<i>筒</i></span><span class="t p " title="6筒">6<i>筒</i></span><span class="t p " title="7筒">7<i>筒</i></span><span class="t p " title="7筒">7<i>筒</i></span><span class="t s " title="3索">3<i>索</i></span><span class="t s " title="4索">4<i>索</i></span><span class="t s " title="5索">5<i>索</i></span><span class="t s " title="7索">7<i>索</i></span><span class="t z  " title="東">東</span><span class="gap"></span><span class="t m draw" title="4萬">四<i>萬</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：東切り</b>。切ると2向聴で、受け入れは19種65枚（1萬・2萬・3萬・4萬・5萬・6萬・9萬・4筒・5筒・6筒・7筒・8筒・9筒・2索・5索・6索・7索・8索・9索）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t z  sm" title="東">東</span> 東</td><td>2向聴</td><td>19種65枚</td></tr><tr><td><span class="t m sm" title="3萬">三<i>萬</i></span> 3萬</td><td>2向聴</td><td>16種55枚</td></tr><tr><td><span class="t m sm" title="4萬">四<i>萬</i></span> 4萬</td><td>2向聴</td><td>15種49枚</td></tr><tr><td><span class="t p sm" title="7筒">7<i>筒</i></span> 7筒</td><td>2向聴</td><td>14種48枚</td></tr><tr><td><span class="t s sm" title="7索">7<i>索</i></span> 7索</td><td>2向聴</td><td>14種46枚</td></tr><tr><td><span class="t p sm" title="6筒">6<i>筒</i></span> 6筒</td><td>3向聴</td><td>23種78枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <div class="q" id="q29">
+    <h3>第29問（上級）</h3>
+    <div class="hand"><span class="t m " title="1萬">一<i>萬</i></span><span class="t m " title="2萬">二<i>萬</i></span><span class="t m " title="3萬">三<i>萬</i></span><span class="t m " title="3萬">三<i>萬</i></span><span class="t m " title="4萬">四<i>萬</i></span><span class="t m " title="4萬">四<i>萬</i></span><span class="t m " title="4萬">四<i>萬</i></span><span class="t p " title="3筒">3<i>筒</i></span><span class="t p " title="4筒">4<i>筒</i></span><span class="t p " title="4筒">4<i>筒</i></span><span class="t p " title="6筒">6<i>筒</i></span><span class="t s " title="2索">2<i>索</i></span><span class="t z r " title="中">中</span><span class="gap"></span><span class="t p draw" title="4筒">4<i>筒</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：中切り</b>。切ると2向聴で、受け入れは17種55枚（1萬・2萬・3萬・4萬・5萬・1筒・2筒・3筒・4筒・5筒・6筒・7筒・8筒・1索・2索・3索・4索）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t z r sm" title="中">中</span> 中</td><td>2向聴</td><td>17種55枚</td></tr><tr><td><span class="t p sm" title="3筒">3<i>筒</i></span> 3筒</td><td>2向聴</td><td>15種47枚</td></tr><tr><td><span class="t p sm" title="6筒">6<i>筒</i></span> 6筒</td><td>2向聴</td><td>15種47枚</td></tr><tr><td><span class="t m sm" title="3萬">三<i>萬</i></span> 3萬</td><td>2向聴</td><td>13種45枚</td></tr><tr><td><span class="t s sm" title="2索">2<i>索</i></span> 2索</td><td>2向聴</td><td>14種43枚</td></tr><tr><td><span class="t p sm" title="4筒">4<i>筒</i></span> 4筒</td><td>2向聴</td><td>7種23枚</td></tr></tbody></table>
+    </details>
+  </div>
+  <div class="q" id="q30">
+    <h3>第30問（上級）</h3>
+    <div class="hand"><span class="t m " title="2萬">二<i>萬</i></span><span class="t m " title="2萬">二<i>萬</i></span><span class="t m " title="3萬">三<i>萬</i></span><span class="t m " title="6萬">六<i>萬</i></span><span class="t m " title="7萬">七<i>萬</i></span><span class="t m " title="8萬">八<i>萬</i></span><span class="t m " title="9萬">九<i>萬</i></span><span class="t p " title="1筒">1<i>筒</i></span><span class="t p " title="2筒">2<i>筒</i></span><span class="t p " title="3筒">3<i>筒</i></span><span class="t p " title="4筒">4<i>筒</i></span><span class="t p " title="6筒">6<i>筒</i></span><span class="t s " title="8索">8<i>索</i></span><span class="gap"></span><span class="t p draw" title="6筒">6<i>筒</i></span></div>
+    <p class="muted">右端がツモってきた牌。何を切る？</p>
+    <details><summary>答えと解説を見る</summary>
+      <p><b>正解：3萬切り</b>。切ると2向聴で、受け入れは19種63枚（2萬・4萬・5萬・6萬・7萬・8萬・9萬・1筒・2筒・3筒・4筒・5筒・6筒・7筒・8筒・6索・7索・8索・9索）。</p>
+      <table><thead><tr><th>切る牌</th><th>切った後</th><th>受け入れ</th></tr></thead><tbody><tr class=hl><td><span class="t m sm" title="3萬">三<i>萬</i></span> 3萬</td><td>2向聴</td><td>19種63枚</td></tr><tr><td><span class="t m sm" title="6萬">六<i>萬</i></span> 6萬</td><td>2向聴</td><td>17種58枚</td></tr><tr><td><span class="t m sm" title="9萬">九<i>萬</i></span> 9萬</td><td>2向聴</td><td>17種58枚</td></tr><tr><td><span class="t m sm" title="2萬">二<i>萬</i></span> 2萬</td><td>2向聴</td><td>17種57枚</td></tr><tr><td><span class="t s sm" title="8索">8<i>索</i></span> 8索</td><td>2向聴</td><td>17種55枚</td></tr><tr><td><span class="t p sm" title="6筒">6<i>筒</i></span> 6筒</td><td>2向聴</td><td>14種48枚</td></tr></tbody></table>
+    </details>
+  </div>
+
+  <a class="app" href="https://apps.apple.com/jp/app/id6822556543"><strong>続きはアプリで。毎日の「今日の5問」も →</strong><br>自動で作られる何切る問題を何問でも。打牌ごとの向聴数と受け入れ枚数で、牌効率が身につきます。</a>
+  <p>点数の数え方は<a href="../mahjong-tensu/">点数早見表</a>・<a href="../mahjong-fu/">符計算</a>、役は<a href="../mahjong-yaku/">役一覧</a>にまとめています。</p>
+
+
+  <h2>よくある質問</h2>
+  <h3>向聴数（シャンテン数）とは？</h3>
+  <p>テンパイまであと何枚有効な牌が必要かを表す数です。テンパイが0、あと1枚でテンパイなら1向聴です。</p>
+  <h3>受け入れ枚数とは？</h3>
+  <p>引くと向聴数が進む牌の残り枚数です。自分の手牌で使っている枚数を4枚から引いて数えます。</p>
+  <h3>正解が2つある問題は？</h3>
+  <p>向聴数と受け入れ枚数が同じになる打牌が複数ある場合は、どれも正解としています。</p>
+</main>
+<footer>
+  <a href="../guide/">早見表・ガイドの一覧</a> ・ <a href="../apps/">アプリの一覧</a> ・ お問い合わせ: tanacount.support@gmail.com
+</footer>
+
+</body>
+</html>
