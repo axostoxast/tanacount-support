@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>麻雀 点数早見表｜子・親のロンとツモ、符と翻ですぐわかる</title>
-<meta name="description" content="麻雀の点数早見表。20符〜110符・1翻〜4翻の子と親のロン・ツモの点数と、満貫・跳満・倍満・三倍満・役満の点数を一覧にしました。点数計算の練習や、点棒なしで遊ぶときのアプリも紹介。">
+<title>麻雀 点数計算機と点数早見表｜符と翻・本場込みですぐわかる</title>
+<meta name="description" content="麻雀の点数計算機と点数早見表。翻・符・親子・ロンツモ・本場・供託を選ぶと受け取る点数を計算します。20符〜110符・1翻〜4翻の子と親のロン・ツモの点数と、満貫・跳満・倍満・三倍満・役満の点数を一覧にしました。点数計算の練習や、点棒なしで遊ぶときのアプリも紹介。">
 <link rel="canonical" href="https://axostoxast.github.io/tanacount-support/mahjong-tensu/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="麻雀 点数早見表｜子・親のロンとツモ">
+<meta property="og:title" content="麻雀 点数計算機・点数早見表">
 <meta property="og:description" content="符と翻から子・親のロン・ツモの点数がすぐわかる一覧表。満貫以上も。">
 <meta property="og:url" content="https://axostoxast.github.io/tanacount-support/mahjong-tensu/">
 <meta property="og:locale" content="ja_JP">
@@ -33,9 +33,22 @@
 </head>
 <body>
 <main>
-  <h1>麻雀 点数早見表</h1>
-  <p>符と翻から、和了したときの点数を探せる一覧表です。各マスの上がロン、下がツモの支払い（子のツモは「子の支払い・親の支払い」）です。本場・供託は含みません。</p>
+  <h1>麻雀 点数計算機・点数早見表</h1>
+  <p>符と翻から和了の点数を出す計算機と、一覧表です。計算機は本場・供託も入れて、実際に受け取る点数まで計算します。一覧表は各マスの上がロン、下がツモの支払い（子のツモは「子の支払い・親の支払い」）です。本場・供託は含みません。</p>
   <p class="muted">「—」は存在しない組み合わせです（20符のロン、25符（七対子）の1翻など）。色付きのマスは満貫です。切り上げ満貫は採用していません。</p>
+
+  <h2 id="keisan">点数計算機</h2>
+  <div class="calc" id="calc">
+    <div class="row"><label>和了した人</label><select id="oya"><option value="0">子</option><option value="1">親</option></select>
+      <label style="margin-left:8px">和了</label><select id="win"><option value="ron">ロン</option><option value="tsumo">ツモ</option></select></div>
+    <div class="row"><label>翻</label><select id="han"><option>1</option><option>2</option><option selected>3</option><option>4</option><option value="5">5（満貫）</option><option value="6">6〜7（跳満）</option><option value="8">8〜10（倍満）</option><option value="11">11〜12（三倍満）</option><option value="13">13〜（役満）</option></select>
+      <label style="margin-left:8px">符</label><select id="fu"><option>20</option><option>25</option><option selected>30</option><option>40</option><option>50</option><option>60</option><option>70</option><option>80</option><option>90</option><option>100</option><option>110</option></select></div>
+    <div class="row"><label>本場</label><input id="honba" type="number" min="0" max="20" value="0" style="width:4.5em">
+      <label style="margin-left:8px">供託</label><input id="kyotaku" type="number" min="0" max="20" value="0" style="width:4.5em"> 本
+      <label style="margin-left:8px"><input id="kiriage" type="checkbox"> 切り上げ満貫</label></div>
+    <div class="out" id="out" aria-live="polite"></div>
+  </div>
+  <p class="muted">符の数え方がわからないときは<a href="../mahjong-fu/">符計算ツール</a>で手の形から計算できます。</p>
 
   <h2>子の点数</h2>
   <table><thead><tr><th>符＼翻</th><th>1翻</th><th>2翻</th><th>3翻</th><th>4翻</th></tr></thead><tbody><tr><th>20符</th><td><b>—</b><br><span class="t">—</span></td><td><b>—</b><br><span class="t">400・700</span></td><td><b>—</b><br><span class="t">700・1300</span></td><td><b>—</b><br><span class="t">1300・2600</span></td></tr><tr><th>25符</th><td><b>—</b><br><span class="t">—</span></td><td><b>1,600</b><br><span class="t">—</span></td><td><b>3,200</b><br><span class="t">800・1600</span></td><td><b>6,400</b><br><span class="t">1600・3200</span></td></tr><tr><th>30符</th><td><b>1,000</b><br><span class="t">300・500</span></td><td><b>2,000</b><br><span class="t">500・1000</span></td><td><b>3,900</b><br><span class="t">1000・2000</span></td><td><b>7,700</b><br><span class="t">2000・3900</span></td></tr><tr><th>40符</th><td><b>1,300</b><br><span class="t">400・700</span></td><td><b>2,600</b><br><span class="t">700・1300</span></td><td><b>5,200</b><br><span class="t">1300・2600</span></td><td class="mg"><b>8,000</b><br><span class="t">2000・4000</span></td></tr><tr><th>50符</th><td><b>1,600</b><br><span class="t">400・800</span></td><td><b>3,200</b><br><span class="t">800・1600</span></td><td><b>6,400</b><br><span class="t">1600・3200</span></td><td class="mg"><b>8,000</b><br><span class="t">2000・4000</span></td></tr><tr><th>60符</th><td><b>2,000</b><br><span class="t">500・1000</span></td><td><b>3,900</b><br><span class="t">1000・2000</span></td><td><b>7,700</b><br><span class="t">2000・3900</span></td><td class="mg"><b>8,000</b><br><span class="t">2000・4000</span></td></tr><tr><th>70符</th><td><b>2,300</b><br><span class="t">600・1200</span></td><td><b>4,500</b><br><span class="t">1200・2300</span></td><td class="mg"><b>8,000</b><br><span class="t">2000・4000</span></td><td class="mg"><b>8,000</b><br><span class="t">2000・4000</span></td></tr><tr><th>80符</th><td><b>2,600</b><br><span class="t">700・1300</span></td><td><b>5,200</b><br><span class="t">1300・2600</span></td><td class="mg"><b>8,000</b><br><span class="t">2000・4000</span></td><td class="mg"><b>8,000</b><br><span class="t">2000・4000</span></td></tr><tr><th>90符</th><td><b>2,900</b><br><span class="t">800・1500</span></td><td><b>5,800</b><br><span class="t">1500・2900</span></td><td class="mg"><b>8,000</b><br><span class="t">2000・4000</span></td><td class="mg"><b>8,000</b><br><span class="t">2000・4000</span></td></tr><tr><th>100符</th><td><b>3,200</b><br><span class="t">800・1600</span></td><td><b>6,400</b><br><span class="t">1600・3200</span></td><td class="mg"><b>8,000</b><br><span class="t">2000・4000</span></td><td class="mg"><b>8,000</b><br><span class="t">2000・4000</span></td></tr><tr><th>110符</th><td><b>3,600</b><br><span class="t">900・1800</span></td><td><b>7,100</b><br><span class="t">1800・3600</span></td><td class="mg"><b>8,000</b><br><span class="t">2000・4000</span></td><td class="mg"><b>8,000</b><br><span class="t">2000・4000</span></td></tr></tbody></table>
@@ -56,5 +69,20 @@
   <p>基本点 ＝ 符 × 2の（翻＋2）乗。子のロンは基本点×4、親のロンは基本点×6で、100点未満は切り上げます。子のツモは子が基本点×1、親が基本点×2、親のツモは全員が基本点×2を払います。基本点が2,000点を超えると満貫です。</p>
   <p class="muted"><a href="../guide/">早見表・ガイドの一覧</a></p>
 </main>
+<script>
+function up(x){return Math.ceil(x/100)*100;}
+function calc(){var oya=document.getElementById("oya").value==="1",ron=document.getElementById("win").value==="ron",han=+document.getElementById("han").value,fu=+document.getElementById("fu").value,
+ hb=Math.max(0,+document.getElementById("honba").value||0),kt=Math.max(0,+document.getElementById("kyotaku").value||0),kiri=document.getElementById("kiriage").checked,o=document.getElementById("out"),fuSel=document.getElementById("fu");
+ fuSel.disabled=han>=5;
+ if(han<5){if(fu===20&&ron){o.innerHTML="20符のロンはありません（平和ツモのみ20符）。";return;}if(fu===25&&han===1){o.innerHTML="25符（七対子）は2翻以上です。";return;}}
+ var base,name="";if(han>=13){base=8000;name="役満";}else if(han>=11){base=6000;name="三倍満";}else if(han>=8){base=4000;name="倍満";}else if(han>=6){base=3000;name="跳満";}else if(han>=5){base=2000;name="満貫";}
+ else{var raw=fu*Math.pow(2,han+2);base=raw;if(raw>=2000){base=2000;name="満貫";}else if(kiri&&raw>=1920){base=2000;name="満貫（切り上げ）";}}
+ var t,get;if(ron){var p=up(base*(oya?6:4));get=p+hb*300;t="<b style='font-size:1.5em'>"+p.toLocaleString()+"点</b>";if(hb)t+="（本場込みで"+get.toLocaleString()+"点）";t+="<br>放銃した人が支払います。";}
+ else if(oya){var a=up(base*2);get=a*3+hb*300;t="<b style='font-size:1.5em'>"+a.toLocaleString()+"点オール</b>";if(hb)t+="（本場込みで"+(a+hb*100).toLocaleString()+"点オール）";t+="<br>子3人がそれぞれ支払います。合計"+get.toLocaleString()+"点。";}
+ else{var c=up(base),d=up(base*2);get=c*2+d+hb*300;t="<b style='font-size:1.5em'>"+c.toLocaleString()+"・"+d.toLocaleString()+"点</b>";if(hb)t+="（本場込みで"+(c+hb*100).toLocaleString()+"・"+(d+hb*100).toLocaleString()+"点）";t+="<br>子が"+c.toLocaleString()+"点、親が"+d.toLocaleString()+"点を支払います。合計"+get.toLocaleString()+"点。";}
+ if(name)t=name+"　"+t;if(kt)t+="<br>供託"+kt+"本（"+(kt*1000).toLocaleString()+"点）もあわせて受け取り、合計"+(get+kt*1000).toLocaleString()+"点です。";
+ o.innerHTML=t;}
+document.querySelectorAll("#calc select,#calc input").forEach(function(e){e.addEventListener("input",calc);e.addEventListener("change",calc);});calc();
+</script>
 </body>
 </html>
