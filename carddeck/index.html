@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>デッキ戦績ノート｜カードゲームの対戦記録・勝率・相性表アプリ</title>
+<meta name="description" content="トレーディングカードゲームの対戦を記録して、勝率・先攻後攻の勝率・相手デッキ別の相性表を自動で集計するiPhoneアプリ。デッキの写真とデッキコードも保存できます。無料。">
+<link rel="canonical" href="https://axostoxast.github.io/tanacount-support/carddeck/">
+<meta name="apple-itunes-app" content="app-id=1617602275">
+<meta property="og:type" content="website">
+<meta property="og:title" content="デッキ戦績ノート｜カードゲームの勝率と相性表">
+<meta property="og:description" content="対戦が終わったら、相手と勝ち負けをタップするだけ。勝率・先攻後攻・相性表を自動で集計。">
+<meta property="og:url" content="https://axostoxast.github.io/tanacount-support/carddeck/">
+<meta property="og:image" content="https://axostoxast.github.io/tanacount-support/img/carddeck_1.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "デッキ戦績ノート",
+      "operatingSystem": "iOS 17以降",
+      "applicationCategory": "GameApplication",
+      "description": "カードゲームの対戦記録アプリ。勝率、先攻・後攻の勝率、相手デッキ別の相性表を自動で集計。デッキの写真とデッキコードも保存できます。",
+      "image": "https://axostoxast.github.io/tanacount-support/img/carddeck_1.jpg",
+      "url": "https://apps.apple.com/jp/app/id1617602275",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "どのカードゲームで使えますか", "acceptedAnswer": {"@type": "Answer", "text": "特定のゲームに限らず、1対1で勝ち負けがつくカードゲームなら使えます。デッキごとにゲーム名を入れておくと、ゲームごとに戦績を分けて見られます。"}},
+        {"@type": "Question", "name": "前のバージョンのデータは引き継がれますか", "acceptedAnswer": {"@type": "Answer", "text": "はい。アップデート後の初回起動時に、登録していたデッキと対戦成績を自動で取り込みます。"}},
+        {"@type": "Question", "name": "記録をExcelで見られますか", "acceptedAnswer": {"@type": "Answer", "text": "「設定」→「戦績をCSVで書き出す」から、ExcelやGoogleスプレッドシートで開けるCSVファイルを書き出せます。"}}
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  :root { color-scheme: light dark; --fg: #1d1d1f; --bg: #fff; --muted: #6e6e73; --card: #f5f5f7; --accent: #5b45d9; }
+  @media (prefers-color-scheme: dark) { :root { --fg: #f5f5f7; --bg: #000; --muted: #a1a1a6; --card: #1c1c1e; --accent: #9d8cff; } }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.8 -apple-system, "Hiragino Sans", sans-serif; }
+  main { max-width: 680px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 1.6rem; line-height: 1.4; margin-bottom: .3em; }
+  h2 { font-size: 1.15rem; margin-top: 2em; }
+  h3 { font-size: 1rem; margin-bottom: .2em; }
+  h3 + p { margin-top: 0; }
+  .lead { font-size: 1.05rem; }
+  .muted { color: var(--muted); font-size: .9rem; }
+  .cta { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; padding: 10px 22px; border-radius: 999px; font-weight: 600; }
+  .shots { display: flex; gap: 12px; }
+  .shots img { width: 46%; max-width: 240px; height: auto; border-radius: 14px; background: var(--card); }
+  ol li, ul li { margin-bottom: .3em; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>デッキ戦績ノート</h1>
+  <p class="lead">カードゲームの対戦を記録して、勝率と相性を自動で集計するiPhoneアプリです。対戦が終わったら、相手のデッキと勝ち負けをタップするだけ。</p>
+  <p><a class="cta" href="https://apps.apple.com/jp/app/id1617602275">App Storeで見る（無料）</a></p>
+  <p class="muted">iPhone・iPad（iOS 17以降）・無料（広告あり）</p>
+
+  <div class="shots">
+    <img src="../img/carddeck_1.jpg" width="390" height="848" alt="記録の画面。使用デッキ、相手のデッキ、先攻・後攻を選んで、勝ち・負けのボタンを押す">
+    <img src="../img/carddeck_2.jpg" width="390" height="848" alt="戦績の画面。勝率、先攻・後攻別の勝率、相手デッキ別の相性表">
+  </div>
+
+  <h2>できること</h2>
+  <ul>
+    <li><strong>すばやく記録</strong>：相手のデッキはよく当たる順に候補が出るので、タップで選べます。スコア・大会名・メモも残せます。</li>
+    <li><strong>勝率を自動で集計</strong>：期間（7日・30日・90日・すべて）、ゲーム、使用デッキで絞り込めます。</li>
+    <li><strong>先攻・後攻の勝率</strong>：先攻と後攻でどれだけ勝率が変わるかがわかります。</li>
+    <li><strong>相性表</strong>：相手デッキ別の勝敗と勝率を一覧に。苦手な相手がひと目でわかります。</li>
+    <li><strong>デッキの管理</strong>：デッキの写真、デッキコード（コピーできます）、メモを保存。使わなくなったデッキは別にまとめられます。</li>
+    <li><strong>シェアとCSV</strong>：今日の戦績を文章でシェア。全記録をCSVで書き出してExcelで分析できます。</li>
+  </ul>
+
+  <h2>こんな方に</h2>
+  <ul>
+    <li>店舗大会やフリー対戦の結果をメモ帳に書いている方</li>
+    <li>デッキの調整のために、相手ごとの勝率を知りたい方</li>
+    <li>いくつかのカードゲームを並行して遊んでいる方</li>
+  </ul>
+
+  <h2>よくある質問</h2>
+  <h3>どのカードゲームで使えますか</h3>
+  <p>特定のゲームに限らず、1対1で勝ち負けがつくカードゲームなら使えます。デッキごとにゲーム名を入れておくと、ゲームごとに戦績を分けて見られます。</p>
+
+  <h3>前のバージョンのデータは引き継がれますか</h3>
+  <p>はい。アップデート後の初回起動時に、登録していたデッキと対戦成績を自動で取り込みます。前のバージョンでは対戦の日付が年月だけだったため、その月の1日の対戦として取り込みます。</p>
+
+  <h3>記録をExcelで見られますか</h3>
+  <p>「設定」→「戦績をCSVで書き出す」から、ExcelやGoogleスプレッドシートで開けるCSVファイルを書き出せます。</p>
+
+  <h3>機種変更でデータは移りますか</h3>
+  <p>iPhoneのバックアップから復元すれば移ります。データはこのアプリの中だけに保存され、外部のサーバーには送りません。</p>
+
+  <h2>お問い合わせ</h2>
+  <p>メール: <a href="mailto:tanacount.support@gmail.com">tanacount.support@gmail.com</a></p>
+  <p class="muted">返信までお時間をいただく場合があります。</p>
+
+  <h2>ほかのアプリ</h2>
+  <p><a href="../apps/">アプリ一覧</a>：麻雀の点数計算・成績表、証明写真・履歴書、補助金、棚卸のアプリ</p>
+
+  <p><a href="privacy.html">プライバシーポリシー</a></p>
+</main>
+</body>
+</html>
