@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>オポ率計算機｜スイスドローの対戦相手の勝率（OMW%）を計算</title>
+<meta name="description" content="カードゲームの大会で使うオポ率（対戦相手の勝率の平均、OMW%）を計算するツール。相手の最終成績を入れると、最低勝率（25%・33%）を考えたオポ率を出します。計算のしかたと例の解説つき。">
+<link rel="canonical" href="https://axostoxast.github.io/tanacount-support/tcg-omw/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="オポ率計算機｜スイスドローの対戦相手の勝率（OMW%）を計算">
+<meta property="og:description" content="カードゲームの大会で使うオポ率（対戦相手の勝率の平均、OMW%）を計算するツール。相手の最終成績を入れると、最低勝率（25%・33%）を考えたオポ率を出します。計算のしかたと例の解説つき。">
+<meta property="og:url" content="https://axostoxast.github.io/tanacount-support/tcg-omw/">
+<meta property="og:locale" content="ja_JP">
+<meta name="apple-itunes-app" content="app-id=1617602275">
+<link rel="stylesheet" href="../assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "オポ率とは？", "acceptedAnswer": {"@type": "Answer", "text": "スイスドローで、自分が当たった相手の勝率の平均です。同じ勝ち点の人の順位を決めるときに使い、オポ率が高い（強い相手と当たった）人が上の順位になります。OMW%（Opponents' Match Win percentage）とも呼びます。"}}, {"@type": "Question", "name": "最低勝率（25%・33%）とは？", "acceptedAnswer": {"@type": "Answer", "text": "勝率の低い相手と当たった人が不利になりすぎないように、相手の勝率に下限を設けるものです。下限より低い勝率は、下限の値として計算します。値はゲームや大会のルールで決まります。"}}, {"@type": "Question", "name": "オポオポ率とは？", "acceptedAnswer": {"@type": "Answer", "text": "対戦相手それぞれのオポ率の平均です。勝ち点とオポ率が同じ人の順位を決めるときに使います。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "早見表・ガイド", "item": "https://axostoxast.github.io/tanacount-support/guide/"}, {"@type": "ListItem", "position": 2, "name": "オポ率計算機（OMW%）", "item": "https://axostoxast.github.io/tanacount-support/tcg-omw/"}]}</script>
+
+</head>
+<body>
+<main>
+  <nav class="crumb"><a href="../guide/">早見表・ガイド</a> ＞ オポ率計算機（OMW%）</nav>
+  <h1>オポ率計算機（OMW%）</h1>
+  <p class="lead">スイスドローで同じ勝ち点の人の順位を決める「オポ率」（対戦相手の勝率の平均、OMW%）を計算します。当たった相手の最終成績（勝ち・負け・引き分け）を入れてください。</p>
+
+  <div class="calc" id="calc">
+    <div class="row"><label>最低勝率</label><select id="floor"><option value="0.25">25%</option><option value="0.33" selected>33%</option><option value="0">なし</option></select>
+      <span class="muted">（相手の勝率がこれより低いときは、この値として計算）</span></div>
+    <div class="scroll"><table class="center" style="min-width:420px">
+      <thead><tr><th>相手</th><th>勝ち</th><th>負け</th><th>引き分け</th><th>相手の勝率</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table></div>
+    <div class="row"><button type="button" id="add">相手を追加</button> <button type="button" id="del">最後の相手を消す</button></div>
+    <div class="out" id="out" aria-live="polite"></div>
+  </div>
+
+  <a class="app" href="https://apps.apple.com/jp/app/id1617602275"><img src="../assets/icons/carddeck.png" width="60" height="60" alt="デッキ戦績ノートのアイコン" loading="lazy"><span><strong>対戦の記録から、相手デッキごとの勝率も自動で集計 →</strong><br>カードゲームの対戦を、相手と勝ち負けをタップするだけで記録。勝率・先攻後攻・相手デッキ別の相性表を自動で集計します。</span></a>
+
+  <h2>オポ率の計算のしかた</h2>
+  <ol>
+    <li>当たった相手それぞれの勝率を出す（勝ち点 ÷（試合数×3）。勝ち3点・引き分け1点）</li>
+    <li>勝率が最低勝率（例：33%）より低い相手は、最低勝率として扱う</li>
+    <li>全員の勝率を平均したものがオポ率</li>
+  </ol>
+  <p>例：相手が4勝1敗（80%）、3勝2敗（60%）、1勝4敗（20%→33%）なら、オポ率は（80＋60＋33）÷3＝<strong>57.7%</strong>です。</p>
+  <p>最低勝率はゲームや大会によって25%や33%など違います。不戦勝（BYE）の扱いも大会ごとに決まっているので、要項を確認してください。</p>
+
+  <h2>オポ率が高くなるのはどんなとき？</h2>
+  <ul>
+    <li>強い相手（最終的に勝ち数が多い人）と多く当たったとき</li>
+    <li>1回戦で負けても、その相手が勝ち進むとオポ率は上がる</li>
+    <li>途中で棄権した相手は、残りの試合が負けにならない分、勝率が下がりにくいことがある（大会のルールによる）</li>
+  </ul>
+
+
+  <h2>よくある質問</h2>
+  <h3>オポ率とは？</h3>
+  <p>スイスドローで、自分が当たった相手の勝率の平均です。同じ勝ち点の人の順位を決めるときに使い、オポ率が高い（強い相手と当たった）人が上の順位になります。OMW%（Opponents' Match Win percentage）とも呼びます。</p>
+  <h3>最低勝率（25%・33%）とは？</h3>
+  <p>勝率の低い相手と当たった人が不利になりすぎないように、相手の勝率に下限を設けるものです。下限より低い勝率は、下限の値として計算します。値はゲームや大会のルールで決まります。</p>
+  <h3>オポオポ率とは？</h3>
+  <p>対戦相手それぞれのオポ率の平均です。勝ち点とオポ率が同じ人の順位を決めるときに使います。</p>
+</main>
+<footer>
+  <a href="../guide/">早見表・ガイドの一覧</a> ・ <a href="../apps/">アプリの一覧</a> ・ お問い合わせ: tanacount.support@gmail.com
+</footer>
+<script>
+var D=[[4,1,0],[3,2,0],[1,4,0],[2,3,0],[3,2,0]];
+function row(i,v){return '<tr><td>'+(i+1)+'人目</td><td><input type="number" min="0" value="'+v[0]+'" style="width:4em"></td><td><input type="number" min="0" value="'+v[1]+'" style="width:4em"></td><td><input type="number" min="0" value="'+v[2]+'" style="width:4em"></td><td class="wr"></td></tr>';}
+var t=document.getElementById("rows");D.forEach(function(v,i){t.insertAdjacentHTML("beforeend",row(i,v));});
+function calc(){var f=+document.getElementById("floor").value,sum=0,n=0;
+ t.querySelectorAll("tr").forEach(function(tr){var x=[].map.call(tr.querySelectorAll("input"),function(e){return +e.value||0;}),g=x[0]+x[1]+x[2],c=tr.querySelector(".wr");
+  if(g===0){c.textContent="-";return;}var w=(x[0]*3+x[2])/(g*3),u=Math.max(w,f);sum+=u;n++;
+  c.textContent=(w*100).toFixed(1)+"%"+(u>w?"→"+(u*100).toFixed(0)+"%":"");});
+ document.getElementById("out").innerHTML=n?'オポ率は <strong>'+(sum/n*100).toFixed(2)+'%</strong>（'+n+'人の平均）':"";}
+document.getElementById("add").addEventListener("click",function(){t.insertAdjacentHTML("beforeend",row(t.children.length,[0,0,0]));bind();calc();});
+document.getElementById("del").addEventListener("click",function(){if(t.lastElementChild)t.removeChild(t.lastElementChild);calc();});
+function bind(){document.querySelectorAll("#calc input,#calc select").forEach(function(e){e.oninput=calc;});}
+bind();calc();
+</script>
+</body>
+</html>

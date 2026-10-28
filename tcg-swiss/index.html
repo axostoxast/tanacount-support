@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>スイスドロー計算｜参加人数から回戦数と予選通過の勝ち数の目安</title>
+<meta name="description" content="カードゲームの大会のスイスドローで、参加人数から何回戦になるか、上位何人に残るには何勝何敗が必要かを計算するツール。参加人数と回戦数の早見表、スイスドローのしくみの解説つき。">
+<link rel="canonical" href="https://axostoxast.github.io/tanacount-support/tcg-swiss/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="スイスドロー計算｜参加人数から回戦数と予選通過の勝ち数の目安">
+<meta property="og:description" content="カードゲームの大会のスイスドローで、参加人数から何回戦になるか、上位何人に残るには何勝何敗が必要かを計算するツール。参加人数と回戦数の早見表、スイスドローのしくみの解説つき。">
+<meta property="og:url" content="https://axostoxast.github.io/tanacount-support/tcg-swiss/">
+<meta property="og:locale" content="ja_JP">
+<meta name="apple-itunes-app" content="app-id=1617602275">
+<link rel="stylesheet" href="../assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "スイスドローは何回戦ですか？", "acceptedAnswer": {"@type": "Answer", "text": "全勝者が1人になる回戦数が基本で、参加人数を2倍するごとに1回戦増えます。8人なら3回戦、16人なら4回戦、32人なら5回戦、64人なら6回戦です。"}}, {"@type": "Question", "name": "何勝すれば予選を通過できますか？", "acceptedAnswer": {"@type": "Answer", "text": "32人・5回戦で上位8人なら、全勝（約1人）と4勝1敗（約5人）は通過、3勝2敗（約10人）のうち約2人がオポ率で通過するのが目安です。このページの計算ツールで、人数と回戦数を入れると目安がわかります。"}}, {"@type": "Question", "name": "同じ勝ち数のときの順位はどう決まりますか？", "acceptedAnswer": {"@type": "Answer", "text": "多くの大会では、対戦相手の勝率の平均（オポ率、OMW%）で決めます。さらに同じなら、相手の相手の勝率（オポオポ率）などを使います。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "早見表・ガイド", "item": "https://axostoxast.github.io/tanacount-support/guide/"}, {"@type": "ListItem", "position": 2, "name": "スイスドロー計算（回戦数・予選通過ライン）", "item": "https://axostoxast.github.io/tanacount-support/tcg-swiss/"}]}</script>
+
+</head>
+<body>
+<main>
+  <nav class="crumb"><a href="../guide/">早見表・ガイド</a> ＞ スイスドロー計算（回戦数・予選通過ライン）</nav>
+  <h1>スイスドロー計算（回戦数・予選通過ライン）</h1>
+  <p class="lead">スイスドロー（スイス式）の大会で、参加人数から何回戦になるか、何勝すれば上位に残れそうかを計算します。参加人数と回戦数、決勝トーナメントに進む人数を入れてください。</p>
+
+  <div class="calc" id="calc">
+    <div class="row"><label>参加人数</label><input type="number" id="n" value="32" min="2" max="2000" style="width:6em">人</div>
+    <div class="row"><label>回戦数</label><input type="number" id="r" value="5" min="1" max="15" style="width:5em">回戦 <button type="button" id="auto">人数から自動</button></div>
+    <div class="row"><label>上位</label><input type="number" id="cut" value="8" min="1" style="width:5em">人が予選通過</div>
+    <div class="out" id="out" aria-live="polite"></div>
+    <div class="scroll"><table class="center" style="min-width:360px">
+      <thead><tr><th>成績</th><th>この成績の人数（目安）</th><th>上から数えて</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table></div>
+  </div>
+  <p class="muted">引き分けがなく、全員が最後まで参加した場合の目安です。同じ勝ち数の人が通過ラインにまたがるときは、オポ率などで順位が決まります。</p>
+
+  <a class="app" href="https://apps.apple.com/jp/app/id1617602275"><img src="../assets/icons/carddeck.png" width="60" height="60" alt="デッキ戦績ノートのアイコン" loading="lazy"><span><strong>大会の戦績を記録して、相手ごとの勝率もわかる →</strong><br>カードゲームの対戦を、相手と勝ち負けをタップするだけで記録。勝率・先攻後攻・相手デッキ別の相性表を自動で集計します。</span></a>
+
+  <h2>参加人数と回戦数の目安</h2>
+  <p>全勝者が1人になるように回戦数を決めるのが基本です。参加人数を2倍にするごとに1回戦ずつ増えます（回戦数＝log<sub>2</sub>(人数) の切り上げ）。</p>
+  <div class="scroll"><table class="center" style="min-width:260px"><thead><tr><th>参加人数</th><th>回戦数</th></tr></thead><tbody><tr><td>3〜4人</td><td>2回戦</td></tr><tr><td>5〜8人</td><td>3回戦</td></tr><tr><td>9〜16人</td><td>4回戦</td></tr><tr><td>17〜32人</td><td>5回戦</td></tr><tr><td>33〜64人</td><td>6回戦</td></tr><tr><td>65〜128人</td><td>7回戦</td></tr><tr><td>129〜226人</td><td>8回戦</td></tr><tr><td>227〜409人</td><td>9回戦</td></tr></tbody></table></div>
+  <p>実際の大会では、決勝トーナメントの有無や時間の都合で回戦数が変わることがあります。</p>
+
+  <h2>スイスドローのしくみ</h2>
+  <ol>
+    <li>1回戦は抽選などで組み合わせを決める</li>
+    <li>2回戦からは、同じ勝ち数（勝ち点）の人どうしが当たる。一度当たった相手とは再戦しない</li>
+    <li>人数が奇数のときは1人が不戦勝（BYE）になる</li>
+    <li>全回戦が終わったら、勝ち点の多い順に順位をつける。同じ勝ち点ならオポ率などで決める</li>
+  </ol>
+  <p>勝ち点は「勝ち3点・引き分け1点・負け0点」とするのが一般的です。</p>
+
+
+  <h2>よくある質問</h2>
+  <h3>スイスドローは何回戦ですか？</h3>
+  <p>全勝者が1人になる回戦数が基本で、参加人数を2倍するごとに1回戦増えます。8人なら3回戦、16人なら4回戦、32人なら5回戦、64人なら6回戦です。</p>
+  <h3>何勝すれば予選を通過できますか？</h3>
+  <p>32人・5回戦で上位8人なら、全勝（約1人）と4勝1敗（約5人）は通過、3勝2敗（約10人）のうち約2人がオポ率で通過するのが目安です。このページの計算ツールで、人数と回戦数を入れると目安がわかります。</p>
+  <h3>同じ勝ち数のときの順位はどう決まりますか？</h3>
+  <p>多くの大会では、対戦相手の勝率の平均（オポ率、OMW%）で決めます。さらに同じなら、相手の相手の勝率（オポオポ率）などを使います。</p>
+</main>
+<footer>
+  <a href="../guide/">早見表・ガイドの一覧</a> ・ <a href="../apps/">アプリの一覧</a> ・ お問い合わせ: tanacount.support@gmail.com
+</footer>
+<script>
+function C(n,k){var r=1;for(var i=1;i<=k;i++)r=r*(n-k+i)/i;return r;}
+function calc(){var n=+document.getElementById("n").value||0,r=+document.getElementById("r").value||0,cut=+document.getElementById("cut").value||0,t=document.getElementById("rows"),o=document.getElementById("out");
+ t.innerHTML="";if(n<2||r<1){o.textContent="";return;}
+ var acc=0,line=null,lineCount=0,lineAbove=0;
+ for(var w=r;w>=0;w--){var c=n*C(r,w)/Math.pow(2,r),before=acc;acc+=c;
+  if(line===null&&acc>=cut-1e-9){line=w;lineCount=c;lineAbove=before;}
+  t.insertAdjacentHTML("beforeend","<tr"+(line===w?' style="font-weight:700"':"")+"><td>"+w+"勝"+(r-w)+"敗</td><td>"+(c<10?c.toFixed(1):Math.round(c))+"人</td><td>"+(Math.floor(before+1e-9)+1)+"〜"+Math.round(acc)+"位</td></tr>");}
+ if(cut>=n){o.textContent="全員が予選通過です。";return;}
+ var safe=line;if(lineAbove+lineCount>cut+1e-9&&line!==null){safe=line+1;}
+ o.innerHTML="上位"+cut+"人に残るには、<strong>"+line+"勝"+(r-line)+"敗</strong>がボーダーの目安です（この成績の約"+lineCount.toFixed(1)+"人のうち、約"+Math.max(0,cut-lineAbove).toFixed(1)+"人が通過）。"+(safe<=r&&safe!==line?" "+safe+"勝"+(r-safe)+"敗ならほぼ確実に通過できます。":"");}
+document.getElementById("auto").addEventListener("click",function(){var n=+document.getElementById("n").value||2;document.getElementById("r").value=Math.max(1,Math.ceil(Math.log2(n)));calc();});
+document.querySelectorAll("#calc input").forEach(function(e){e.addEventListener("input",calc);});calc();
+</script>
+</body>
+</html>
