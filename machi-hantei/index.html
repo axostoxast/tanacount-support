@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>麻雀 待ち判定ツール｜手牌から待ち牌と残り枚数がわかる・待ちの種類と多面待ち</title>
+<meta name="description" content="13枚の手牌を選ぶと、和了れる牌（待ち）と残り枚数を表示する無料の待ち判定ツール。七対子・国士無双にも対応。両面・嵌張・辺張・シャンポン・単騎・ノベタン・三面張など待ちの種類と、清一色の多面待ちの例も。">
+<link rel="canonical" href="https://axostoxast.github.io/tanacount-support/machi-hantei/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="麻雀 待ち判定ツール｜手牌から待ち牌と残り枚数がわかる・待ちの種類と多面待ち">
+<meta property="og:description" content="13枚の手牌を選ぶと、和了れる牌（待ち）と残り枚数を表示する無料の待ち判定ツール。七対子・国士無双にも対応。両面・嵌張・辺張・シャンポン・単騎・ノベタン・三面張など待ちの種類と、清一色の多面待ちの例も。">
+<meta property="og:url" content="https://axostoxast.github.io/tanacount-support/machi-hantei/">
+<meta property="og:locale" content="ja_JP">
+<meta name="apple-itunes-app" content="app-id=6822353532">
+<link rel="stylesheet" href="../assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "麻雀の待ちはどうやって調べる？", "acceptedAnswer": {"@type": "Answer", "text": "13枚の手牌に34種類の牌を1枚ずつ足してみて、4面子1雀頭・七対子・国士無双のどれかになる牌が待ちです。このページのツールに手牌を入れると自動で調べられます。"}}, {"@type": "Question", "name": "いちばん和了りやすい待ちは？", "acceptedAnswer": {"@type": "Answer", "text": "一般的には両面待ち（2種8枚）や三面張です。ただし、残り枚数や、相手が切りやすい牌かどうかでも変わります。"}}, {"@type": "Question", "name": "フリテンとは？", "acceptedAnswer": {"@type": "Answer", "text": "自分の待ち牌のどれかを自分で捨てているとき、ロン和了ができない状態です。多面待ちでは待ちを見落としてフリテンになりやすいので注意しましょう。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "早見表・ガイド", "item": "https://axostoxast.github.io/tanacount-support/guide/"}, {"@type": "ListItem", "position": 2, "name": "麻雀 待ち判定ツール", "item": "https://axostoxast.github.io/tanacount-support/machi-hantei/"}]}</script>
+<style>
+.hand { display: flex; flex-wrap: wrap; gap: 2px; align-items: flex-end; margin: 6px 0; }
+.t { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; width: 24px; height: 34px; border: 1px solid #c9c9ce; border-radius: 4px; background: #fffef8; color: #1d1d1f; font: 700 15px/1 "Hiragino Mincho ProN", serif; box-shadow: 0 1px 0 #c9c9ce; }
+.t i { font-style: normal; font-size: 9px; line-height: 1; margin-top: 2px; }
+.t.m i { color: #c0392b; } .t.p { color: #1f4fbf; } .t.s { color: #1e7f4f; } .t.z.r { color: #c0392b; } .t.z.g { color: #1e7f4f; }
+.t.sm { width: 18px; height: 26px; font-size: 12px; vertical-align: middle; } .t.sm i { font-size: 7px; }
+.t.draw { margin-left: 8px; } .gap { width: 4px; }
+.q { border-bottom: 1px solid var(--line); padding: 8px 0 14px; }
+details summary { cursor: pointer; color: var(--accent); margin: 6px 0; }
+@media (max-width: 380px) { .t { width: 20px; height: 30px; font-size: 13px; } }
+.pal { display: grid; grid-template-columns: repeat(9, auto); justify-content: start; gap: 4px; margin: 10px 0; }
+.pal button, #hand button { padding: 0; border: 0; background: none; cursor: pointer; }
+.pal button:disabled { opacity: .3; cursor: default; }
+.smp { font: inherit; font-size: .9rem; margin: 2px 4px 2px 0; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); color: var(--accent); cursor: pointer; }
+#clr { font: inherit; font-size: .9rem; padding: 2px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); }
+#hand { min-height: 36px; }
+.wt { display: inline-flex; flex-direction: column; align-items: center; margin-right: 4px; }
+.wt small { font-size: .75rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <nav class="crumb"><a href="../guide/">早見表・ガイド</a> ＞ 麻雀 待ち判定ツール</nav>
+  <h1>麻雀 待ち判定ツール</h1>
+  <p class="lead">牌を13枚選ぶと、和了れる牌（待ち）と残り枚数を表示します。清一色の多面待ちの確認や、待ちの種類の練習にどうぞ。</p>
+  <div class="calc">
+    <div class="row"><b>手牌</b> <span id="cnt" class="muted">0 / 13枚</span>
+      <button type="button" id="clr" style="float:right">クリア</button></div>
+    <div class="hand" id="hand" aria-live="polite"></div>
+    <p class="muted" style="margin:0">牌をタップすると外せます。</p>
+    <div class="pal" id="pal"><button type="button" data-t="0" aria-label="1萬"><span class="t m " title="1萬">一<i>萬</i></span></button><button type="button" data-t="1" aria-label="2萬"><span class="t m " title="2萬">二<i>萬</i></span></button><button type="button" data-t="2" aria-label="3萬"><span class="t m " title="3萬">三<i>萬</i></span></button><button type="button" data-t="3" aria-label="4萬"><span class="t m " title="4萬">四<i>萬</i></span></button><button type="button" data-t="4" aria-label="5萬"><span class="t m " title="5萬">五<i>萬</i></span></button><button type="button" data-t="5" aria-label="6萬"><span class="t m " title="6萬">六<i>萬</i></span></button><button type="button" data-t="6" aria-label="7萬"><span class="t m " title="7萬">七<i>萬</i></span></button><button type="button" data-t="7" aria-label="8萬"><span class="t m " title="8萬">八<i>萬</i></span></button><button type="button" data-t="8" aria-label="9萬"><span class="t m " title="9萬">九<i>萬</i></span></button><button type="button" data-t="9" aria-label="1筒"><span class="t p " title="1筒">1<i>筒</i></span></button><button type="button" data-t="10" aria-label="2筒"><span class="t p " title="2筒">2<i>筒</i></span></button><button type="button" data-t="11" aria-label="3筒"><span class="t p " title="3筒">3<i>筒</i></span></button><button type="button" data-t="12" aria-label="4筒"><span class="t p " title="4筒">4<i>筒</i></span></button><button type="button" data-t="13" aria-label="5筒"><span class="t p " title="5筒">5<i>筒</i></span></button><button type="button" data-t="14" aria-label="6筒"><span class="t p " title="6筒">6<i>筒</i></span></button><button type="button" data-t="15" aria-label="7筒"><span class="t p " title="7筒">7<i>筒</i></span></button><button type="button" data-t="16" aria-label="8筒"><span class="t p " title="8筒">8<i>筒</i></span></button><button type="button" data-t="17" aria-label="9筒"><span class="t p " title="9筒">9<i>筒</i></span></button><button type="button" data-t="18" aria-label="1索"><span class="t s " title="1索">1<i>索</i></span></button><button type="button" data-t="19" aria-label="2索"><span class="t s " title="2索">2<i>索</i></span></button><button type="button" data-t="20" aria-label="3索"><span class="t s " title="3索">3<i>索</i></span></button><button type="button" data-t="21" aria-label="4索"><span class="t s " title="4索">4<i>索</i></span></button><button type="button" data-t="22" aria-label="5索"><span class="t s " title="5索">5<i>索</i></span></button><button type="button" data-t="23" aria-label="6索"><span class="t s " title="6索">6<i>索</i></span></button><button type="button" data-t="24" aria-label="7索"><span class="t s " title="7索">7<i>索</i></span></button><button type="button" data-t="25" aria-label="8索"><span class="t s " title="8索">8<i>索</i></span></button><button type="button" data-t="26" aria-label="9索"><span class="t s " title="9索">9<i>索</i></span></button><button type="button" data-t="27" aria-label="東"><span class="t z  " title="東">東</span></button><button type="button" data-t="28" aria-label="南"><span class="t z  " title="南">南</span></button><button type="button" data-t="29" aria-label="西"><span class="t z  " title="西">西</span></button><button type="button" data-t="30" aria-label="北"><span class="t z  " title="北">北</span></button><button type="button" data-t="31" aria-label="白"><span class="t z  " title="白"></span></button><button type="button" data-t="32" aria-label="發"><span class="t z g " title="發">發</span></button><button type="button" data-t="33" aria-label="中"><span class="t z r " title="中">中</span></button></div>
+    <div class="row">例：<button type="button" class="smp" data-s="1112345678999m">九蓮宝燈</button><button type="button" class="smp" data-s="2223456777888m">清一色</button><button type="button" class="smp" data-s="1133557799m22p4s">七対子</button><button type="button" class="smp" data-s="19m19p19s1234567z">国士無双</button></div>
+    <div class="out" id="out" aria-live="polite"></div>
+  </div>
+  <p class="muted">七対子・国士無双にも対応しています。手牌で4枚使っている牌は待ちに含めません（残り0枚の待ちは表示します）。</p>
+
+  <a class="app" href="https://apps.apple.com/jp/app/id6822353532"><img src="../assets/icons/machi.png" width="60" height="60" alt="麻雀待ち判定のアイコン" loading="lazy"><span><strong>待ちごとの役・符・点数まで計算するアプリ →</strong><br>手牌を入れると、待ち牌と残り枚数、待ちごとの役・符・点数がわかります。</span></a>
+
+  <h2>待ちの種類</h2>
+  <p>和了の形を作る最後の1枚を、どんな形で待っているかで呼び方が変わります。符計算で2符つく待ちもあります（<a href="../mahjong-fu/">符計算</a>）。</p>
+  <h3>両面（リャンメン）</h3>
+  <div class="hand"><span class="t m " title="2萬">二<i>萬</i></span><span class="t m " title="3萬">三<i>萬</i></span></div>
+  <p>待ち：<span class="t m sm" title="1萬">一<i>萬</i></span><span class="t m sm" title="4萬">四<i>萬</i></span> <span class="muted">2種8枚</span></p>
+  <p class="muted">連続した2枚の両側どちらでも和了れる待ち。2種8枚で、いちばん和了りやすい基本の待ちです。平和の条件にもなります。</p>
+  <h3>嵌張（カンチャン）</h3>
+  <div class="hand"><span class="t m " title="2萬">二<i>萬</i></span><span class="t m " title="4萬">四<i>萬</i></span></div>
+  <p>待ち：<span class="t m sm" title="3萬">三<i>萬</i></span> <span class="muted">1種4枚</span></p>
+  <p class="muted">間の1枚を待つ形。1種4枚。符が2符つきます。</p>
+  <h3>辺張（ペンチャン）</h3>
+  <div class="hand"><span class="t m " title="1萬">一<i>萬</i></span><span class="t m " title="2萬">二<i>萬</i></span></div>
+  <p>待ち：<span class="t m sm" title="3萬">三<i>萬</i></span> <span class="muted">1種4枚</span></p>
+  <p class="muted">端の2枚で、3だけを待つ形（89なら7待ち）。1種4枚。符が2符つきます。</p>
+  <h3>双碰（シャンポン）</h3>
+  <div class="hand"><span class="t m " title="2萬">二<i>萬</i></span><span class="t m " title="2萬">二<i>萬</i></span><span class="t p " title="5筒">5<i>筒</i></span><span class="t p " title="5筒">5<i>筒</i></span></div>
+  <p>待ち：<span class="t m sm" title="2萬">二<i>萬</i></span><span class="t p sm" title="5筒">5<i>筒</i></span> <span class="muted">2種4枚</span></p>
+  <p class="muted">対子2組のどちらかが刻子になれば和了れる待ち。2種4枚。</p>
+  <h3>単騎（タンキ）</h3>
+  <div class="hand"><span class="t s " title="7索">7<i>索</i></span></div>
+  <p>待ち：<span class="t s sm" title="7索">7<i>索</i></span> <span class="muted">1種3枚</span></p>
+  <p class="muted">1枚で雀頭を待つ形。1種3枚と少ないですが、字牌や端の牌に待ちを変えやすいのが利点。符が2符つきます。</p>
+  <h3>延べ単（ノベタン）</h3>
+  <div class="hand"><span class="t m " title="2萬">二<i>萬</i></span><span class="t m " title="3萬">三<i>萬</i></span><span class="t m " title="4萬">四<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span></div>
+  <p>待ち：<span class="t m sm" title="2萬">二<i>萬</i></span><span class="t m sm" title="5萬">五<i>萬</i></span> <span class="muted">2種6枚</span></p>
+  <p class="muted">4枚の連続形で、両端の単騎を待つ形（2・5待ち）。2種6枚。</p>
+  <h3>三面張（サンメンチャン）</h3>
+  <div class="hand"><span class="t m " title="3萬">三<i>萬</i></span><span class="t m " title="4萬">四<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="6萬">六<i>萬</i></span><span class="t m " title="7萬">七<i>萬</i></span></div>
+  <p>待ち：<span class="t m sm" title="2萬">二<i>萬</i></span><span class="t m sm" title="5萬">五<i>萬</i></span><span class="t m sm" title="8萬">八<i>萬</i></span> <span class="muted">3種11枚</span></p>
+  <p class="muted">5枚の連続形で、2・5・8を待つ形。手牌で使っていなければ3種11枚の強い待ちです。</p>
+
+  <h2>多面待ちの例</h2>
+  <p>同じ色の牌が多いと、いくつもの待ちが重なって見落としやすくなります。待ちを見逃すとフリテンの原因にもなるので注意しましょう。</p>
+  <h3>九蓮宝燈の形（9面待ち）</h3>
+  <div class="hand"><span class="t m " title="1萬">一<i>萬</i></span><span class="t m " title="1萬">一<i>萬</i></span><span class="t m " title="1萬">一<i>萬</i></span><span class="t m " title="2萬">二<i>萬</i></span><span class="t m " title="3萬">三<i>萬</i></span><span class="t m " title="4萬">四<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="6萬">六<i>萬</i></span><span class="t m " title="7萬">七<i>萬</i></span><span class="t m " title="8萬">八<i>萬</i></span><span class="t m " title="9萬">九<i>萬</i></span><span class="t m " title="9萬">九<i>萬</i></span><span class="t m " title="9萬">九<i>萬</i></span></div>
+  <p>待ち：<span class="t m sm" title="1萬">一<i>萬</i></span><span class="t m sm" title="2萬">二<i>萬</i></span><span class="t m sm" title="3萬">三<i>萬</i></span><span class="t m sm" title="4萬">四<i>萬</i></span><span class="t m sm" title="5萬">五<i>萬</i></span><span class="t m sm" title="6萬">六<i>萬</i></span><span class="t m sm" title="7萬">七<i>萬</i></span><span class="t m sm" title="8萬">八<i>萬</i></span><span class="t m sm" title="9萬">九<i>萬</i></span> <span class="muted">9種23枚</span></p>
+  <p class="muted">萬子のどれが来ても和了れる、純正九蓮宝燈の形です。</p>
+  <h3>清一色の8面待ち</h3>
+  <div class="hand"><span class="t m " title="2萬">二<i>萬</i></span><span class="t m " title="2萬">二<i>萬</i></span><span class="t m " title="2萬">二<i>萬</i></span><span class="t m " title="3萬">三<i>萬</i></span><span class="t m " title="4萬">四<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="6萬">六<i>萬</i></span><span class="t m " title="7萬">七<i>萬</i></span><span class="t m " title="7萬">七<i>萬</i></span><span class="t m " title="7萬">七<i>萬</i></span></div>
+  <p>待ち：<span class="t m sm" title="1萬">一<i>萬</i></span><span class="t m sm" title="2萬">二<i>萬</i></span><span class="t m sm" title="3萬">三<i>萬</i></span><span class="t m sm" title="4萬">四<i>萬</i></span><span class="t m sm" title="5萬">五<i>萬</i></span><span class="t m sm" title="6萬">六<i>萬</i></span><span class="t m sm" title="7萬">七<i>萬</i></span><span class="t m sm" title="8萬">八<i>萬</i></span> <span class="muted">8種22枚</span></p>
+  <h3>清一色の多面待ち</h3>
+  <div class="hand"><span class="t m " title="1萬">一<i>萬</i></span><span class="t m " title="1萬">一<i>萬</i></span><span class="t m " title="1萬">一<i>萬</i></span><span class="t m " title="2萬">二<i>萬</i></span><span class="t m " title="3萬">三<i>萬</i></span><span class="t m " title="4萬">四<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="6萬">六<i>萬</i></span><span class="t m " title="7萬">七<i>萬</i></span><span class="t m " title="8萬">八<i>萬</i></span></div>
+  <p>待ち：<span class="t m sm" title="2萬">二<i>萬</i></span><span class="t m sm" title="3萬">三<i>萬</i></span><span class="t m sm" title="5萬">五<i>萬</i></span><span class="t m sm" title="6萬">六<i>萬</i></span><span class="t m sm" title="8萬">八<i>萬</i></span><span class="t m sm" title="9萬">九<i>萬</i></span> <span class="muted">6種19枚</span></p>
+  <h3>7枚の連続形</h3>
+  <div class="hand"><span class="t m " title="2萬">二<i>萬</i></span><span class="t m " title="3萬">三<i>萬</i></span><span class="t m " title="4萬">四<i>萬</i></span><span class="t m " title="5萬">五<i>萬</i></span><span class="t m " title="6萬">六<i>萬</i></span><span class="t m " title="7萬">七<i>萬</i></span><span class="t m " title="8萬">八<i>萬</i></span></div>
+  <p>待ち：<span class="t m sm" title="2萬">二<i>萬</i></span><span class="t m sm" title="5萬">五<i>萬</i></span><span class="t m sm" title="8萬">八<i>萬</i></span> <span class="muted">3種9枚</span></p>
+  <p class="muted">三面張に見えにくい形ですが、2・5・8の3種待ちです。</p>
+  <h3>シャンポン＋カンチャン</h3>
+  <div class="hand"><span class="t m " title="4萬">四<i>萬</i></span><span class="t m " title="4萬">四<i>萬</i></span><span class="t m " title="4萬">四<i>萬</i></span><span class="t m " title="6萬">六<i>萬</i></span></div>
+  <p>待ち：<span class="t m sm" title="5萬">五<i>萬</i></span><span class="t m sm" title="6萬">六<i>萬</i></span> <span class="muted">2種7枚</span></p>
+
+  <a class="app" href="https://apps.apple.com/jp/app/id6822353532"><img src="../assets/icons/machi.png" width="60" height="60" alt="麻雀待ち判定のアイコン" loading="lazy"><span><strong>手牌を入れると、待ちと役・点数がすぐわかる →</strong><br>手牌を入れると、待ち牌と残り枚数、待ちごとの役・符・点数がわかります。</span></a>
+  <p>点数は<a href="../mahjong-tensu/">点数早見表</a>、役は<a href="../mahjong-yaku/">役一覧</a>、牌効率は<a href="../nanikiru/">何切る問題</a>で練習できます。</p>
+
+
+  <h2>よくある質問</h2>
+  <h3>麻雀の待ちはどうやって調べる？</h3>
+  <p>13枚の手牌に34種類の牌を1枚ずつ足してみて、4面子1雀頭・七対子・国士無双のどれかになる牌が待ちです。このページのツールに手牌を入れると自動で調べられます。</p>
+  <h3>いちばん和了りやすい待ちは？</h3>
+  <p>一般的には両面待ち（2種8枚）や三面張です。ただし、残り枚数や、相手が切りやすい牌かどうかでも変わります。</p>
+  <h3>フリテンとは？</h3>
+  <p>自分の待ち牌のどれかを自分で捨てているとき、ロン和了ができない状態です。多面待ちでは待ちを見落としてフリテンになりやすいので注意しましょう。</p>
+</main>
+<footer>
+  <a href="../guide/">早見表・ガイドの一覧</a> ・ <a href="../apps/">アプリの一覧</a> ・ お問い合わせ: tanacount.support@gmail.com
+</footer>
+<script>
+const HON = "東南西北白發中", KAN = "一二三四五六七八九";
+const nm = t => t >= 27 ? HON[t - 27] : `${t % 9 + 1}${"萬筒索"[Math.floor(t / 9)]}`;
+const pal = document.getElementById("pal"), handEl = document.getElementById("hand"), out = document.getElementById("out"), cnt = document.getElementById("cnt");
+const html = {}; pal.querySelectorAll("button").forEach(b => html[b.dataset.t] = b.innerHTML);
+let hand = [];
+function mentsu(c, i) {
+  while (i < 34 && !c[i]) i++;
+  if (i === 34) return true;
+  if (c[i] >= 3) { c[i] -= 3; const ok = mentsu(c, i); c[i] += 3; if (ok) return true; }
+  if (i < 27 && i % 9 <= 6 && c[i + 1] && c[i + 2]) {
+    c[i]--; c[i + 1]--; c[i + 2]--; const ok = mentsu(c, i); c[i]++; c[i + 1]++; c[i + 2]++; if (ok) return true;
+  }
+  return false;
+}
+function agari(c) {
+  if (c.filter(x => x === 2).length === 7) return true;
+  const y = [0, 8, 9, 17, 18, 26, 27, 28, 29, 30, 31, 32, 33];
+  if (y.every(i => c[i] >= 1) && y.reduce((s, i) => s + c[i], 0) === 14) return true;
+  for (let p = 0; p < 34; p++) if (c[p] >= 2) { c[p] -= 2; const ok = mentsu(c, 0); c[p] += 2; if (ok) return true; }
+  return false;
+}
+function render() {
+  hand.sort((a, b) => a - b);
+  handEl.innerHTML = hand.map((t, i) => `<button type="button" data-i="${i}" aria-label="${nm(t)}を外す">${html[t]}</button>`).join("");
+  cnt.textContent = `${hand.length} / 13枚`;
+  const c = Array(34).fill(0); hand.forEach(t => c[t]++);
+  pal.querySelectorAll("button").forEach(b => b.disabled = hand.length >= 13 || c[b.dataset.t] >= 4);
+  if (hand.length < 13) { out.innerHTML = `<p class="muted">あと${13 - hand.length}枚選んでください。</p>`; return; }
+  const w = [];
+  for (let t = 0; t < 34; t++) { if (c[t] >= 4) continue; c[t]++; if (agari(c)) w.push(t); c[t]--; }
+  if (!w.length) { out.innerHTML = "<p><b>ノーテン</b>（テンパイしていません）</p>"; return; }
+  const left = w.reduce((s, t) => s + 4 - c[t], 0);
+  out.innerHTML = `<p><b>テンパイ：${w.length}種${left}枚</b></p><div class="hand">${w.map(t => `<span class="wt">${html[t]}<small>残${4 - c[t]}</small></span>`).join("")}</div><p class="muted">${w.map(nm).join("・")}待ち</p>`;
+}
+function parse(s) { const r = []; let n = []; for (const ch of s) { if (/\d/.test(ch)) n.push(+ch); else { const b = "mpsz".indexOf(ch) * 9; n.forEach(x => r.push(b + x - 1)); n = []; } } return r; }
+pal.addEventListener("click", e => { const b = e.target.closest("button"); if (b && hand.length < 13) { hand.push(+b.dataset.t); render(); } });
+handEl.addEventListener("click", e => { const b = e.target.closest("button"); if (b) { hand.splice(+b.dataset.i, 1); render(); } });
+document.getElementById("clr").addEventListener("click", () => { hand = []; render(); });
+document.querySelectorAll(".smp").forEach(b => b.addEventListener("click", () => { hand = parse(b.dataset.s); render(); }));
+render();
+</script>
+</body>
+</html>
