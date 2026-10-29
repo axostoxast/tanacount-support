@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>初手で引く確率の計算機｜カードゲームのデッキ枚数・採用枚数別の早見表</title>
+<meta name="description" content="カードゲームで、デッキに入れたカードを初手や数ターン後までに引ける確率を計算。60枚デッキ・初手7枚、40枚デッキ・初手5枚の早見表つき。採用枚数を3枚にするか4枚にするか迷ったときに。">
+<link rel="canonical" href="https://axostoxast.github.io/tanacount-support/tcg-kakuritsu/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初手で引く確率の計算機｜カードゲームのデッキ枚数・採用枚数別の早見表">
+<meta property="og:description" content="カードゲームで、デッキに入れたカードを初手や数ターン後までに引ける確率を計算。60枚デッキ・初手7枚、40枚デッキ・初手5枚の早見表つき。採用枚数を3枚にするか4枚にするか迷ったときに。">
+<meta property="og:url" content="https://axostoxast.github.io/tanacount-support/tcg-kakuritsu/">
+<meta property="og:locale" content="ja_JP">
+<meta name="apple-itunes-app" content="app-id=1617602275">
+<link rel="stylesheet" href="../assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "4枚入れたカードを初手で引ける確率は？", "acceptedAnswer": {"@type": "Answer", "text": "60枚デッキで初手7枚なら約39.9%、40枚デッキで初手5枚なら約42.7%です。"}}, {"@type": "Question", "name": "3枚と4枚で、引ける確率はどれくらい違う？", "acceptedAnswer": {"@type": "Answer", "text": "60枚デッキの初手7枚では、3枚なら約31.5%、4枚なら約39.9%で、約8.4ポイント上がります。"}}, {"@type": "Question", "name": "どうやって計算している？", "acceptedAnswer": {"@type": "Answer", "text": "デッキからランダムに引くときの確率（超幾何分布）です。デッキの枚数・入れた枚数・引く枚数から、1枚も引けない確率を求め、1から引いています。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "早見表・ガイド", "item": "https://axostoxast.github.io/tanacount-support/guide/"}, {"@type": "ListItem", "position": 2, "name": "初手で引く確率の計算機", "item": "https://axostoxast.github.io/tanacount-support/tcg-kakuritsu/"}]}</script>
+<style>
+.pre { font: inherit; font-size: .85rem; margin-left: 6px; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); color: var(--accent); cursor: pointer; }
+</style>
+</head>
+<body>
+<main>
+  <nav class="crumb"><a href="../guide/">早見表・ガイド</a> ＞ 初手で引く確率の計算機</nav>
+  <h1>初手で引く確率の計算機</h1>
+  <p class="lead">デッキに入れたカードを、最初の手札（初手）や、何枚か引いたあとまでに引ける確率を計算します。採用枚数を3枚にするか4枚にするか、迷ったときの目安にどうぞ。</p>
+
+  <div class="calc">
+    <div class="row"><label for="deck">デッキの枚数</label><input id="deck" type="number" min="1" max="200" value="60" style="width:5em">枚
+      <button type="button" class="pre" data-d="60" data-h="7">60枚・初手7枚</button><button type="button" class="pre" data-d="40" data-h="5">40枚・初手5枚</button></div>
+    <div class="row"><label for="cp">引きたいカードの枚数</label><input id="cp" type="number" min="1" max="60" value="4" style="width:4em">枚（同じ役割のカードの合計でもよい）</div>
+    <div class="row"><label for="hand">初手の枚数</label><input id="hand" type="number" min="1" max="20" value="7" style="width:4em">枚</div>
+    <div class="row"><label for="ex">そのあと引く枚数</label><input id="ex" type="number" min="0" max="60" value="0" style="width:4em">枚（ターンのはじめのドローなど。山札を見て選ぶ効果は含めない）</div>
+    <div class="out" id="out" aria-live="polite"></div>
+  </div>
+  <p class="muted">デッキからランダムに引いたときの確率（超幾何分布）です。マリガンや、山札を見て選ぶ効果は含みません。</p>
+
+  <a class="app" href="https://apps.apple.com/jp/app/id1617602275"><img src="../assets/icons/carddeck.png" width="60" height="60" alt="デッキ戦績ノートのアイコン" loading="lazy"><span><strong>対戦を記録して、実際の先攻・後攻別の勝率もわかる →</strong><br>カードゲームの対戦を、相手と勝ち負けをタップするだけで記録。勝率・先攻後攻・相手デッキ別の相性表を自動で集計します。</span></a>
+
+  <h2>早見表：60枚デッキ・初手7枚</h2>
+  <p>引きたいカードを<b>1枚以上</b>引ける確率です。</p>
+  <div class="scroll"><table class="center" style="min-width:720px"><thead><tr><th>デッキに<br>入れた枚数</th><th>初手<br><span class='muted'>7枚</span></th><th>1枚引いた後<br><span class='muted'>8枚</span></th><th>2枚引いた後<br><span class='muted'>9枚</span></th><th>3枚引いた後<br><span class='muted'>10枚</span></th><th>5枚引いた後<br><span class='muted'>12枚</span></th><th>8枚引いた後<br><span class='muted'>15枚</span></th></tr></thead><tbody><tr><th>1枚</th><td>11.7%</td><td>13.3%</td><td>15.0%</td><td>16.7%</td><td>20.0%</td><td>25.0%</td></tr><tr><th>2枚</th><td>22.1%</td><td>25.1%</td><td>28.0%</td><td>30.8%</td><td>36.3%</td><td>44.1%</td></tr><tr><th>3枚</th><td>31.5%</td><td>35.4%</td><td>39.1%</td><td>42.7%</td><td>49.5%</td><td>58.5%</td></tr><tr><th>4枚</th><td>39.9%</td><td>44.5%</td><td>48.8%</td><td>52.8%</td><td>60.1%</td><td>69.4%</td></tr></tbody></table></div>
+
+  <h2>早見表：40枚デッキ・初手5枚</h2>
+  <div class="scroll"><table class="center" style="min-width:720px"><thead><tr><th>デッキに<br>入れた枚数</th><th>初手<br><span class='muted'>5枚</span></th><th>1枚引いた後<br><span class='muted'>6枚</span></th><th>2枚引いた後<br><span class='muted'>7枚</span></th><th>3枚引いた後<br><span class='muted'>8枚</span></th><th>5枚引いた後<br><span class='muted'>10枚</span></th><th>8枚引いた後<br><span class='muted'>13枚</span></th></tr></thead><tbody><tr><th>1枚</th><td>12.5%</td><td>15.0%</td><td>17.5%</td><td>20.0%</td><td>25.0%</td><td>32.5%</td></tr><tr><th>2枚</th><td>23.7%</td><td>28.1%</td><td>32.3%</td><td>36.4%</td><td>44.2%</td><td>55.0%</td></tr><tr><th>3枚</th><td>33.8%</td><td>39.4%</td><td>44.8%</td><td>49.8%</td><td>58.9%</td><td>70.4%</td></tr></tbody></table></div>
+
+  <h2>2枚以上引ける確率（初手）</h2>
+  <div class="scroll"><table class="center" style="min-width:300px"><thead><tr><th>入れた枚数</th><th>60枚・初手7枚</th><th>40枚・初手5枚</th></tr></thead><tbody><tr><th>2枚</th><td>1.2%</td><td>1.3%</td></tr><tr><th>3枚</th><td>3.4%</td><td>3.6%</td></tr><tr><th>4枚</th><td>6.3%</td><td>6.9%</td></tr></tbody></table></div>
+
+  <h2>確率の考え方</h2>
+  <ul>
+    <li><b>「同じ役割のカード」はまとめて数える</b>：例えば、序盤に使いたいカードが2種類4枚ずつなら、合わせて8枚として計算すると「どちらかを引ける確率」になります。</li>
+    <li><b>デッキの枚数が少ないほど引きやすい</b>：同じ4枚でも、40枚デッキのほうが60枚デッキより引きやすくなります。</li>
+    <li><b>1枚増やす効果は、少ない枚数ほど大きい</b>：60枚・初手7枚なら、1枚→2枚で約11.7%→22.1%と大きく上がり、3枚→4枚では約31.5%→39.9%です。</li>
+  </ul>
+  <p>理論上の確率と、実際の対戦での手ごたえを比べたいときは、対戦の記録をつけておくと便利です。大会の計算は<a href="../tcg-swiss/">スイスドロー計算</a>・<a href="../tcg-omw/">オポ率計算機</a>もどうぞ。</p>
+
+
+  <h2>よくある質問</h2>
+  <h3>4枚入れたカードを初手で引ける確率は？</h3>
+  <p>60枚デッキで初手7枚なら約39.9%、40枚デッキで初手5枚なら約42.7%です。</p>
+  <h3>3枚と4枚で、引ける確率はどれくらい違う？</h3>
+  <p>60枚デッキの初手7枚では、3枚なら約31.5%、4枚なら約39.9%で、約8.4ポイント上がります。</p>
+  <h3>どうやって計算している？</h3>
+  <p>デッキからランダムに引くときの確率（超幾何分布）です。デッキの枚数・入れた枚数・引く枚数から、1枚も引けない確率を求め、1から引いています。</p>
+</main>
+<footer>
+  <a href="../guide/">早見表・ガイドの一覧</a> ・ <a href="../apps/">アプリの一覧</a> ・ お問い合わせ: tanacount.support@gmail.com
+</footer>
+<script>
+function comb(n, k) { if (k < 0 || k > n) return 0; k = Math.min(k, n - k); let r = 1; for (let i = 1; i <= k; i++) r = r * (n - k + i) / i; return r; }
+function atLeast(N, K, n, k) { const t = comb(N, n); let s = 0; for (let i = k; i <= Math.min(K, n); i++) s += comb(K, i) * comb(N - K, n - i); return s / t; }
+const $ = id => document.getElementById(id);
+const pct = p => (p * 100).toFixed(1) + "%";
+function upd() {
+  const N = +$("deck").value, K = +$("cp").value, h = +$("hand").value, e = +$("ex").value, n = h + e;
+  if (!(N > 0 && K > 0 && h > 0 && e >= 0) || K > N || n > N) { $("out").innerHTML = "<p>枚数を確かめてください（引く枚数やカードの枚数が、デッキの枚数より多くなっています）。</p>"; return; }
+  const p1 = atLeast(N, K, n, 1), p2 = atLeast(N, K, n, 2);
+  let h2 = `<p><b>${n}枚引くまでに1枚以上：${pct(p1)}</b>（引けない確率 ${pct(1 - p1)}）</p>`;
+  if (K >= 2) h2 += `<p>2枚以上：${pct(p2)}</p>`;
+  h2 += `<p class="muted">引ける枚数の平均：${(K * n / N).toFixed(2)}枚</p>`;
+  $("out").innerHTML = h2;
+}
+["deck", "cp", "hand", "ex"].forEach(id => $(id).addEventListener("input", upd));
+document.querySelectorAll(".pre").forEach(b => b.addEventListener("click", () => { $("deck").value = b.dataset.d; $("hand").value = b.dataset.h; upd(); }));
+upd();
+</script>
+</body>
+</html>
