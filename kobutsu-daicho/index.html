@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>古物台帳の書き方と無料テンプレート｜記載事項・1万円未満の例外・保存期間（Excel・印刷用）</title>
+<meta name="description" content="古物商が古物台帳（帳簿）に書く項目、1万円未満でも記録が必要な品目（2025年10月の改正を含む）、売ったときの記録、保存期間（3年）をまとめました。Excelで開けるCSVと、A4横で印刷できる台帳の無料テンプレートつき。">
+<link rel="canonical" href="https://axostoxast.github.io/tanacount-support/kobutsu-daicho/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="古物台帳の書き方と無料テンプレート｜記載事項・1万円未満の例外・保存期間（Excel・印刷用）">
+<meta property="og:description" content="古物商が古物台帳（帳簿）に書く項目、1万円未満でも記録が必要な品目（2025年10月の改正を含む）、売ったときの記録、保存期間（3年）をまとめました。Excelで開けるCSVと、A4横で印刷できる台帳の無料テンプレートつき。">
+<meta property="og:url" content="https://axostoxast.github.io/tanacount-support/kobutsu-daicho/">
+<meta property="og:locale" content="ja_JP">
+<meta name="apple-itunes-app" content="app-id=6832219366">
+<link rel="stylesheet" href="../assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "古物台帳は何年保存する？", "acceptedAnswer": {"@type": "Answer", "text": "最後に記録した日から3年間です。紙でも、パソコンやスマートフォンでの記録でもかまいません。"}}, {"@type": "Question", "name": "1万円未満の買取りでも記録は必要？", "acceptedAnswer": {"@type": "Answer", "text": "原則は不要ですが、バイク・原付（部品を含む）、ゲームソフト、CD・DVDなど、書籍、エアコンの室外機、電気温水機器のヒートポンプ、電線、金属製のグレーチングは、1万円未満でも本人確認と記録が必要です。"}}, {"@type": "Question", "name": "古物台帳に決まった様式はある？", "acceptedAnswer": {"@type": "Answer", "text": "必要な項目がそろっていれば、市販の帳簿、Excel、アプリのどれで記録してもかまいません。"}}, {"@type": "Question", "name": "売ったときも記録が必要？", "acceptedAnswer": {"@type": "Answer", "text": "美術品類、時計・宝飾品類、自動車、自動二輪車・原付を売ったときは、相手方の住所・氏名・職業・年齢と確認方法なども記録します（1万円未満の取引を除く。バイク・原付は金額にかかわらず必要）。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "早見表・ガイド", "item": "https://axostoxast.github.io/tanacount-support/guide/"}, {"@type": "ListItem", "position": 2, "name": "古物台帳の書き方と無料テンプレート", "item": "https://axostoxast.github.io/tanacount-support/kobutsu-daicho/"}]}</script>
+<style>
+.pbtn { font: inherit; font-size: .85rem; margin-left: 6px; padding: 2px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); color: var(--accent); cursor: pointer; }
+.sheet { font-size: .8rem; }
+.sheet td { height: 30px; }
+@media print {
+  @page { size: A4 landscape; margin: 10mm; }
+  body { background: #fff; color: #000; }
+  main > *:not(.print-area), footer { display: none !important; }
+  main { padding: 0; max-width: none; }
+  .print-area h2 { border: 0; margin-top: 0; }
+  .sheet { font-size: 9pt; }
+  .sheet th, .sheet td { border: 1px solid #000; }
+  .sheet td { height: 10.5mm; }
+}
+</style>
+</head>
+<body>
+<main>
+  <nav class="crumb"><a href="../guide/">早見表・ガイド</a> ＞ 古物台帳の書き方と無料テンプレート</nav>
+  <h1>古物台帳の書き方と無料テンプレート</h1>
+  <p class="lead">古物商が取引のときに書く古物台帳（帳簿）の記載事項と、記録が必要な取引、保存期間をまとめました。Excelで開けるCSVと、A4横で印刷できる台帳を無料で用意しています。</p>
+
+  <div class="toc"><b>目次</b><ul>
+    <li><a href="#items">古物台帳に書く項目</a></li>
+    <li><a href="#when">記録が必要な取引（1万円未満の例外）</a></li>
+    <li><a href="#dispose">売ったとき（払出し）の記録</a></li>
+    <li><a href="#dl">無料テンプレート（CSV・印刷用）</a></li>
+    <li><a href="#cats">13の品目区分</a></li>
+    <li><a href="#keep">保存期間と、帳簿の形式</a></li>
+  </ul></div>
+
+  <h2 id="items">古物台帳に書く項目</h2>
+  <p>古物を買い受けたり、交換したり、売却の委託を受けたりしたときは、次の内容を記録します。</p>
+  <ul>
+    <li>取引の年月日</li>
+    <li>古物の品目と数量</li>
+    <li>古物の特徴（メーカー・型番・製造番号・色・傷など、ほかの品物と見分けられる内容）</li>
+    <li>相手方の住所・氏名・職業・年齢</li>
+    <li>相手方の本人確認の方法（運転免許証を見た、など）</li>
+  </ul>
+
+  <a class="app" href="https://apps.apple.com/jp/app/id6832219366"><img src="../assets/icons/kobutsu.png" width="60" height="60" alt="古物台帳のアイコン" loading="lazy"><span><strong>スマホで古物台帳をつけて、記録が必要な取引を自動で判定 →</strong><br>古物の買受けを記録して、本人確認と記録が必要な取引かを自動で判定。台帳をPDFで書き出せて、せどりの仕入れ・売上・利益も管理できます。</span></a>
+
+  <h3>記入例</h3>
+  <div class="scroll"><table style="min-width:1000px"><thead><tr><th>取引年月日</th><th>区分（買受け・交換・委託）</th><th>品目</th><th>品名</th><th>数量</th><th>特徴（メーカー・型番・製造番号など）</th><th>代価</th><th>相手方の住所</th><th>氏名</th><th>職業</th><th>年齢</th><th>確認方法（書類と番号）</th></tr></thead><tbody><tr><td>2026/11/08</td><td>買受け</td><td>機械工具類</td><td>ゲーム機 本体</td><td>1</td><td>ホワイト 製造番号 XKJ1234567 箱・説明書あり</td><td>21,000円</td><td>東京都練馬区〇〇町1-2-3</td><td>山田 太郎</td><td>会社員</td><td>38</td><td>運転免許証（第123456789012号）</td></tr><tr><td>2026/11/07</td><td>買受け</td><td>時計・宝飾品類</td><td>腕時計（自動巻き）</td><td>1</td><td>ステンレス 裏ぶた刻印 No.88231 ベルト小傷</td><td>38,000円</td><td>東京都杉並区〇〇2-8-1</td><td>佐藤 花子</td><td>パート</td><td>45</td><td>マイナンバーカード（番号は記録しない）</td></tr><tr><td>2026/11/06</td><td>買受け</td><td>道具類</td><td>ゲームソフト 5本</td><td>5</td><td>アクション2・RPG3 ケースあり</td><td>4,500円</td><td>東京都練馬区〇〇町1-2-3</td><td>山田 太郎</td><td>会社員</td><td>38</td><td>運転免許証（第123456789012号）</td></tr><tr><td>2026/11/05</td><td>買受け</td><td>写真機類</td><td>ミラーレス一眼 レンズキット</td><td>1</td><td>ブラック シリアル 1029384</td><td>46,000円</td><td>神奈川県川崎市〇〇区3-3-9</td><td>鈴木 一郎</td><td>自営業</td><td>52</td><td>非対面：免許証の写し＋転送不要の書留</td></tr></tbody></table></div>
+
+  <h2 id="when">記録が必要な取引</h2>
+  <p>代価の総額が<b>1万円未満</b>の取引は、本人確認と記録の義務がありません。ただし、次の品目は1万円未満でも本人確認と記録が必要です。</p>
+  <ul>
+    <li>自動二輪車・原動機付自転車（部品を含む）</li>
+    <li>家庭用ゲームソフト</li>
+    <li>CD・DVD・ブルーレイなど</li>
+    <li>書籍</li>
+    <li>エアコンの室外機、電気温水機器のヒートポンプ、電線（家庭用のケーブルを除く）、金属製のグレーチング（<b>2025年10月1日から</b>）</li>
+  </ul>
+  <p>ネットや郵送の買取りなど相手と会わない取引では、本人限定受取郵便や、身分証明書の写しと転送不要の書留を使う方法など、決められた方法で本人確認をします。</p>
+
+  <h2 id="dispose">売ったとき（払出し）の記録</h2>
+  <p>美術品類、時計・宝飾品類、自動車、自動二輪車・原付の4つは、売ったとき（売却・交換・委託による引渡し）にも、取引の年月日、品目と数量、特徴、相手方の住所・氏名・職業・年齢、確認方法を記録します（1万円未満の取引を除く。バイク・原付は金額にかかわらず必要）。</p>
+
+  <h2 id="dl">無料テンプレート</h2>
+  <ul>
+    <li><a href="kobutsu-daicho.csv" download>古物台帳（CSV・60行）</a>：Excel・Googleスプレッドシートで開けます。</li>
+    <li><a href="kobutsu-daicho-sample.csv" download>記入例つき（CSV）</a></li>
+    <li><a href="#print">印刷用の古物台帳（A4横・14行）</a> <button type="button" onclick="window.print()" class="pbtn">印刷する</button></li>
+  </ul>
+
+  <h2 id="cats">13の品目区分</h2>
+  <div class="scroll"><table style="min-width:480px"><tbody><tr><th>美術品類</th><td>絵画・書・彫刻・工芸品など</td></tr><tr><th>衣類</th><td>洋服・着物・帽子・布団など</td></tr><tr><th>時計・宝飾品類</th><td>時計・宝石・貴金属・眼鏡など</td></tr><tr><th>自動車</th><td>自動車とその部品</td></tr><tr><th>自動二輪車及び原動機付自転車</th><td>バイク・原付とその部品</td></tr><tr><th>自転車類</th><td>自転車とその部品</td></tr><tr><th>写真機類</th><td>カメラ・レンズ・望遠鏡など</td></tr><tr><th>事務機器類</th><td>パソコン・プリンター・レジなど</td></tr><tr><th>機械工具類</th><td>スマートフォン・家電・電動工具・ゲーム機など</td></tr><tr><th>道具類</th><td>家具・楽器・スポーツ用品・ゲームソフト・CD・DVDなど</td></tr><tr><th>皮革・ゴム製品類</th><td>バッグ・靴・財布など</td></tr><tr><th>書籍</th><td>本・雑誌・漫画など</td></tr><tr><th>金券類</th><td>商品券・乗車券・切手など</td></tr></tbody></table></div>
+
+  <h2 id="keep">保存期間と、帳簿の形式</h2>
+  <ul>
+    <li>古物台帳は、最後に記録した日から<b>3年間保存</b>します。</li>
+    <li>紙の帳簿のほか、パソコンやスマートフォンでの記録（電磁的方法）でもかまいません。警察から求められたら、すぐに見せたり印刷したりできるようにしておきます。</li>
+    <li>帳簿をなくしたり盗まれたりしたときは、すぐに警察に届け出ます。</li>
+  </ul>
+  <p class="muted">このページは一般的な内容をまとめたものです。くわしくは所轄の警察署（古物営業の担当）や、警察庁・各都道府県警察の案内を確認してください。</p>
+
+  <a class="app" href="https://apps.apple.com/jp/app/id6832219366"><img src="../assets/icons/kobutsu.png" width="60" height="60" alt="古物台帳のアイコン" loading="lazy"><span><strong>仕入れ・売上・利益もまとめて管理。台帳はPDFで →</strong><br>古物の買受けを記録して、本人確認と記録が必要な取引かを自動で判定。台帳をPDFで書き出せて、せどりの仕入れ・売上・利益も管理できます。</span></a>
+
+  <section id="print" class="print-area">
+    <h2>古物台帳</h2>
+    <p class="print-head">古物商：＿＿＿＿＿＿＿＿＿＿＿＿　　許可番号：＿＿＿＿＿＿＿＿＿＿＿＿＿＿　　＿＿＿＿年＿＿月　　ページ：＿＿</p>
+    <table class="sheet"><thead><tr><th>取引年月日</th><th>区分</th><th>品目</th><th>品名・数量</th><th>特徴</th><th>代価</th><th>相手方の住所</th><th>氏名</th><th>職業</th><th>年齢</th><th>確認方法</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>
+  </section>
+
+
+  <h2>よくある質問</h2>
+  <h3>古物台帳は何年保存する？</h3>
+  <p>最後に記録した日から3年間です。紙でも、パソコンやスマートフォンでの記録でもかまいません。</p>
+  <h3>1万円未満の買取りでも記録は必要？</h3>
+  <p>原則は不要ですが、バイク・原付（部品を含む）、ゲームソフト、CD・DVDなど、書籍、エアコンの室外機、電気温水機器のヒートポンプ、電線、金属製のグレーチングは、1万円未満でも本人確認と記録が必要です。</p>
+  <h3>古物台帳に決まった様式はある？</h3>
+  <p>必要な項目がそろっていれば、市販の帳簿、Excel、アプリのどれで記録してもかまいません。</p>
+  <h3>売ったときも記録が必要？</h3>
+  <p>美術品類、時計・宝飾品類、自動車、自動二輪車・原付を売ったときは、相手方の住所・氏名・職業・年齢と確認方法なども記録します（1万円未満の取引を除く。バイク・原付は金額にかかわらず必要）。</p>
+</main>
+<footer>
+  <a href="../guide/">早見表・ガイドの一覧</a> ・ <a href="../apps/">アプリの一覧</a> ・ お問い合わせ: tanacount.support@gmail.com
+</footer>
+
+</body>
+</html>
