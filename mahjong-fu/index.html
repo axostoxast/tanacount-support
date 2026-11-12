@@ -13,7 +13,7 @@
 <meta property="og:locale" content="ja_JP">
 <meta name="apple-itunes-app" content="app-id=6822173418">
 <link rel="stylesheet" href="../assets/site.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "符はなぜ切り上げる？", "acceptedAnswer": {"@type": "Answer", "text": "点数計算を簡単にするため、合計した符を10符単位に切り上げます。七対子の25符だけは例外です。"}}, {"@type": "Question", "name": "平和ツモは何符？", "acceptedAnswer": {"@type": "Answer", "text": "20符です。平和はツモの2符をつけません。平和のロンは30符です。"}}, {"@type": "Question", "name": "符を覚えなくても遊べる？", "acceptedAnswer": {"@type": "Answer", "text": "早見表や点数計算アプリを使えば、符を覚えていなくても遊べます。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "符はなぜ切り上げる？", "acceptedAnswer": {"@type": "Answer", "text": "点数計算を簡単にするため、合計した符を10符単位に切り上げます。七対子の25符だけは例外です。"}}, {"@type": "Question", "name": "平和ツモは何符？", "acceptedAnswer": {"@type": "Answer", "text": "20符です。平和はツモの2符をつけません。平和のロンは30符です。"}}, {"@type": "Question", "name": "符を覚えなくても遊べる？", "acceptedAnswer": {"@type": "Answer", "text": "早見表や点数計算アプリを使えば、符を覚えていなくても遊べます。"}}, {"@type": "Question", "name": "5翻以上でも符は必要？", "acceptedAnswer": {"@type": "Answer", "text": "5翻以上は満貫以上になり、符に関係なく点数が決まるので、符を数える必要はありません。"}}, {"@type": "Question", "name": "暗刻と明刻の違いは？", "acceptedAnswer": {"@type": "Answer", "text": "自分でそろえた刻子が暗刻、ポンでそろえた刻子が明刻です。ロンで完成した刻子は明刻として数えます。"}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "早見表・ガイド", "item": "https://axostoxast.github.io/tanacount-support/guide/"}, {"@type": "ListItem", "position": 2, "name": "麻雀 符計算", "item": "https://axostoxast.github.io/tanacount-support/mahjong-fu/"}]}</script>
 
 </head>
@@ -73,6 +73,19 @@
     <li><b>鳴いて符がない形（喰い平和）のロン</b>：20符にならないよう30符とする</li>
   </ul>
 
+  <h2>計算の例</h2>
+  <table>
+    <thead><tr><th>手の形</th><th>内訳</th><th>符</th></tr></thead>
+    <tbody>
+      <tr><td>門前でロン、么九牌の暗刻1つ、嵌張待ち</td><td>副底20＋門前ロン10＋暗刻8＋待ち2＝40</td><td style="white-space:nowrap">40符</td></tr>
+      <tr><td>鳴いてツモ、中張牌のポン1つ、雀頭が役牌</td><td>副底20＋ツモ2＋明刻2＋雀頭2＝26 → 切り上げ</td><td style="white-space:nowrap">30符</td></tr>
+      <tr><td>門前でツモ、么九牌の暗槓1つ</td><td>副底20＋ツモ2＋暗槓32＝54 → 切り上げ</td><td style="white-space:nowrap">60符</td></tr>
+      <tr><td>門前でロン、面子はすべて順子、両面待ち（平和）</td><td>副底20＋門前ロン10＝30</td><td style="white-space:nowrap">30符</td></tr>
+      <tr><td>鳴いてロン、面子はすべて順子、両面待ち</td><td>副底20のみ → 喰い平和形は30符</td><td style="white-space:nowrap">30符</td></tr>
+    </tbody>
+  </table>
+  <p>符が出たら、翻と合わせて<a href="../mahjong-tensu/">点数早見表</a>で点数を確認できます。よく出るのは30符と40符なので、まずはこの2つの点数から覚えるのがおすすめです（<a href="../tensu-oboekata/">点数計算の覚え方</a>）。</p>
+
   <a class="app" href="https://apps.apple.com/jp/app/id6822173418"><img src="../assets/icons/drill.png" width="60" height="60" alt="麻雀点数計算ドリルのアイコン" loading="lazy"><span><strong>符と翻から点数を答える練習問題 →</strong><br>「子・ロン 3翻40符」のような問題に4択で答える練習問題。間違えたら計算の手順をその場で解説します。</span></a>
   <a class="app" href="https://apps.apple.com/jp/app/id6822353532"><img src="../assets/icons/machi.png" width="60" height="60" alt="麻雀待ち判定のアイコン" loading="lazy"><span><strong>手牌を入れると符と点数を自動で計算 →</strong><br>手牌を入れると、待ち牌と残り枚数、待ちごとの役・符・点数がわかります。</span></a>
 
@@ -84,6 +97,10 @@
   <p>20符です。平和はツモの2符をつけません。平和のロンは30符です。</p>
   <h3>符を覚えなくても遊べる？</h3>
   <p>早見表や点数計算アプリを使えば、符を覚えていなくても遊べます。</p>
+  <h3>5翻以上でも符は必要？</h3>
+  <p>5翻以上は満貫以上になり、符に関係なく点数が決まるので、符を数える必要はありません。</p>
+  <h3>暗刻と明刻の違いは？</h3>
+  <p>自分でそろえた刻子が暗刻、ポンでそろえた刻子が明刻です。ロンで完成した刻子は明刻として数えます。</p>
 </main>
 <footer>
   <a href="../guide/">早見表・ガイドの一覧</a> ・ <a href="../apps/">アプリの一覧</a> ・ お問い合わせ: tanacount.support@gmail.com
